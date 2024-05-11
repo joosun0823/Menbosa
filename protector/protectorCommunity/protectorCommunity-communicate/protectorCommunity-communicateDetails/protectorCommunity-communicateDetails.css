@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: var(--font-color-default);
+  font-size: 16px;
+  /* 텍스트긁기 방지 */
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hover: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+
+main{
+  width: 970px;
+  margin: 0 auto;
+}
+
+
+/* 상세글 제목 */
+.protectorCommunity-communicateDetails-title{
+  width: 800px;
+  margin: 40px auto 0;
+}
+
+.title-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-top > p > span{
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.title-bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.menuButton{
+  cursor: pointer;
+}
+
+/* 상세글 내용 */
+.protectorCommunity-communicateDetails-content{
+  width: 800px;
+  margin: 0 auto;
+  border-top:1px solid #D9D9D9;
+  border-bottom:1px solid #D9D9D9;
+  padding: 20px 0;
+}
+
+.protectorCommunity-communicateDetails-content > p{
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.protectorCommunity-communicateDetails-content > p > img{
+  width: 100%;
+}
+
+
+
+/* 댓글 아이콘있는 부분 */
+.protectorCommunity-communicateDetails-comments{
+  width: 800px;
+  margin: 40px auto 0;
+}
+
+.comments-top{
+  display: inline-flex;
+  align-items: flex-end;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.comments-top > p{
+  margin-right: 15px;
+  display: flex;
+
+}
+
+.comments-top > span{
+  font-size: 24px;
+  margin-right: 5px;
+
+}
+
+.comments-top > span:nth-of-type(1){
+  color: var(--color-main);
+}
+
+
+/* 댓글 리스트 */
+.comments-list{
+}
+
+.comments-list > li{
+
+}
+
+.comments-list > li > div{
+  width: 100%;
+}
+
+
+.comments-list-own{
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid var(--color-disabled);
+}
+
+.comments-list-own > div{
+  width: 100%;
+}
+
+.comments-list-writer{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.comments-list-contents{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+.comments-list-contents > span:nth-of-type(2){
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--color-disabled);
+}
+
+.comments-menuButton{
+  cursor: pointer;
+}
+/* 대댓글 */
+
+.comments-list-reply{
+  background-color: #f8f8f8;
+  padding: 20px 0;
+}
+
+
+.comments-list-reply > li{
+  display: flex;
+  width: 100%;
+}
+
+.comments-list-reply > li > p{
+  padding-left: 30px;
+}
+
+.comments-list-reply > li > div{
+  width: 100%;
+}
+.reply-writer{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.reply-contents{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+.reply-contents > span:nth-of-type(2){
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--color-disabled);
+}
+
+/* 댓글 입력창 */
+.protectorCommunity-communicateDetails-commentsInput{
+  width: 800px;
+  margin: 40px auto;
+}
+
+.protectorCommunity-communicateDetails-commentsInput > form{
+  width: 100%;
+  display: flex;
+  border: 1px solid var(--color-disabled);
+  border-radius: 10px;
+  padding: 10px 0 10px 10px;
+  justify-content: space-evenly;
+}
+
+.protectorCommunity-communicateDetails-commentsInput > form > input{
+  width: 80%;
+  border: none;
+  outline: none;
+}
+
+.protectorCommunity-communicateDetails-commentsInput > form > button{
+  padding: 10px 45px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--color-main);
+  color: var(--font-color-white);
+  cursor: pointer;
+}
+
+.protectorCommunity-communicateDetails-commentsInput > form > button:hover{
+  background-color: var(--color-main-hover);
+}
+
+/* 목록 돌아가기 버튼 */
+.protectorCommunity-communicateDetails-listButton{
+  margin: 80px 0;
+  text-align: center;
+}
+
+.protectorCommunity-communicateDetails-listButton > a{
+  background-color: var(--color-main);
+  color: var(--font-color-white);
+  padding: 10px 40px;
+  border-radius: 30px;
+}
+
+.protectorCommunity-communicateDetails-listButton > a:hover{
+  background-color: var(--color-main-hover);
+}
