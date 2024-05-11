@@ -1,0 +1,111 @@
+구분 페이지(보호자 / 어르신) : division
+
+
+-보호자 선택 시 (총 26페이지)
+
+	로그인 페이지 : protectorLogin
+
+	회원가입 페이지 : protectorJoin
+
+	비밀번호 찾기 페이지 : protectorPassword-find
+
+	메인 페이지 : protectorMain
+
+	소개/안내 페이지 : protectorIntroduce
+
+	시설 추천 페이지 : protectorRecommend
+
+	시설추천(병원) : protectorRecommend-hospital
+	
+	시설추천(노인복지시설) : protectorRecommend-welfare
+
+	시설추천(요양원) : protectorRecommend-sanatorium
+
+	검사 페이지 : protectorTest
+
+	보호자 설문 페이지 : protectorTest-survey
+
+	보호자 설문 결과 페이지 : protectorTest-surveyResult
+
+	인지 기능 검사 페이지(어르신 페이지와 동일) : seniorTest
+	
+	커뮤니티 페이지 : protectorCommunity
+
+	커뮤니티 공지 페이지 : protectorCommunity-announce
+
+	커뮤니티 소통 페이지 : protectorCommunity-communicate
+
+	소통 글쓰기 페이지 : protectorCommunity-communicateMake
+
+	소통 글 상세페이지 : protectorCommunity-communicateDetails
+
+	커뮤니티 시설후기 페이지 : protectorCommunity-postscript
+
+	시설후기 글쓰기 페이지 : protectorCommunity-postscriptMake
+
+	시설후기 글 상세페이지 : protectorCommunity-postscriptDetails
+
+	커뮤니티 자주하는 질문 페이지 : protectorCommunity-question
+
+	마이페이지 : protectorMypage
+
+	마이페이지 정보 수정 페이지 : protectorMypage-modify
+
+	마이페이지 1:1문의 페이지 : protectorMypage-inquiry
+
+	마이페이지 어르신 정보 상세페이지 : protectorMypage-seniorDetails
+
+-어르신 선택 시 (총 12페이지)
+
+	로그인 페이지 : seniorLogin
+
+	회원가입 페이지 : seniorJoin
+
+	비밀번호 찾기 페이지 : seniorPassword-find
+
+	메인 페이지 : seniorMain
+
+	마이페이지 : seniorMypage
+
+	마이페이지 보호자 정보 페이지 : seniorMypage-information
+
+	마이페이지 정보 수정 페이지 : seniorMypage-modify
+
+	마이페이지 검사결과 페이지 : seniorMypage-testResult
+
+	검사 페이지 : seniorTest
+
+	검사 리스트 페이지 : seniorTest-list
+
+	검사 시작 페이지 : seniorTest-start
+
+	검사 결과 페이지 : seniorTest-Result
+
+- 기타 (총 1페이지)
+
+	비밀번호 검증 페이지 : passwordVerify
+
+
+※ 주의사항
+	-위 내용 외의 클래스 추가 시 클래스명 뒤에 "-" 추가
+		ex) protectorPassword-find-container
+
+	-리스트 태그 사용 시 고급선택자 사용할 것
+
+	-애매할 시 팀장에게 문의
+
+	
+
+		
+
+	
+
+	
+
+	
+
+	
+	
+
+	
+
