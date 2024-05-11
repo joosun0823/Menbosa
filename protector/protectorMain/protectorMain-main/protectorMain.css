@@ -1,0 +1,16 @@
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
