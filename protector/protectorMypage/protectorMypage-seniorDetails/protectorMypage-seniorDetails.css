@@ -16,7 +16,9 @@
 
 .mypage-icon-user{
   width: 30px;
-  margin: 0 20px
+  margin: 0 10px;
+  position: relative;
+  top: 3px;
 }
 
 #senior-info-resultall-container{
