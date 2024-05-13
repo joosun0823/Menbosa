@@ -97,6 +97,9 @@
 }
 
 .seniorLogin-loginBox-loginButton{
+  display: inline-block;
+  text-align: center;
+  padding-top: 10px;
   width: 470px;
   height: 65px;
   background-color: #FE7A15;
@@ -105,6 +108,7 @@
   border-radius: 5px;
   margin-top: 35px;
   cursor: pointer;
+  text-decoration-line: none;
 }
 
 .seniorLogin-loginBox-menu{
