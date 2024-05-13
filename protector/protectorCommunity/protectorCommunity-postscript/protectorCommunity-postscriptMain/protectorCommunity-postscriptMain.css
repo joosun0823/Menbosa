@@ -41,17 +41,16 @@ main{
 }
 
 /* 공지 */
-.protectorCommunity-communicate-title{
+.protectorCommunity-postscript-title{
   text-align: center;
   font-size: 32px;
   margin: 20px auto 40px;
   font-weight: 500;
 }
 
-
 /* 커뮤니티 탭메뉴 */
 
-.protectorCommunity-communicate-tabMenu{
+.protectorCommunity-postscript-tabMenu{
   width: 850px;
   margin: 0 auto;
   display: flex;
@@ -59,7 +58,7 @@ main{
   margin-bottom: 40px;
 }
 
-.protectorCommunity-communicate-tabMenu > li{
+.protectorCommunity-postscript-tabMenu > li{
 
   border: 1px solid  #E2E2E2;
   width: 150px;
@@ -69,39 +68,39 @@ main{
   border-radius: 30px;
 }
 
-.protectorCommunity-communicate-tabMenu > li > a{
+.protectorCommunity-postscript-tabMenu > li > a{
   display: block;
   width: 100%;
   font-size: 20px;
 }
 
-.protectorCommunity-communicate-tabMenu > li:nth-of-type(2){
+.protectorCommunity-postscript-tabMenu > li:nth-of-type(3){
   background-color: var(--color-main);
 }
 
-.protectorCommunity-communicate-tabMenu > li:nth-of-type(2) > a{
+.protectorCommunity-postscript-tabMenu > li:nth-of-type(3) > a{
   color: var(--font-color-white);
 }
 
 /* 커뮤니티 검색바 */
-.protectorCommunity-communicate-searchbar{
+.protectorCommunity-postscript-searchbar{
   background-color: #F0F0F0;
   padding: 20px 30px;
   margin-bottom: 30px;
 }
 
-.protectorCommunity-communicate-searchbar > form{
+.protectorCommunity-postscript-searchbar > form{
   display: flex;
   justify-content: space-between;
 }
 
-.protectorCommunity-communicate-searchbar > form > select{
+.protectorCommunity-postscript-searchbar > form > select{
   padding: 10px 40px 10px 5px;
   border: none;
   border-radius: 8px;
 }
 
-.protectorCommunity-communicate-searchbar > form > input{
+.protectorCommunity-postscript-searchbar > form > input{
   width: 600px;
   padding: 0 10px;
   border: none;
@@ -109,7 +108,7 @@ main{
 
 }
 
-.protectorCommunity-communicate-searchbar > form > button{
+.protectorCommunity-postscript-searchbar > form > button{
   padding: 10px 40px;
   color: white;
   background-color: #FE7A15;
@@ -118,19 +117,19 @@ main{
 
 }
 
-.protectorCommunity-communicate-searchbar > form > button:hover{
+.protectorCommunity-postscript-searchbar > form > button:hover{
   background-color: var(--color-main-hover);
 }
 
 /* 리스트 전체 */
-.protectorCommunity-communicate-notice{
+.protectorCommunity-postscript-notice{
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
 
 
 /* 리스트에 순번, 제목, 등록자명, 등록일 부분 */
-.protectorCommunity-communicate-notice-title{
+.protectorCommunity-postscript-notice-title{
   background-color: #D0D0D0;
   display: flex;
   justify-content: space-between;
@@ -138,51 +137,51 @@ main{
   
 }
 
-.protectorCommunity-communicate-notice-title > span{
+.protectorCommunity-postscript-notice-title > span{
   padding: 0 40px;
   border-right: 1px solid white;
 }
 
-.protectorCommunity-communicate-notice-title > span:nth-of-type(2){
+.protectorCommunity-postscript-notice-title > span:nth-of-type(2){
   width: 500px;
 }
 
-.protectorCommunity-communicate-notice-title > span:nth-of-type(4){
+.protectorCommunity-postscript-notice-title > span:nth-of-type(4){
   border: none;
 }
 
 /* 리스트 목록 */
-.protectorCommunity-communicate-notice > ul{
+.protectorCommunity-postscript-notice > ul{
 
 }
 
-.protectorCommunity-communicate-notice > ul > li{
+.protectorCommunity-postscript-notice > ul > li{
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #E2E2E2;
 }
 
-.protectorCommunity-communicate-notice > ul > li > span{
+.protectorCommunity-postscript-notice > ul > li > span{
   padding: 0 20px;
 }
 
-.protectorCommunity-communicate-notice > ul > li > span:nth-of-type(1){
+.protectorCommunity-postscript-notice > ul > li > span:nth-of-type(1){
   padding: 0 30px;
 }
 
-.protectorCommunity-communicate-notice > ul > li > a{
+.protectorCommunity-postscript-notice > ul > li > a{
   width: 500px;
   padding-right: 45px;
 }
 
 /* 글쓰기 버튼 */
-.protectorCommunity-communicate-writeButton{
+.protectorCommunity-postscript-writeButton{
   margin: 15px 0;
   text-align: right;
 }
 
-.protectorCommunity-communicate-writeButton > a{
+.protectorCommunity-postscript-writeButton > a{
   padding: 10px 40px;
   background-color: #F8D90F;
   border: none;
@@ -190,17 +189,17 @@ main{
   border-radius: 8px;
 }
 
-.protectorCommunity-communicate-writeButton > a:hover{
+.protectorCommunity-postscript-writeButton > a:hover{
   background-color: var(--color-sub-yell-hover);
 }
 
 /* 페이지 버튼 */
-.protectorCommunity-communicate-pageButton{
+.protectorCommunity-postscript-pageButton{
   display: flex;
   justify-content: center ;
   margin: 40px auto;
 }
-.protectorCommunity-communicate-pageButton > span{
+.protectorCommunity-postscript-pageButton > span{
   border: 1px solid #D0D0D0;
   padding: 2px 10px;
 }
