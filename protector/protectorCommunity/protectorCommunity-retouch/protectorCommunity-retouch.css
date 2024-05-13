@@ -114,6 +114,7 @@ h2{
   cursor: pointer;
 }
 
+/* 버튼 */
 
 .retouch-buttons{
   text-align: center;
@@ -126,8 +127,21 @@ display: inline-block;
 width: 150px;
 padding: 10px 0;
 border: 1px solid var(--color-disabled);
-margin-right: 40px;
+
 border-radius: 30px;
+}
+
+
+.retouch-buttons > span{
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid var(--color-disabled);
+  border-radius: 30px;
+  background-color: var(--font-color-white);
+  color: black;
+  margin-right: 40px;
+  cursor: pointer;
 }
 
 .retouch-buttons > button{
@@ -137,4 +151,6 @@ border-radius: 30px;
   border-radius: 30px;
   background-color: var(--color-main);
   color: white;
+  cursor: pointer;
 }
+
