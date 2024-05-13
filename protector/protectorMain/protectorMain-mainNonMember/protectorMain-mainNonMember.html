@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./protectorMain.css">
-  <script defer src="./protectorMain.js"></script>
+  <link rel="stylesheet" href="./protectorMain-mainNonMember.css">
+  <script defer src="./protectorMain-mainNonMember.js"></script>
 </head>
 <body>
   <header>
@@ -112,37 +112,49 @@
         <div class="protectorMain-notice">
           <div class="protectorMain-noticeMove">
             <p>공지사항</p>
-            <img src="../../../img/protectorImg/protectorMain-prev.png" alt="">
-            <img src="../../../img/protectorImg/protectorMain-next.png" alt="">
+            <div class="protectorMain-noticeMoveBtn">
+              <button>
+                <img src="../../../img/protectorImg/protectorMain-prev.png" alt="">
+              </button>
+              <button>
+                <img src="../../../img/protectorImg/protectorMain-next.png" alt="">
+              </button>
+            </div>
           </div>
 
-          <ul class="protectorMain-noticeCnt">
-            <li>
-              <a href="#"></a>
-            </li>
-
-            <li>
-              <a href="#"></a>
-            </li>
-
-            <li>
-              <a href="#"></a>
-            </li>
-
-            <li>
-              <a href="#"></a>
-            </li>
-
-            <li>
-              <a href="#"></a>
-            </li>
-          </ul>
+          <div class="protectorMain-noticebanner">
+            <ul class="protectorMain-noticeCnt">
+              <li>
+                <a href="#"></a>
+              </li>
+              
+              <li>
+                <a href="#"></a>
+              </li>
+              
+              <li>
+                <a href="#"></a>
+              </li>
+              
+              <li>
+                <a href="#"></a>
+              </li>
+              
+              <li>
+                <a href="#"></a>
+              </li>
+            </ul>
+          </div>
         </div>
         <!-- 광고 배너 -->
         <div class="protectorMain-banner">
           <div class="protectorMain-bannerMove">
-            <img src="../../../img/protectorImg/protectorMain-prev.png" alt="">
-            <img src="../../../img/protectorImg/protectorMain-next.png" alt="">
+            <button>
+              <img src="../../../img/protectorImg/protectorMain-prev.png" alt="">
+            </button>
+            <button>
+              <img src="../../../img/protectorImg/protectorMain-next.png" alt="">
+            </button>
           </div>
 
           <div class="protectorMain-bannerCnt">

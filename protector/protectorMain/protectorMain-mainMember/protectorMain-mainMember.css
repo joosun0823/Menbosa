@@ -83,37 +83,8 @@ a {
   color: white;
 }
 
-.headerLogin {
-  width: 150px;
-}
-
-.headerLogin-container {
-  display: flex;
-}
-
-.headerLogin-container li {
-  width: 75px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-}
-
-.headerLogin-container a {
-  color: white;
-}
-
-.headerLogin-container li:nth-of-type(2) {
-  background-color: white;
-  border-radius: 8px;
-}
-
-.headerLogin-container li:nth-of-type(2):hover {
-  background-color: rgb(238, 238, 238);
-  cursor: pointer;
-}
-
-.headerLogin-container li:nth-of-type(2) a {
-  color: var(--color-main);
+.headerLogin img {
+  width: 60px;
 }
 
 /* 메인 */
@@ -168,6 +139,83 @@ a {
   font-weight: bold;
 }
 
+.protectorMain-bottomCnt {
+  width: 970px;
+  margin: auto;
+}
+
+.protectorMain-noticeMove {
+  display: flex;
+  justify-content: space-between;
+}
+
+.protectorMain-noticeMove p {
+  font-size: 24px;
+  color: #FE7A15;
+}
+
+.protectorMain-noticeMoveBtn button {
+  border: none;
+  background-color: white;
+}
+
+.protectorMain-noticeMoveBtn img {
+  width: 50px;
+  height: 50px;
+}
+
+.protectorMain-noticeMoveBtn img:hover {
+  cursor: pointer;
+}
+
+.protectorMain-noticebanner {
+  width: 970px;
+  overflow: hidden;
+}
+
+.protectorMain-noticeCnt {
+  width: 2000px;
+  display: flex;
+}
+
+.protectorMain-noticeCnt li {
+  border: 1px solid red;
+  width: 220px;
+  height: 250px;
+  margin-right: 155px;
+  border-radius: 20px;
+}
+
+.protectorMain-banner {
+  margin-top: 50px;
+}
+
+.protectorMain-bannerMove {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.protectorMain-bannerMove button {
+  background-color: white;
+}
+
+.protectorMain-bannerMove img {
+  width: 50px;
+  height: 50px;
+}
+
+.protectorMain-bannerCnt {
+  overflow: hidden;
+}
+
+.protectorMain-bannerImg {
+  width: 2000px;
+  display: flex;
+}
+
+.protectorMain-bannerImg img {
+  width: 970px;
+}
 
 
 /* 푸터 */
