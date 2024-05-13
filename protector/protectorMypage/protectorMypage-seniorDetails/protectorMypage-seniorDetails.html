@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <!-- css -->
-    <link rel="stylesheet" href="mypage-common.css" />
+    <link rel="stylesheet" href="./../mypage-common.css" />
     <link rel="stylesheet" href="protectorMypage-seniorDetails.css">
   </head>
   <body>
@@ -26,9 +26,9 @@
         <ul>
           <a href="./../protectorMypage-main/protectorMypage-main.html"><li>마이페이지</li></a>
           <a href="./../protectorMypage-modify/protectorMypage-modify.html"><li>개인정보 수정</li></a>
-          <a href="#"><li>1:1문의</li></a>
-          <li>로그아웃</li>
-          <li>탈퇴하기</li>
+          <a href="./../protectorMypage-inquiry/protectorMypage-inquiryList/protectorMypage-inquiryList.html"><li>1:1문의</li></a>
+          <li class="mypage-warningsecession">로그아웃</li>
+          <li class="mypage-warningsecession">탈퇴하기</li>
         </ul>
       </aside>
       <main>
@@ -39,37 +39,37 @@
               <img class="mypage-icon-user" src="./../../../img/protectorImg/mypage_icon_user.svg" alt="유저" /><span>장*혁님</span>
             </article>
             <article>
-              <div>생년월일 <span>0000/00/00</span></div>
+              <div>생년월일 : <span>0000/00/00</span></div>
             </article>
             <article>
               <div>
-                전화번호 <span>010</span>-<span>0000</span>-<span>0000</span>
+                전화번호 : <span>010</span>-<span>0000</span>-<span>0000</span>
               </div>
             </article>
           </section>
           <div id="senior-info-resultall-title" class="mypage-subtitle_box"><span>000</span>님의 검사결과 모아보기</div>
           <article id="senior-info-resultall-container">
-            <table>
-              <tr>
-                <th>검사날짜</th>
-                <th>검사명</th>
-                <th>위험도</th>
-              </tr>
-              <tr>
-                <td>ex.2024.05.09.</td>
-                <td>ex.기본 인지기능검사</td>
-                <td><span class="mypage-state-box mypage-state-good">양호</span></td>
-              </tr>
-              <tr>
-                <td>ex.2024.05.09.</td>
-                <td>ex.기본 인지기능검사</td>
-                <td><span class="mypage-state-box mypage-state-good">양호</span></td>
-              </tr>
-            </table>
+            <div class="mypage-table">
+              <div class="mypage-tr">
+                <p class="mypage-th">검사날짜</p>
+                <p class="mypage-th">검사명</p>
+                <p class="mypage-th">위험도</p>
+              </div>
+              <div class="mypage-tr">
+                <p class="mypage-td">ex.2024.05.09.</p>
+                <p class="mypage-td">ex.기본인지기능검사</p>
+                <p class="mypage-td"><span class="mypage-state-box mypage-state-good">양호</span></p>
+              </div>
+              <div class="mypage-tr">
+                <p class="mypage-td">ex.2024.05.09.</p>
+                <p class="mypage-td">ex.기본인지기능검사</p>
+                <p class="mypage-td"><span class="mypage-state-box mypage-state-mid">주의</span></p>
+              </div>
             <p class="mypage-warning">
               이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를
               임의로 해석하거나 처치를 진행하지마세요.
             </p>
+          </div>
           </article>
         </section>
         <a href="./../protectorMypage-main/protectorMypage-main.html" class="mypage-undo">돌아가기 &#10095;</a>

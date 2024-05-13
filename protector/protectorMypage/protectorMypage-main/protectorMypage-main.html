@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <!-- css -->
-    <link rel="stylesheet" href="mypage-common.css" />
+    <link rel="stylesheet" href="./../mypage-common.css" />
     <link rel="stylesheet" href="protectorMypage-main.css" />
   </head>
   <body>
@@ -26,9 +26,9 @@
         <ul>
           <a href="./../protectorMypage-main/protectorMypage-main.html"><li>마이페이지</li></a>
           <a href="./../protectorMypage-modify/protectorMypage-modify.html"><li>개인정보 수정</li></a>
-          <a href="#"><li>1:1문의</li></a>
-          <li>로그아웃</li>
-          <li>탈퇴하기</li>
+          <a href="./../protectorMypage-inquiry/protectorMypage-inquiryList/protectorMypage-inquiryList.html"><li>1:1문의</li></a>
+          <li class="mypage-warningsecession">로그아웃</li>
+          <li class="mypage-warningsecession">탈퇴하기</li>
         </ul>
       </aside>
       <main>
@@ -129,27 +129,27 @@
         <div class="mypage-subtitle_box">보호자 설문 내역</div>
         <section class="mypage-contents-container">
           <article>
-            <table>
-              <tr>
-                <th>검사날짜</th>
-                <th>검사명</th>
-                <th>위험도</th>
-              </tr>
-              <tr>
-                <td>ex.2024.05.09.</td>
-                <td>ex.어르신 진단 보호자 설문</td>
-                <td><span class="mypage-state-box mypage-state-good">양호</span></td>
-              </tr>
-              <tr>
-                <td>ex.2024.05.09.</td>
-                <td>ex.어르신 진단 보호자 설문</td>
-                <td><span class="mypage-state-box mypage-state-mid">주의</span></td>
-              </tr>
-            </table>
+            <div class="mypage-table">
+              <div class="mypage-tr">
+                <p class="mypage-th">검사날짜</p>
+                <p class="mypage-th">검사명</p>
+                <p class="mypage-th">위험도</p>
+              </div>
+              <div class="mypage-tr">
+                <p class="mypage-td">ex.2024.05.09.</p>
+                <p class="mypage-td">ex.어르신 진단 보호자 설문</p>
+                <p class="mypage-td"><span class="mypage-state-box mypage-state-good">양호</span></p>
+              </div>
+              <div class="mypage-tr">
+                <p class="mypage-td">ex.2024.05.09.</p>
+                <p class="mypage-td">ex.어르신 진단 보호자 설문</p>
+                <p class="mypage-td"><span class="mypage-state-box mypage-state-mid">주의</span></p>
+              </div>
             <p class="mypage-warning">
               이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를
               임의로 해석하거나 처치를 진행하지마세요.
             </p>
+          </div>
           </article>
         </section>
       </main>

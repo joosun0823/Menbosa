@@ -105,6 +105,7 @@ aside li{
   line-height: 55px;
   padding: 0 30px;
   list-style: none;
+  font-weight: 500;
   /* font-size: 20px; */
 }
 aside li:hover{
@@ -181,24 +182,31 @@ article{
 .mypage-state-mid{background-color: #F7941D;}
 .mypage-state-bad{background-color: #EF4136;}
 
-table{
+.mypage-table{
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 10px;
 }
-th, td{
-  width: 30%;
-  border-bottom: 1px solid var(--color-table-grey);
+.mypage-th, .mypage-td{
+  width: 100%;
   text-align: center;
-  height: 45px;
+  padding: 5px 0;
 }
-th{color: var(--font-color-grey); height: 35px;}
+
+.mypage-th{color: var(--font-color-grey); height: 35px;}
+.mypage-tr{
+  display: flex;
+  border-bottom: 1px solid var(--color-table-grey);
+  align-items: center;
+}
 
 /* 검사관련 경고단락 */
 .mypage-warning{
   font-size: 12px;
   color: var(--font-color-grey);
   text-align: right;
+  position: relative;
+  top: 10px;
 }
 
 /* 입력창,인증버튼 */
@@ -227,5 +235,9 @@ input[type='tel']{width: 92%;}
   color: var(--font-color-grey);
 }
 .mypage-undo:hover{
-  color: var(--color-main);
+  color: var(--color-main-hover);
 }
+
+/* 붉은 글씨 */
+.mypage-import{color: red;}
+.mypage-warningsecession:hover{color: red;}
