@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>알흠:謁欽 --어르신등록</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="mypage-common.css" />
+    <link rel="stylesheet" href="protectorMypage-seniorAdd.css">
+  </head>
+  <body>
+    <!-- 헤더높이 80 푸터 높이 200 width 970 -->
+    <div id="header"></div>
+    <section id="protectorMypage-senioradd">
+    <aside>
+      <a href="#" class="mypage-alheum-logo-mid"><img src="./../../../img/protectorImg/mypage_alheum_logo.svg" alt="알흠로고" /></a>
+      <ul>
+        <a href="./../protectorMypage-main/protectorMypage-main.html"><li>마이페이지</li></a>
+        <a href="./../protectorMypage-modify/protectorMypage-modify.html"><li>개인정보 수정</li></a>
+        <a href="#"><li>1:1문의</li></a>
+        <li>로그아웃</li>
+        <li>탈퇴하기</li>
+      </ul>
+    </aside>
+    <main>
+      <div class="mypage-subtitle_box">어르신 등록하기</div>
+      <section class="mypage-contents-container">
+        <article>
+          <div class="mypage-text-big">등록할 어르신 정보 입력</div>
+          <form action="" method="post">
+            <section>
+              <label for="seniorname"
+                ><div>성함</div>
+                <input
+                  type="text"
+                  name="seniorname"
+                  placeholder="어르신 성함을 입력하세요"
+              /></label>
+            </section>
+            <div>전화번호</div>
+            <section class="mypage-phonenum-box">
+              <label for="phoneNum_first">
+                <input
+                  type="tel"
+                  name="phoneNum_first"
+                  maxlength="3"
+                  value="010"
+                />
+                -
+              </label>
+              <label for="phoneNum_second">
+                <input
+                  type="tel"
+                  name="phoneNum_second"
+                  maxlength="4"
+                  placeholder="가운데자리"
+                />
+                -
+              </label>
+              <label for="phoneNum_last">
+                <input
+                type="tel"
+                name="phoneNum_last"
+                maxlength="4"
+                placeholder="마지막자리"
+                />
+              </label>
+              <button type="button" class="mypage-button">인증</button>
+            </section>
+            <section>
+              <label for="phone_certi">
+                <input
+                  type="text"
+                  name="phone_certi"
+                  placeholder="인증번호를 입력하세요"
+                />
+              </label>
+            </section>
+            <button class="mypage-button mypage-add">등록</button>
+          </form>
+        </article>
+      </section>
+      <a href="./../protectorMypage-main/protectorMypage-main.html" class="mypage-undo">돌아가기 &#10095;</a>
+    </main>
+    </section>
+    <div id="footer"></div>
+  </body>
+</html>
