@@ -116,7 +116,7 @@ main{
 }
 
 .answer{
-  background-color: var(--color-disabled);
+  background-color: #f6f6f6;
   /* padding: 40px; */
   transition:max-height 0.5s ease;
   display: flex;
