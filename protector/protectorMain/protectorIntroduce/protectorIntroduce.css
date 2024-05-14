@@ -34,13 +34,11 @@
   user-select: none;
 }
 
-<<<<<<< HEAD
-/* 로그인 */
-
-
-=======
->>>>>>> yhj
 /* 헤더 */
+header {
+  background-color: var(--color-main);
+}
+
 .header {
   width: 970px;
   height: 80px;
@@ -79,7 +77,11 @@ a {
 }
 
 .headerNav-container li:hover {
-  border-bottom: 2px solid var(--color-main);
+  border-bottom: 2px solid white;
+}
+
+.headerNav-container a {
+  color: white;
 }
 
 .headerLogin {
@@ -97,99 +99,102 @@ a {
   line-height: 40px;
 }
 
+.headerLogin-container a {
+  color: white;
+}
+
 .headerLogin-container li:nth-of-type(2) {
-  background-color: var(--color-main);
+  background-color: white;
   border-radius: 8px;
 }
 
 .headerLogin-container li:nth-of-type(2):hover {
-  background-color: var(--color-main-hover);
+  background-color: rgb(238, 238, 238);
   cursor: pointer;
 }
 
 .headerLogin-container li:nth-of-type(2) a {
-  color: white;
-}
-
-<<<<<<< HEAD
-=======
-/* 로그인 */
-.protectorLoginTitle p {
   color: var(--color-main);
-  font-size: 40px;
-  text-align: center;
-  margin-top: 100px;
 }
 
-.protectorLoginCnt {
-  width: 500px;
-  height: 350px;
-  margin: 30px auto 200px auto;
-  border-radius: 10px;
-  background-color: rgb(245, 245, 245);
-  box-shadow: inset 1px 1px 3px 1px rgba(0.15, 0.15, 0.15, 0.15);
-}
-
-.protectorLoginMain {
-  width: 400px;
-  margin: auto;
-}
-
-.protectorLoginMainCnt {
-  position: relative;
-  top: 40px;
-}
-
-.protectorLoginNum,
-.protectorLoginPw {
-  color: var(--color-main);
-  font-size: 16px;
-  margin-top: 5px;
-}
-
-.protectorPhoneNum,
-.protectorPassword {
-  width: 400px;
-  height: 50px;
-  border-radius: 5px;
-  margin: 10px 0;
-  outline-color: rgb(226, 226, 226);
-}
-
-.protectorLoginBtn button {
-  width: 400px;
-  height: 50px;
-  border-radius: 25px;
+/* 소개 메인 */
+.protectorIntroduce-top {
+  height: 500px;
   background-color: var(--color-main);
+  text-align: center;
+}
+
+.protectorIntroduce-top p {
   color: white;
-  font-size: 18px;
-  margin: auto;
-  margin-top: 10px;
 }
 
-.protectorLoginBtn button:hover {
-  background-color: var(--color-main-hover);
-}
-
-.protectorLogin-subMenu {
-  display: flex;
-  margin-top: 10px;
+.protectorIntroduce-topCnt {
   position: relative;
-  left: 90px;
+  top: 100px;
 }
 
-.protectorLogin-subMenu a {
-  margin: 0 10px;
-  color: var(--color-main);
+.protectorIntroduce-topTitle {
+  font-size: 40px;
+  margin: 50px 0; 
 }
 
-.protectorLogin-subMenu p {
-  color: lightgrey;
+.protectorIntroduce-middleCnt {
+  width: 970px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 50px;
 }
 
+.protectorIntroduce-middle div {
+  text-align: center;
+}
 
+.protectorIntroduce-bottom {
+  height: 400px;
+  background-color: #f2f2f2;
+}
 
->>>>>>> yhj
+.protectorIntroduce-bottomCnt {
+  width: 970px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+
+.protectorIntroduce-bottomCnt p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.protectorIntroduce-start,
+.protectorIntroduce-join {
+  width: 500px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 50px;
+  box-shadow: 3px 3px 1px 2px lightgrey;
+}
+
+.protectorIntroduce-start {
+  background-color: var(--color-main);
+}
+
+.protectorIntroduce-join {
+  background-color: rgb(35, 35, 35);
+}
+
+.protectorIntroduce-bottomCnt a {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 /* 푸터 */
 .footerContainer {
   width: 970px;

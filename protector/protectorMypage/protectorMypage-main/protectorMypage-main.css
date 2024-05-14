@@ -80,17 +80,31 @@
 .protectorMypage-seniorinfo-clickmenu{
   visibility: hidden;
   position: absolute;
-  right: -500px;
-  top: 0;
   z-index: 1;
   background-color: var(--color-back-white);
   border-radius: 15px;
   display: inline-block;
-  padding: 5px 0;
   box-shadow: 0 0 3px 2px var(--color-shadow);
+  overflow: hidden;
 }
 .protectorMypage-mycontents-clickmenu li,
 .protectorMypage-seniorinfo-clickmenu li{
-  padding: 4px 15px;
+  min-width: fit-content;
+  padding: 6px 15px;
+  min-width: 60px;
+  text-align: center;
+  cursor: pointer;
 }
-.mypage-import{color: red;}
+.protectorMypage-seniorinfo-clickmenu li{
+  min-width: 90px; 
+}
+
+.protectorMypage-mycontents-clickmenu li:hover,
+.protectorMypage-seniorinfo-clickmenu li:hover{
+  background-color: var(--color-back-lightgrey);
+}
+
+.protectorMypage-container-box{
+  position: relative;
+  left: 0;
+}

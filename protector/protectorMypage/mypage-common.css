@@ -216,6 +216,7 @@ input{
   padding: 8px;
   width: 100%;
   margin: 8px 0;
+  outline-style: none;
 }
 input[type='tel']{width: 92%;}
 .mypage-phonenum-box{display: flex;}
@@ -233,6 +234,7 @@ input[type='tel']{width: 92%;}
   left: 620px;
   cursor: pointer;
   color: var(--font-color-grey);
+  z-index: 1;
 }
 .mypage-undo:hover{
   color: var(--color-main-hover);
