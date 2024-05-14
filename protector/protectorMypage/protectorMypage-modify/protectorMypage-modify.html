@@ -20,11 +20,9 @@
     <div id="header"></div>
     <section id="protectorMypage-modify">
       <aside>
-        <a href="#" class="mypage-alheum-logo-mid"
-          ><img
-            src="./../../../img/protectorImg/mypage_alheum_logo.svg"
-            alt="알흠로고"
-        /></a>
+        <div class="mypage-alheum-logo-mid"
+          ><img src="./../../../img/protectorImg/mypage_alheum_logo.svg" alt="알흠로고"
+        /></div>
         <ul>
           <a href="./../protectorMypage-main/protectorMypage-main.html"
             ><li>마이페이지</li></a
@@ -32,7 +30,10 @@
           <a href="./../protectorMypage-modify/protectorMypage-modify.html"
             ><li>개인정보 수정</li></a
           >
-          <a href="./../protectorMypage-inquiry/protectorMypage-inquiryList/protectorMypage-inquiryList.html"><li>1:1문의</li></a>
+          <a
+            href="./../protectorMypage-inquiry/protectorMypage-inquiryList/protectorMypage-inquiryList.html"
+            ><li>1:1문의</li></a
+          >
           <li class="mypage-warningsecession">로그아웃</li>
           <li class="mypage-warningsecession">탈퇴하기</li>
         </ul>
@@ -43,7 +44,12 @@
           <article>
             <form action="" method="post">
               <section>
-                <div>성함</div>
+                <div>
+                  성함(수정불가)
+                  <span class="mypage-phonewarning"
+                    >*변경 요청은 1:1문의 바랍니다.</span
+                  >
+                </div>
                 <div class="mypage-text-big">보호자</div>
               </section>
               <section>
@@ -55,7 +61,12 @@
                     placeholder="기존이메일@이메일도메인"
                 /></label>
               </section>
-              <div>전화번호</div>
+              <div>
+                전화번호(수정불가)
+                <span class="mypage-phonewarning"
+                  >*변경 요청은 1:1문의 바랍니다.</span
+                >
+              </div>
               <section class="mypage-phonenum-box">
                 <label for="phoneNum_first">
                   <input
@@ -86,6 +97,7 @@
                     disabled
                   />
                 </label>
+                <!-- 변경가능으로 할 경우 밑에 주석 풀고 css에서 폰넘버last width 수정해야함 -->
                 <!-- <button type="button" class="mypage-certi mypage-button">
                   인증
                 </button>
@@ -115,15 +127,21 @@
                 /></label>
               </section>
               <div class="mypage-button-box-flex">
-                <button type="reset" class="mypage-cancel mypage-button">
-                  취소
-                </button>
+                <a href="./../protectorMypage-main/protectorMypage-main.html"
+                  ><button type="button" class="mypage-cancel mypage-button">
+                    취소
+                  </button></a
+                >
                 <button class="mypage-button mypage-add">저장</button>
               </div>
             </form>
           </article>
         </section>
-        <a href="./../protectorMypage-main/protectorMypage-main.html" class="mypage-undo">돌아가기 &#10095;</a>
+        <a
+          href="./../protectorMypage-main/protectorMypage-main.html"
+          class="mypage-undo"
+          >돌아가기 &#10095;</a
+        >
       </main>
     </section>
     <div id="footer"></div>

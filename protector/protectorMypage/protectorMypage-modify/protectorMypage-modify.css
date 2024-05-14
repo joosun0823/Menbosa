@@ -27,3 +27,9 @@
 input[name='phoneNum_last']{
   width: 100%;
 }
+
+/* ////////////////////////////////////////////// */
+.mypage-phonewarning{
+  font-size: 12px;
+  color: red;
+}

@@ -216,6 +216,7 @@ input{
   padding: 8px;
   width: 100%;
   margin: 8px 0;
+  outline-style: none;
 }
 input[type='tel']{width: 92%;}
 .mypage-phonenum-box{display: flex;}
