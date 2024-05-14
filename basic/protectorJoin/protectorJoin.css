@@ -34,12 +34,6 @@
   user-select: none;
 }
 
-<<<<<<< HEAD
-/* 로그인 */
-
-
-=======
->>>>>>> yhj
 /* 헤더 */
 .header {
   width: 970px;
@@ -111,85 +105,128 @@ a {
   color: white;
 }
 
-<<<<<<< HEAD
-=======
-/* 로그인 */
-.protectorLoginTitle p {
+/* 회원가입 */
+.protectorJoin-title {
+  width: 970px;
+  margin: auto;
+  text-align: center;
+}
+
+.protectorJoin-title p {
   color: var(--color-main);
   font-size: 40px;
-  text-align: center;
   margin-top: 100px;
 }
 
-.protectorLoginCnt {
+.protectorJoin-main {
   width: 500px;
-  height: 350px;
+  height: 800px;
   margin: 30px auto 200px auto;
   border-radius: 10px;
   background-color: rgb(245, 245, 245);
   box-shadow: inset 1px 1px 3px 1px rgba(0.15, 0.15, 0.15, 0.15);
 }
 
-.protectorLoginMain {
+.protectorJoin-main form {
   width: 400px;
   margin: auto;
-}
-
-.protectorLoginMainCnt {
   position: relative;
   top: 40px;
 }
 
-.protectorLoginNum,
-.protectorLoginPw {
+.protectorJoin-nameTitle {
   color: var(--color-main);
-  font-size: 16px;
-  margin-top: 5px;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
-.protectorPhoneNum,
-.protectorPassword {
+.protectorJoin-name {
   width: 400px;
   height: 50px;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 5px 0;
   outline-color: rgb(226, 226, 226);
 }
 
-.protectorLoginBtn button {
-  width: 400px;
+.protectorJoin-phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.protectorJoin-number {
+  width: 100px;
   height: 50px;
-  border-radius: 25px;
+  margin: 0 5px;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-phone button {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
   background-color: var(--color-main);
   color: white;
-  font-size: 18px;
-  margin: auto;
-  margin-top: 10px;
+  font-size: 14px;
 }
 
-.protectorLoginBtn button:hover {
-  background-color: var(--color-main-hover);
+.protectorJoin-inputNumber {
+  width: 400px;
+  height: 50px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
 }
 
-.protectorLogin-subMenu {
-  display: flex;
-  margin-top: 10px;
-  position: relative;
-  left: 90px;
+.protectorJoin-password {
+  width: 400px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
 }
 
-.protectorLogin-subMenu a {
-  margin: 0 10px;
+.protectorJoin-passwordVerify {
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-email {
+  width: 400px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-checkbox p {
   color: var(--color-main);
+  font-size: 20px;
 }
 
-.protectorLogin-subMenu p {
-  color: lightgrey;
+.protectorJoin-checkboxAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(205, 205, 205);
 }
 
+.protectorJoin-checkCnt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
 
+.protectorJoin-checkCnt p {
+  font-size: 15px;
+}
 
->>>>>>> yhj
 /* 푸터 */
 .footerContainer {
   width: 970px;

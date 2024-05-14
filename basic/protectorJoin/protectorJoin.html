@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./passwordVerify.css">
-  <script defer src="./passwordVerify.js"></script>
+  <link rel="stylesheet" href="./protectorJoin.css">
 </head>
 <body>
   <header>
@@ -61,28 +59,55 @@
   </header>
 
   <main>
-    <div class="findPassword">
-      <p>비밀번호 찾기</p>
+    <div class="protectorJoin-title">
+      <p>회원가입</p>
     </div>
-    <div class="findPasswordCnt">
-      <div class="findPasswordMain">
-        <p class="findPasswordMainTag">가입한 번호를 입력해주세요.</p>
-        <form class="findPasswordForm" action="#">
-          <div class="findPassword-phoneNumberCnt">
-            <input type="text" class="findPassword-phoneNumber">
-            <span>-</span>
-            <input type="text" class="findPassword-phoneNumber">
-            <span>-</span>
-            <input type="text" class="findPassword-phoneNumber">
-            <button>인증하기</button>
+    <div class="protectorJoin-main">
+      <form action="">
+        <p class="protectorJoin-nameTitle">이름</p>
+        <input type="text" class="protectorJoin-name" placeholder="이름을 입력해주세요.">
+
+        <p class="protectorJoin-nameTitle">전화번호</p>
+        <div class="protectorJoin-phone">
+          <input type="text" class="protectorJoin-number">
+          <span>-</span>
+          <input type="text" class="protectorJoin-number">
+          <span>-</span>
+          <input type="text" class="protectorJoin-number">
+          <button>인증하기</button>
+        </div>
+        <input type="text" class="protectorJoin-inputNumber" placeholder="인증번호를 입력하세요.">
+
+        <p class="protectorJoin-nameTitle">비밀번호</p>
+        <input type="password" class="protectorJoin-password" placeholder="비밀번호을 입력해주세요.">
+        <br>
+        <input type="password" class="protectorJoin-passwordVerify" placeholder="비밀번호을 다시 한번 입력해주세요.">
+
+        <p class="protectorJoin-nameTitle">이메일</p>
+        <input type="text" class="protectorJoin-email" placeholder="이메일을 입력해주세요.">
+
+        <div class="protectorJoin-checkbox">
+          <div class="protectorJoin-checkboxAll">
+            <p>약관 전체 동의</p>
+            <input type="checkbox" class="protectorJoin-checked">
           </div>
-          <input type="text" class="findPassword-inputNumber" placeholder="인증번호를 입력해주세요.">
-          <p>인증하기 버튼을 누르면 인증번호를 문자로 보내드립니다.</p>
-          <div class="findPassword-submit">
-            <button>비밀번호 찾기</button>
+
+          <div class="protectorJoin-checkCnt">
+            <p>만 70세 이상입니다</p>
+            <input type="checkbox" class="protectorJoin-check">
           </div>
-        </form>
-      </div>
+
+          <div class="protectorJoin-checkCnt">
+            <p>이용약관 동의</p>
+            <input type="checkbox" class="protectorJoin-check">
+          </div>
+
+          <div class="protectorJoin-checkCnt">
+            <p>개인정보 수집 및 이용 동의</p>
+            <input type="checkbox" class="protectorJoin-check">
+          </div>
+        </div>
+      </form>
     </div>
   </main>
 
@@ -144,40 +169,4 @@
     </div>
   </footer>
 </body>
-</html>
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>알흠:謁欽 --검증페이지</title>
-    <!-- 폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- css -->
-    <link rel="stylesheet" href="passwordVerify.css">
-  </head>
-  <body>
-    <div id="header"></div>
-    <main>
-      <div class="passwordVerify-logoImgBox">
-        <img src="./../../img/basing/alheum_logo.svg" alt="알흠로고" />
-        <!-- <img src="./../../img/protectorImg/mypage_alheum_logo.svg" alt="알흠로고" /> -->
-      </div>
-      <h2>비밀번호 재확인</h2>
-      <section class="passwordVerify-passwordContainer">
-        <form action="" method="post" class="passwordVerify-form">
-          <label for="passwordCheck">
-            <input class="passwordVerify-input" type="password" name="passwordCheck" placeholder="비밀번호를 입력해주세요">
-          </label>
-          <p class="passwordVerify-p">정보를 안전하게 보호하기 위해 비밀번호를 다시 확인합니다</p>
-          <button class="passwordVerify-button">확인</button>
-        </form>
-      </section>
-    </main>
-    <div id="footer"></div>
-  </body>
 </html>
