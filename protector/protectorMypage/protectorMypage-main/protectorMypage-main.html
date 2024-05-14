@@ -14,15 +14,18 @@
     <!-- css -->
     <link rel="stylesheet" href="./../mypage-common.css" />
     <link rel="stylesheet" href="protectorMypage-main.css" />
+    <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="protectorMypage-main.js"></script>
   </head>
   <body>
     <!-- 헤더높이 80 푸터 높이 200 width 970 -->
     <div id="header"></div>
     <section id="protectorMypage">
       <aside>
-        <a href="#" class="mypage-alheum-logo-mid"
+        <div class="mypage-alheum-logo-mid"
           ><img src="./../../../img/protectorImg/mypage_alheum_logo.svg" alt="알흠로고"
-        /></a>
+        /></div>
         <ul>
           <a href="./../protectorMypage-main/protectorMypage-main.html"><li>마이페이지</li></a>
           <a href="./../protectorMypage-modify/protectorMypage-modify.html"><li>개인정보 수정</li></a>
@@ -40,7 +43,7 @@
           <!-- 클릭메뉴S -->
           <div class="protectorMypage-mycontents-clickmenu">
             <ul>
-              <li>수정</li>
+              <a href="#"><li>수정</li></a>
               <li class="mypage-import">삭제</li>
             </ul>
           </div>
@@ -50,10 +53,10 @@
           id="protectorMypage-mycontents-container"
           class="mypage-contents-container"
         >
-          <div class="protectorMypage-container-box">
+          <div id="protectorMypage-mycontents-slidbox" class="protectorMypage-container-box">
             <article class="mypage-box-half">
               <!-- 클릭시 수정 삭제 js -->
-              <span class="mypage-icon-menu mypage-notblock">&#9776;</span>
+              <span  id="one" class="mypage-icon-menu mypage-notblock">&#9776;</span>
               <p>지나고보면 그 때가 가장 좋았어요</p>
               <div class="mypage-box-textsmall">
                 <span>소통</span>
@@ -72,23 +75,41 @@
             <article class="mypage-box-half">
               <!-- 클릭시 수정 삭제 js -->
               <span class="mypage-icon-menu mypage-notblock">&#9776;</span>
-              <p>000요양원을 추천합니다.</p>
+              <p>000병원이 친절하고 좋네요.</p>
               <div class="mypage-box-textsmall">
                 <span>시설추천</span>
+                <span>2024.05.06.</span>
+              </div>
+            </article>
+            <article class="mypage-box-half">
+              <!-- 클릭시 수정 삭제 js -->
+              <span class="mypage-icon-menu mypage-notblock">&#9776;</span>
+              <p>000호스피스는 별로였어요.</p>
+              <div class="mypage-box-textsmall">
+                <span>시설추천</span>
+                <span>2024.05.06.</span>
+              </div>
+            </article>
+            <article class="mypage-box-half">
+              <!-- 클릭시 수정 삭제 js -->
+              <span class="mypage-icon-menu mypage-notblock">&#9776;</span>
+              <p>어르신 모시는 팁! 전격 대공개!</p>
+              <div class="mypage-box-textsmall">
+                <span>소통</span>
                 <span>2024.05.06.</span>
               </div>
             </article>
           </div>
         </section>
         <!-- 어르신 관리 -->
-        <div class="mypage-subtitle_box">
+        <div class="mypage-subtitle_box" id="protectorMypage-seniorinfo-tab">
           어르신 관리
           <div class="protectorMypage-arrow mypage-arrow-right">&#10095;</div>
           <div class="protectorMypage-arrow mypage-arrow-left">&#10094;</div>
           <!-- 클릭메뉴S -->
           <div class="protectorMypage-seniorinfo-clickmenu">
             <ul>
-              <li>상세보기</li>
+              <a href="./../protectorMypage-seniorDetails/protectorMypage-seniorDetails.html"><li>상세보기</li></a>
               <li class="mypage-import">동록해제</li>
             </ul>
           </div>
@@ -101,7 +122,7 @@
               <!-- 클릭시 상세보기 삭제 js -->
               <span class="mypage-icon-menu">&#9776;</span>
               <div>
-                <div><span>성함</span><span>장서혁</span></div>
+                <div><span>성함</span><span>장서혁1</span></div>
                 <div><span>생년월일</span><span>1888-00-00</span></div>
                 <div><span>전화번호</span><span>010-1234-4567</span></div>
                 <div>
@@ -114,12 +135,25 @@
               <!-- 클릭시 상세보기 삭제 js -->
               <span class="mypage-icon-menu">&#9776;</span>
               <div>
-                <div><span>성함</span><span>장서혁</span></div>
+                <div><span>성함</span><span>장서혁2</span></div>
                 <div><span>생년월일</span><span>1888-00-00</span></div>
                 <div><span>전화번호</span><span>010-1234-4567</span></div>
                 <div>
                   <span>최근검사결과</span
                   ><span class="mypage-state-box mypage-state-good">양호</span>
+                </div>
+              </div>
+            </article>
+            <article class="mypage-box-half">
+              <!-- 클릭시 상세보기 삭제 js -->
+              <span class="mypage-icon-menu">&#9776;</span>
+              <div>
+                <div><span>성함</span><span>장서혁3</span></div>
+                <div><span>생년월일</span><span>1888-00-00</span></div>
+                <div><span>전화번호</span><span>010-1234-4567</span></div>
+                <div>
+                  <span>최근검사결과</span
+                  ><span class="mypage-state-box mypage-state-bad">위험</span>
                 </div>
               </div>
             </article>
