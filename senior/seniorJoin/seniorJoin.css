@@ -43,31 +43,31 @@
   background-color: aqua;
 }
 
-.seniorLogin-container{
+.seniorJoin-container{
   width: 970px;
   margin: 0 auto;
 }
 
-.seniorLogin-logo{
+.seniorJoin-logo{
   display: flex;
   justify-content: center;
   margin-top: 70px;
 }
 
-.seniorLogin-logo > img{
+.seniorJoin-logo > img{
   height: 190px;
   width: 275px;
 }
 
-.seniorLogin-container > p{
+.seniorJoin-container > p{
   font-size: 44px;
   margin-top: 70px;
   margin-bottom: 70px;
   text-align: center;
 }
 
-.seniorLogin-loginBox{
-  height: 540px;
+.seniorJoin-joinBox{
+  height: 1050px;
   width: 530px;
   background-color: #F5F5F5;
   margin: 0 auto;
@@ -76,12 +76,12 @@
   border-radius: 5px;
 }
 
-.seniorLogin-loginBox > p{
+.seniorJoin-joinBox > p{
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-.seniorLogin-loginBox > input{
+.seniorJoin-joinBox > input{
   font-size: 24px;
   width: 470px;
   height: 70px;
@@ -93,56 +93,86 @@
 
 }
 
-#seniorPhonenumber{
-  margin-right: 10px;
-}
-
-.seniorLogin-loginBox > input::placeholder{
+.seniorJoin-joinBox > input::placeholder{
   color: #A7A7A7;
 }
 
-.seniorLogin-loginBox-loginButton{
-  display: inline-block;
+.seniorJoin-joinBox-seniorPhonenumber-container{
+  display: flex;
+  align-items: center;
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container > input {
+  font-size: 24px;
+  width: 100px;
+  height: 70px;
+  border: 1px solid #8C8C8C;
+  border-radius: 5px;
+  margin: 0 auto;
+  /* margin-bottom: 30px; */
+  /* padding-left: 10px; */
   text-align: center;
-  padding-top: 10px;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container > span{
+  font-size: 30px;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container > button{
+  width: 110px;
+  height: 70px;
+  background-color: #DCDCDC;
+  color: white;
+  font-size: 24px;
+  border-radius: 35px;
+  margin-left: 30px;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container > input::placeholder{
+  color: #A7A7A7;
+}
+
+#certificationNumber{
+  margin-bottom: 30px;
+}
+
+#seniorJoin-Password{
+  margin-bottom: 20px;
+}
+
+.seniorJoin-agreeContainer > p{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.seniorJoin-agree{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.seniorJoin-agree > p{
+  color: #333;
+  font-size: 24px;
+}
+
+.seniorJoin-agree > input{
+  width: 32px;
+  height: 32px;
+}
+
+.seniorJoin-joinButton{
+  background-color: #DCDCDC;
+  display: block;
+  text-align: center;
   width: 470px;
-  height: 65px;
-  background-color: #FE7A15;
+  height: 64px;
   color: white;
   font-size: 30px;
-  border-radius: 5px;
-  margin-top: 35px;
-  cursor: pointer;
   text-decoration-line: none;
-}
-
-.seniorLogin-loginBox-menu{
-  width: 470px;
-  height: 50px;
-  margin-top: 30px;
-  display: flex;
-}
-
-.seniorPassword-find{
-  width: 240px;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid #B4B4B4;
-  color: #717171;
-  text-decoration-line: none;
-
-}
-
-.seniorJoin{
-  width: 240px;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #717171;
-  text-decoration-line: none;
+  padding-top: 10px;
 }
 
 .seniorBackgroundImg{
