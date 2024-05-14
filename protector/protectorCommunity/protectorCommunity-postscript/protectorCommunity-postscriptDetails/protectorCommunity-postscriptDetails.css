@@ -123,6 +123,7 @@ main{
 
 /* 댓글 아이콘있는 부분 */
 .protectorCommunity-postscriptDetails-comments{
+  position: relative;
   width: 800px;
   margin: 40px auto 0;
 }
@@ -269,8 +270,11 @@ main{
 
 /* 댓글 입력창 */
 .protectorCommunity-postscriptDetails-commentsInput{
+  position: sticky;
+  bottom: 100px;
   width: 800px;
   margin: 40px auto;
+  background-color: var(--font-color-white);
 }
 
 .protectorCommunity-postscriptDetails-commentsInput > form{
