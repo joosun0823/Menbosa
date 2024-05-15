@@ -35,9 +35,13 @@
 }
 
 
+header{
+  height: 80px;
+}
+
 main{
   width: 970px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 
@@ -66,6 +70,39 @@ main{
 
 .menuButton{
   cursor: pointer;
+  position: relative;
+}
+
+/* 서브메뉴 - 수정, 삭제 */
+.menuButton-modifyDelete{
+  display: none;
+  border: 1px solid var(--color-disabled);
+  position: absolute;
+  width: 60px;
+  background-color: white;
+  left: 10px;
+  top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 3px 2px rgba(0,0,0,0.1);
+}
+
+
+.menuButton-modifyDelete > li{
+  padding: 10px 0;
+  text-align: center;
+}
+
+.menuButton-modifyDelete > li:hover{
+  background-color: #f8f8f8;
+}
+
+.menuButton-modifyDelete > a:nth-of-type(1){
+  border-bottom: 1px solid var(--color-disabled);
+}
+
+.menuButton-modifyDelete > li:nth-of-type(2) > a{
+  color: red;
 }
 
 /* 상세글 내용 */
@@ -90,6 +127,7 @@ main{
 
 /* 댓글 아이콘있는 부분 */
 .protectorCommunity-postscriptDetails-comments{
+  position: relative;
   width: 800px;
   margin: 40px auto 0;
 }
@@ -164,6 +202,36 @@ main{
 
 .comments-menuButton{
   cursor: pointer;
+  position: relative;
+}
+
+/* 댓글 메뉴 - 답글달기, 삭제 버튼 */
+
+.comments-list-submenu{
+  width: 90px;
+  display: none;
+  position: absolute;
+  background-color: var(--font-color-white);
+  border: 1px solid var(--color-disabled);
+  border-radius: 10px;
+  top: 10px;
+  left: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 3px 2px rgba(0,0,0,0.1);
+}
+
+.comments-list-submenu > li{
+  padding: 10px;
+  text-align: center;
+}
+
+.comments-list-submenu > li:hover{
+  background-color: #f8f8f8;
+}
+
+
+.comments-list-submenu > li:nth-of-type(2) > a{
+  color: red;
 }
 /* 대댓글 */
 
@@ -206,8 +274,11 @@ main{
 
 /* 댓글 입력창 */
 .protectorCommunity-postscriptDetails-commentsInput{
+  position: sticky;
+  bottom: 100px;
   width: 800px;
   margin: 40px auto;
+  background-color: var(--font-color-white);
 }
 
 .protectorCommunity-postscriptDetails-commentsInput > form{
@@ -253,4 +324,9 @@ main{
 
 .protectorCommunity-postscriptDetails-listButton > a:hover{
   background-color: var(--color-main-hover);
+}
+
+
+.active{
+  display: block;
 }

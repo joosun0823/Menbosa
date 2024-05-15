@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>커뮤니티-소통상세</title>
   <link rel="stylesheet" href="./protectorCommunity-communicateDetails.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <script defer src="./protectorCommunity-communicateDetails.js"></script>
 </head>
 <body>
   <header></header>
@@ -18,7 +19,13 @@
           <span>[소통]</span>
           <span>보고싶다</span>
         </p>
-        <p class="menuButton"><img src="../../../../img/protectorImg/community-menuButton.png" alt=""></p>
+        <div class="menuButton">
+          <img src="../../../../img/protectorImg/community-menuButton.png" alt="">
+          <ul class="menuButton-modifyDelete">
+            <li><a href="../../protectorCommunity-retouch/protectorCommunity-retouch.html">수정</a></li>
+            <li><a href="">삭제</a></li>
+          </ul>
+        </div>
       </div>
       <div class="title-bottom">
         <span>작성자</span>
@@ -38,7 +45,7 @@
     <div class="protectorCommunity-communicateDetails-comments">
       <div class="comments-top">
         <p><img src="../../../../img/protectorImg/community-commentsLogo.png" alt=""></p>
-        <span>2</span>
+        <span>4</span>
         <span>Comments</span>
       </div>
       <ul class="comments-list">
@@ -46,10 +53,16 @@
           <div class="comments-list-own">
             <p><img src="../../../../img/protectorImg/community-profile.png" alt=""></p>
             <div>
-              <p class="comments-list-writer">
+              <div class="comments-list-writer">
                 <span>작성자</span>
-                <span class="comments-menuButton"><img src="../../../../img/protectorImg/community-menuButton.png" alt=""></span>
-              </p>
+                <div class="comments-menuButton">
+                  <img src="../../../../img/protectorImg/community-menuButton.png" alt="">
+                  <ul class="comments-list-submenu">
+                    <li><a href="">답글달기</a></li>
+                    <li><a href="">삭제</a></li>
+                  </ul>
+                </div>
+              </div>
               <p class="comments-list-contents">
                 <span>으미 기여븐거</span>
                 <span>20240511 15:08</span>
@@ -76,10 +89,88 @@
           <div class="comments-list-own">
             <p><img src="../../../../img/protectorImg/community-profile.png" alt=""></p>
             <div>
-              <p class="comments-list-writer">
+              <div class="comments-list-writer">
                 <span>작성자</span>
-                <span class="comments-menuButton"><img src="../../../../img/protectorImg/community-menuButton.png" alt=""></span>
+                <div class="comments-menuButton">
+                  <img src="../../../../img/protectorImg/community-menuButton.png" alt="">
+                  <ul class="comments-list-submenu">
+                    <li><a href="">답글달기</a></li>
+                    <li><a href="">삭제</a></li>
+                  </ul>
+                </div>
+              </div>
+              <p class="comments-list-contents">
+                <span>으미 기여븐거</span>
+                <span>20240511 15:08</span>
               </p>
+            </div>
+          </div>
+          <ul class="comments-list-reply">
+            <li>
+              <p>ㄴ</p>
+              <div>
+                <p class="reply-writer">
+                  <span>다른사람 1</span>
+                  <span></span>
+                </p>
+                <p class="reply-contents">
+                  <span>넘기여브넹</span>
+                  <span>20240511 15:08</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="comments-list-own">
+            <p><img src="../../../../img/protectorImg/community-profile.png" alt=""></p>
+            <div>
+              <div class="comments-list-writer">
+                <span>작성자</span>
+                <div class="comments-menuButton">
+                  <img src="../../../../img/protectorImg/community-menuButton.png" alt="">
+                  <ul class="comments-list-submenu">
+                    <li><a href="">답글달기</a></li>
+                    <li><a href="">삭제</a></li>
+                  </ul>
+                </div>
+              </div>
+              <p class="comments-list-contents">
+                <span>으미 기여븐거</span>
+                <span>20240511 15:08</span>
+              </p>
+            </div>
+          </div>
+          <ul class="comments-list-reply">
+            <li>
+              <p>ㄴ</p>
+              <div>
+                <p class="reply-writer">
+                  <span>다른사람 1</span>
+                  <span></span>
+                </p>
+                <p class="reply-contents">
+                  <span>넘기여브넹</span>
+                  <span>20240511 15:08</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="comments-list-own">
+            <p><img src="../../../../img/protectorImg/community-profile.png" alt=""></p>
+            <div>
+              <div class="comments-list-writer">
+                <span>작성자</span>
+                <div class="comments-menuButton">
+                  <img src="../../../../img/protectorImg/community-menuButton.png" alt="">
+                  <ul class="comments-list-submenu">
+                    <li><a href="">답글달기</a></li>
+                    <li><a href="">삭제</a></li>
+                  </ul>
+                </div>
+              </div>
               <p class="comments-list-contents">
                 <span>으미 기여븐거</span>
                 <span>20240511 15:08</span>
@@ -103,15 +194,15 @@
           </ul>
         </li>
       </ul>
+      <div class="protectorCommunity-communicateDetails-commentsInput">
+        <form action="">
+          <input type="text" name="" placeholder="댓글을 남겨보세요">
+          <button>등록</button>
+        </form>
+      </div>
     </div>
 
 
-    <div class="protectorCommunity-communicateDetails-commentsInput">
-      <form action="">
-        <input type="text" name="" placeholder="댓글을 남겨보세요">
-        <button>등록</button>
-      </form>
-    </div>
 
     <div class="protectorCommunity-communicateDetails-listButton">
       <a href="../protectorCommunity-communicateMain/protectorCommunity-communicateMain.html">목록으로</a>

@@ -17,10 +17,6 @@
   font-style: normal;
 }
 
-main{
-  width: 970px;
-  margin: 0 auto;
-}
 
 :root {
   --font-color-default : #333;
@@ -39,6 +35,15 @@ main{
   --color-gray-hover: #686868;
 }
 
+
+header{
+  height: 80px;
+}
+
+main{
+  width: 970px;
+  margin: 40px auto;
+}
 
 /* 공지 */
 .protectorMypage-inquiry-title{
@@ -142,18 +147,33 @@ main{
 /* 글쓰기 */
 .protectorMypage-inquiry-writeButton{
   margin: 15px 0;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }
 
 .protectorMypage-inquiry-writeButton > a{
   padding: 10px 40px;
-  background-color: #F8D90F;
   border: none;
   color: white;
   border-radius: 8px;
 }
 
-.protectorMypage-inquiry-writeButton > a:hover{
+.protectorMypage-inquiry-writeButton > a:nth-of-type(1){
+  background-color: var(--color-disabled);
+  color: #333;
+}
+
+
+.protectorMypage-inquiry-writeButton > a:nth-of-type(2){
+  background-color: var(--color-sub-yell);
+}
+
+.protectorMypage-inquiry-writeButton > a:nth-of-type(1):hover{
+  background-color: #b1b1b1;
+}
+
+
+.protectorMypage-inquiry-writeButton > a:nth-of-type(2):hover{
   background-color: var(--color-sub-yell-hover);
 }
 

@@ -35,11 +35,14 @@
 }
 
 
-main{
-  width: 970px;
-  margin: 0 auto;
+header{
+  height: 80px;
 }
 
+main{
+  width: 970px;
+  margin: 40px auto;
+}
 /* 공지 */
 .protectorCommunity-postscript-title{
   text-align: center;

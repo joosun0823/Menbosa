@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>커뮤니티-시설후기상세</title>
   <link rel="stylesheet" href="./protectorCommunity-postscriptDetails.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <script defer src="./protectorCommunity-postscriptDetails.js"></script>
 </head>
 <body>
   <header></header>
@@ -18,7 +19,13 @@
           <span>[시설후기]</span>
           <span>여기 좋아요</span>
         </p>
-        <p class="menuButton"><img src="../../../../img/protectorImg/community-menuButton.png" alt=""></p>
+        <div class="menuButton">
+          <img src="../../../../img/protectorImg/community-menuButton.png" alt="">
+          <ul class="menuButton-modifyDelete">
+            <li><a href="../../protectorCommunity-retouch/protectorCommunity-retouch.html">수정</a></li>
+            <li><a href="">삭제</a></li>
+          </ul>
+        </div>
       </div>
       <div class="title-bottom">
         <span>장서혁</span>
@@ -46,10 +53,16 @@
           <div class="comments-list-own">
             <p><img src="../../../../img/protectorImg/community-profile.png" alt=""></p>
             <div>
-              <p class="comments-list-writer">
+              <div class="comments-list-writer">
                 <span>작성자</span>
-                <span class="comments-menuButton"><img src="../../../../img/protectorImg/community-menuButton.png" alt=""></span>
-              </p>
+                <div class="comments-menuButton">
+                  <img src="../../../../img/protectorImg/community-menuButton.png" alt="">
+                  <ul class="comments-list-submenu">
+                    <li><a href="">답글달기</a></li>
+                    <li><a href="">삭제</a></li>
+                  </ul>
+                </div>  
+              </div>
               <p class="comments-list-contents">
                 <span>으미 기여븐거</span>
                 <span>20240511 15:08</span>
@@ -76,10 +89,16 @@
           <div class="comments-list-own">
             <p><img src="../../../../img/protectorImg/community-profile.png" alt=""></p>
             <div>
-              <p class="comments-list-writer">
+              <div class="comments-list-writer">
                 <span>작성자</span>
-                <span class="comments-menuButton"><img src="../../../../img/protectorImg/community-menuButton.png" alt=""></span>
-              </p>
+                <div class="comments-menuButton">
+                  <img src="../../../../img/protectorImg/community-menuButton.png" alt="">
+                  <ul class="comments-list-submenu">
+                    <li><a href="">답글달기</a></li>
+                    <li><a href="">삭제</a></li>
+                  </ul>
+                </div>  
+              </div>
               <p class="comments-list-contents">
                 <span>으미 기여븐거</span>
                 <span>20240511 15:08</span>
@@ -102,16 +121,18 @@
             </li>
           </ul>
         </li>
+        
       </ul>
+      <div class="protectorCommunity-postscriptDetails-commentsInput">
+        <form action="">
+          <input type="text" name="" placeholder="댓글을 남겨보세요">
+          <button>등록</button>
+        </form>
+      </div>
     </div>
 
 
-    <div class="protectorCommunity-postscriptDetails-commentsInput">
-      <form action="">
-        <input type="text" name="" placeholder="댓글을 남겨보세요">
-        <button>등록</button>
-      </form>
-    </div>
+
 
     <div class="protectorCommunity-postscriptDetails-listButton">
       <a href="../protectorCommunity-postscriptMain/protectorCommunity-postcriptMain.html">목록으로</a>

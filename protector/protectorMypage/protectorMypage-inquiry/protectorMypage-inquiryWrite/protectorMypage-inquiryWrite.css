@@ -34,12 +34,14 @@
   --color-gray-hover: #686868;
 }
 
+header{
+  height: 80px;
+}
 
 main{
   width: 970px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
-
 
 h2{
   text-align: center;
