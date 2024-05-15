@@ -35,9 +35,13 @@
 }
 
 
+header{
+  height: 80px;
+}
+
 main{
   width: 970px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 

@@ -17,11 +17,6 @@
   font-style: normal;
 }
 
-main{
-  width: 970px;
-  margin: 0 auto;
-}
-
 :root {
   --font-color-default : #333;
   --font-color-grey: #727272;
@@ -37,6 +32,15 @@ main{
   --color-sub-gree-hober: #9dc001;
   --color-gray: #8b8b8b;
   --color-gray-hover: #686868;
+}
+
+header{
+  height: 80px;
+}
+
+main{
+  width: 970px;
+  margin: 40px auto;
 }
 
 /* 자주하는 질문 */
