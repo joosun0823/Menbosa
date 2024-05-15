@@ -134,6 +134,11 @@ a {
   text-align: center;
 }
 
+.protectorMain-menubarCnt li:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
 .protectorMain-menubarCnt li a {
   font-size: 18px;
   font-weight: bold;
@@ -216,7 +221,6 @@ a {
 .protectorMain-bannerImg img {
   width: 970px;
 }
-
 
 /* 푸터 */
 .footerContainer {
