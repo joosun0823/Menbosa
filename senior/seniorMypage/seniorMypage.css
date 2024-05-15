@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,8 +8,14 @@
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  color: #333;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
 
 :root {
   --font-color-default : #333;
@@ -26,11 +32,6 @@
   --color-sub-gree-hober: #9dc001;
   --color-gray: #8b8b8b;
   --color-gray-hover: #686868;
-}
-
-.exheader{
-  height: 80px;
-  background-color: aqua;
 }
 
 .exfooter{
@@ -83,9 +84,10 @@
 }
 
 .seniorMypage-myInfo-info{
+  background-color: white;
   border: 1px solid lightgrey;
   display: flex;
-  height: 300px;
+  height: 330px;
 }
 
 .seniorMypage-myInfo-info-key{
@@ -160,6 +162,7 @@
 .seniorMypage-protectorInfo{
   width: 475px;
   height: 225px;
+  background-color: white;
   /* background-color: #37BACC; */
 }
 
@@ -202,6 +205,7 @@
 }
 
 .seniorMypage-testResults{
+  margin-top: 30px;
   height: 570px;
   /* background-color: #D3DD26; */
   border-radius: 20px;
@@ -328,12 +332,16 @@
 }
 
 .cancelButton{
+  display: block;
+  text-align: center;
+  padding: 10px;
   font-size: 20px;
   width: 100px;
   border-radius: 30px;
   background-color: #A7A9AC;
   color: white;
   margin-right: 10px;
+  text-decoration-line: none;
 }
 
 .saveButton{
@@ -356,4 +364,3 @@ input::placeholder{
   color: #A7A9AC;
   font-size: 20px;
 }
-
