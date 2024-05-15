@@ -159,6 +159,15 @@ a {
   background-color: var(--color-main);
 }
 
+.division-imgM p:hover {
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+}
+
+.division-imgW p:hover {
+  box-shadow: 0 0 4px 2px var(--color-sub-blue-hover);
+}
+
+
 /* 푸터 */
 .footerContainer {
   width: 970px;

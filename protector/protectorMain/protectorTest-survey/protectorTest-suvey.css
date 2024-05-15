@@ -1,9 +1,3 @@
-/* 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> 
-*/
-
 :root {
   --font-color-default : #333;
   --font-color-grey: #727272;
@@ -53,10 +47,52 @@
 a{text-decoration-line: none;}
 li{list-style: none;}
 
-/* 헤더푸터 */
-#header{height: 80px; background-color: aliceblue;}
-#footer{height: 200px; background-color: aliceblue;}
-/* -------------------------------------------------*/
+/* 헤더 */
+.header {
+  width: 970px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.headerLogo img {
+  width: 80px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.headerNav {
+  width: 600px;
+  height: 80px;
+}
+
+.headerNav-container {
+  display: flex;
+}
+
+.headerNav-container li {
+  width: 120px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+}
+
+.headerNav-container li:hover {
+  border-bottom: 2px solid var(--color-main);
+}
+
+.headerLogin img {
+  width: 60px;
+}
+
 
 /* 버튼 */
 .suvey-button{
@@ -133,3 +169,36 @@ main{
   padding: 30px 0;
   margin-bottom: 30px;
  }
+
+ /* 푸터 */
+.footerContainer {
+  width: 970px;
+  margin: auto;
+}
+
+.footerText li:nth-of-type(5) a,
+.footerText li:nth-of-type(7) a {
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footerText1 {
+  display: flex;
+}
+
+.footerText1 li {
+  padding-right: 20px;
+}
+
+.footerText1,
+.footerText2,
+.footerText3 {
+  margin: 20px 0;
+}

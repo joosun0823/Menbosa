@@ -110,6 +110,7 @@ a {
 
 .headerLogin-container li:nth-of-type(2):hover {
   background-color: rgb(238, 238, 238);
+  box-shadow: 0 0 4px 2px rgb(238, 238, 238);
   cursor: pointer;
 }
 
@@ -119,7 +120,7 @@ a {
 
 /* 소개 메인 */
 .protectorIntroduce-top {
-  height: 500px;
+  height: 400px;
   background-color: var(--color-main);
   text-align: center;
 }
@@ -130,7 +131,7 @@ a {
 
 .protectorIntroduce-topCnt {
   position: relative;
-  top: 100px;
+  top: 80px;
 }
 
 .protectorIntroduce-topTitle {
@@ -140,11 +141,11 @@ a {
 
 .protectorIntroduce-middleCnt {
   width: 970px;
-  height: 200px;
+  height: 180px;
   display: flex;
   justify-content: space-between;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .protectorIntroduce-middle div {
@@ -185,8 +186,20 @@ a {
   background-color: var(--color-main);
 }
 
+.protectorIntroduce-start:hover {
+  background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+  cursor: pointer;
+}
+
 .protectorIntroduce-join {
   background-color: rgb(35, 35, 35);
+}
+
+.protectorIntroduce-join:hover {
+  background-color: rgb(40, 40, 40);
+  box-shadow: 0 0 4px 2px rgb(40, 40, 40);
+  cursor: pointer;
 }
 
 .protectorIntroduce-bottomCnt a {

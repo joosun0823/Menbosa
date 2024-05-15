@@ -98,6 +98,7 @@ a {
 
 .headerLogin-container li:nth-of-type(2):hover {
   background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
   cursor: pointer;
 }
 
@@ -152,6 +153,12 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.protectorJoin-phone button:hover {
+  background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+  cursor: pointer;
 }
 
 .protectorJoin-number {
@@ -225,6 +232,31 @@ a {
 
 .protectorJoin-checkCnt p {
   font-size: 15px;
+}
+
+.protectorJoin-checked {
+  width: 20px;
+  height: 20px;
+}
+
+.protectorJoin-check {
+  width: 15px;
+  height: 15px;
+}
+
+.protectorJoin-submit button {
+  width: 400px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--color-main);
+  color: white;
+  margin-top: 20px;
+}
+
+.protectorJoin-submit button:hover {
+  background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+  cursor: pointer;
 }
 
 /* 푸터 */
