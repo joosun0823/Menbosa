@@ -34,12 +34,6 @@
   user-select: none;
 }
 
-<<<<<<< HEAD
-/* 로그인 */
-
-
-=======
->>>>>>> yhj
 /* 헤더 */
 .header {
   width: 970px;
@@ -104,6 +98,7 @@ a {
 
 .headerLogin-container li:nth-of-type(2):hover {
   background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
   cursor: pointer;
 }
 
@@ -111,8 +106,6 @@ a {
   color: white;
 }
 
-<<<<<<< HEAD
-=======
 /* 로그인 */
 .protectorLoginTitle p {
   color: var(--color-main);
@@ -169,6 +162,8 @@ a {
 
 .protectorLoginBtn button:hover {
   background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+  cursor: pointer;
 }
 
 .protectorLogin-subMenu {
@@ -189,7 +184,6 @@ a {
 
 
 
->>>>>>> yhj
 /* 푸터 */
 .footerContainer {
   width: 970px;
