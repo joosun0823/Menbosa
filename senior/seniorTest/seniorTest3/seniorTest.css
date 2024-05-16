@@ -138,3 +138,97 @@
   font-size: 20px;
   margin-bottom: 100px;
 }
+
+/* 모달창 */
+
+.protector-result-background{
+  background-color: rgba(26, 26, 26, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+/* 모달창 */
+.protector-result-modalBox{
+  /* 모달 창 높이 위치는 적절하게 잡아주세요 */
+  background-color: white;
+  margin: auto;
+  margin-top: 200px;
+  width: 900px;
+  height: 640px;
+  border-radius: 20px;
+  box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* 하단 경고메세지 작아도 됨 */
+.protector-result-warningText{
+  font-size: 14px;
+  color: var(--font-color-grey);
+}
+
+.protector-result-logoImg > img{
+  width: 230px;
+  height: 160px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.protector-result-colorButtonDiv{
+  width: 120px;
+  height: 50px;
+  background-color: #27aae1;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  justify-content: center;
+  border-radius: 30px;
+  margin: 0 auto;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.protector-result-explanation{
+  font-size: 24px;
+}
+
+.protector-result-movementButton{
+  width: 195px;
+  height: 55px;
+  background-color: #FE7A15;
+  margin: 0 auto;
+  border-radius: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.protector-result-movementButton > a{
+  color: white;
+  text-decoration-line: none;
+  line-height: 55px;
+  font-size: 20px;
+}
+
+.protector-result-gohome{
+  width: 195px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.protector-result-gohome > a{
+  color: #FE7A15;
+  text-decoration-line: none;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.protector-result-warningText{
+  color: #A7A9AC;
+  font-size: 16px;
+}
