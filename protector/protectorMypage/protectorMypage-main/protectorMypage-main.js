@@ -141,3 +141,12 @@ let menudelete_2_value = false;
 $menudelete_2.on('click',()=>{
   menudelete_2_value = confirm("등록을 해제하시겠습니까?")
 });
+
+///////////////////////////////////////////////////////////////
+
+// //탈퇴하기
+// let $asidesecession = $("#mypage-asidesecession");
+// let asidesecession_value = false;
+// $asidesecession.on('click',()=>{
+//   asidesecession_value = confirm("탈퇴하시겠습니까?")
+// });
