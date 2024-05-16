@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -57,6 +58,7 @@
 
 .seniorTest-header-title{
   font-size: 40px;
+  font-weight: 600;
   margin: auto 0;
   margin-left: 20px;
 }
