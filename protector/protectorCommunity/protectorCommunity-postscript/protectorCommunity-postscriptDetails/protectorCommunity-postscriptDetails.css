@@ -97,11 +97,12 @@ main{
   background-color: #f8f8f8;
 }
 
-.menuButton-modifyDelete > a:nth-of-type(1){
-  border-bottom: 1px solid var(--color-disabled);
+.menuButton-modifyDelete > li:nth-of-type(1) > a{
+  display: inline-block;
+  width: 60px;
 }
 
-.menuButton-modifyDelete > li:nth-of-type(2) > a{
+.menuButton-modifyDelete > li:nth-of-type(2) > span{
   color: red;
 }
 
@@ -208,7 +209,7 @@ main{
 /* 댓글 메뉴 - 답글달기, 삭제 버튼 */
 
 .comments-list-submenu{
-  width: 90px;
+  width: 60px;
   display: none;
   position: absolute;
   background-color: var(--font-color-white);
@@ -230,20 +231,22 @@ main{
 }
 
 
-.comments-list-submenu > li:nth-of-type(2) > a{
+.comments-list-submenu > li:nth-of-type(2) > span{
   color: red;
 }
 /* 대댓글 */
 
 .comments-list-reply{
   background-color: #f8f8f8;
-  padding: 20px 0;
+  /* padding: 20px 0; */
 }
 
 
 .comments-list-reply > li{
   display: flex;
   width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-disabled);
 }
 
 .comments-list-reply > li > p{
@@ -272,9 +275,56 @@ main{
   color: var(--color-disabled);
 }
 
+/* 대댓글 입력창 */
+.reply-inputBox{
+  display: none;
+  /* padding-bottom: 20px; */
+  width: 100%;
+  border-bottom: 1px solid var(--color-disabled);
+
+}
+
+.reply-input {
+  width: 100%;
+  display: flex;
+  /* border-radius: 8px; */
+  border: 1px solid var(--color-disabled);
+  padding: 10px;
+  background-color: var(--font-color-white);
+  border-left: 2px solid var(--color-disabled);
+  border-right: 2px solid var(--color-disabled);
+}
+
+
+.reply-input > input{
+  width:100%;
+  border: none;
+  outline: none;
+}
+
+.reply-inputBox > p{
+  padding-left: 30px;
+}
+
+.reply-input > button{
+  width: 95px;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-main);
+  color: white;
+  cursor: pointer;
+}
+
+.reply-input > button:hover{
+  background-color: var(--color-main-hover);
+}
+
+
+
 /* 댓글 입력창 */
 .protectorCommunity-postscriptDetails-commentsInput{
-  position: sticky;
+  /* position: sticky; */
   bottom: 100px;
   width: 800px;
   margin: 40px auto;
@@ -330,3 +380,10 @@ main{
 .active{
   display: block;
 }
+
+
+.reply-active{
+  display: flex;
+}
+
+
