@@ -53,9 +53,6 @@
 a{text-decoration-line: none;}
 li{list-style: none;}
 
-/* 헤더푸터 */
-#header{height: 80px; background-color: aliceblue;}
-#footer{height: 200px; background-color: aliceblue;}
 
 /* 알흠로고 middle */
 .mypage-alheum-logo-mid{
@@ -121,7 +118,7 @@ main{
  }
 
 /* 주황색 택 */
-.mypage-subtitle_box{
+.mypage-subtitle-box{
   background-color: var(--color-main);
   max-width: fit-content;
   padding: 5px 20px;
@@ -131,7 +128,7 @@ main{
   margin-top: 30px;
   position: relative;
 }
-.mypage-subtitle_box > span{
+.mypage-subtitle-box > span{
   color: var(--font-color-white);
   font-size: 20px;
 }

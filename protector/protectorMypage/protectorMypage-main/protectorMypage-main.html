@@ -18,10 +18,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="./../mypage-aside-common.js"></script>
     <script defer src="protectorMypage-main.js"></script>
+    <script defer src="./../../../basic/header/headerMember/headerMember.js"></script>
+    <script defer src="./../../../basic/footer/footer.js"></script>
   </head>
   <body>
     <!-- 헤더높이 80 푸터 높이 200 width 970 -->
-    <div id="header"></div>
+    <header></header>
     <section id="protectorMypage">
       <aside>
         <div class="mypage-alheum-logo-mid"
@@ -37,7 +39,7 @@
       </aside>
       <main>
         <!-- 내가 작성한 글 -->
-        <div id="protectorMypage-mycontents" class="mypage-subtitle_box">
+        <div id="protectorMypage-mycontents" class="mypage-subtitle-box">
           작성한 글
           <div class="protectorMypage-arrow mypage-arrow-right">&#10095;</div>
           <div class="protectorMypage-arrow mypage-arrow-left">&#10094;</div>
@@ -103,7 +105,7 @@
           </div>
         </section>
         <!-- 어르신 관리 -->
-        <div class="mypage-subtitle_box" id="protectorMypage-seniorinfo-tab">
+        <div class="mypage-subtitle-box" id="protectorMypage-seniorinfo-tab">
           어르신 관리
           <div class="protectorMypage-arrow mypage-arrow-right">&#10095;</div>
           <div class="protectorMypage-arrow mypage-arrow-left">&#10094;</div>
@@ -161,7 +163,7 @@
           </div>
         </section>
         <!-- 보호자 설문 내역 테이블 -->
-        <div class="mypage-subtitle_box">보호자 설문 내역</div>
+        <div class="mypage-subtitle-box">보호자 설문 내역</div>
         <section class="mypage-contents-container">
           <article>
             <div class="mypage-table">
@@ -189,6 +191,6 @@
         </section>
       </main>
     </section>
-    <div id="footer"></div>
+    <footer></footer>
   </body>
 </html>
