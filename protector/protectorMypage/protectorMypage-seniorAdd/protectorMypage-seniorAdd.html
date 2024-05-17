@@ -17,10 +17,12 @@
     <!-- js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="./../mypage-aside-common.js"></script>
+    <script defer src="./../../../basic/header/headerMember/headerMember.js"></script>
+    <script defer src="./../../../basic/header/headerMember/headerMember.js"></script>
   </head>
   <body>
     <!-- 헤더높이 80 푸터 높이 200 width 970 -->
-    <div id="header"></div>
+    <header></header>
     <section id="protectorMypage-senioradd">
     <aside>
       <div class="mypage-alheum-logo-mid"
@@ -35,7 +37,7 @@
       </ul>
     </aside>
     <main>
-      <div class="mypage-subtitle_box">어르신 등록하기</div>
+      <div class="mypage-subtitle-box">어르신 등록하기</div>
       <section class="mypage-contents-container">
         <article>
           <div class="mypage-text-big">등록할 어르신 정보 입력</div>
@@ -51,28 +53,28 @@
             </section>
             <div>전화번호</div>
             <section class="mypage-phonenum-box">
-              <label for="phoneNum_first">
+              <label for="phoneNum-first">
                 <input
                   type="tel"
-                  name="phoneNum_first"
+                  name="phoneNum-first"
                   maxlength="3"
                   value="010"
                 />
                 -
               </label>
-              <label for="phoneNum_second">
+              <label for="phoneNum-second">
                 <input
                   type="tel"
-                  name="phoneNum_second"
+                  name="phoneNum-second"
                   maxlength="4"
                   placeholder="가운데자리"
                 />
                 -
               </label>
-              <label for="phoneNum_last">
+              <label for="phoneNum-last">
                 <input
                 type="tel"
-                name="phoneNum_last"
+                name="phoneNum-last"
                 maxlength="4"
                 placeholder="마지막자리"
                 />
@@ -80,10 +82,10 @@
               <button type="button" class="mypage-button">인증</button>
             </section>
             <section>
-              <label for="phone_certi">
+              <label for="phone-certi">
                 <input
                   type="text"
-                  name="phone_certi"
+                  name="phone-certi"
                   placeholder="인증번호를 입력하세요"
                 />
               </label>
@@ -95,6 +97,6 @@
       <a href="./../protectorMypage-main/protectorMypage-main.html" class="mypage-undo">돌아가기 &#10095;</a>
     </main>
     </section>
-    <div id="footer"></div>
+    <footer></footer>
   </body>
 </html>
