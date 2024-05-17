@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>알흠:謁欽 --어르신등록</title>
+    <title>알흠:謁欽</title>
     <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,29 +12,28 @@
       rel="stylesheet"
     />
     <!-- css -->
-    <link rel="stylesheet" href="./../mypage-common.css" />
-    <link rel="stylesheet" href="protectorMypage-seniorAdd.css">
+    <link rel="stylesheet" href="css/protectorMypage-common.css" />
+    <link rel="stylesheet" href="css/protectorMypage-seniorAdd.css">
     <!-- js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="./../mypage-aside-common.js"></script>
-    <script defer src="./../../../basic/header/headerMember/headerMember.js"></script>
-    <script defer src="./../../../basic/header/headerMember/headerMember.js"></script>
+    <script defer src="js/protectorMypage-aside-common.js"></script>
+    <script defer src="js/headerMember.js"></script>
+    <script defer src="js/footer.js"></script>
   </head>
   <body>
-    <!-- 헤더높이 80 푸터 높이 200 width 970 -->
     <header></header>
     <section id="protectorMypage-senioradd">
     <aside>
       <div class="mypage-alheum-logo-mid"
-          ><img src="./../../../img/protectorImg/mypage_alheum_logo.svg" alt="알흠로고"
+          ><img src="img/alheum_logo.svg" alt="알흠로고"
         /></div>
-      <ul>
-        <a href="./../protectorMypage-main/protectorMypage-main.html"><li>마이페이지</li></a>
-        <a href="./../protectorMypage-modify/protectorMypage-modify.html"><li>개인정보 수정</li></a>
-        <a href="./../protectorMypage-inquiry/protectorMypage-inquiryList/protectorMypage-inquiryList.html"><li>1:1문의</li></a>
-        <li class="mypage-warningsecession">로그아웃</li>
-        <li id="mypage-asidesecession" class="mypage-warningsecession">탈퇴하기</li>
-      </ul>
+        <ul>
+          <a href="protectorMypage-main.html"><li>마이페이지</li></a>
+          <a href="passwordVerify-mypage.html"><li>개인정보 수정</li></a>
+          <a href="protectorMypage-inquiryList.html"><li>1:1문의</li></a>
+          <li class="mypage-warningsecession">로그아웃</li>
+          <li id="mypage-asidesecession" class="mypage-warningsecession">탈퇴하기</li>
+        </ul>
     </aside>
     <main>
       <div class="mypage-subtitle-box">어르신 등록하기</div>
@@ -59,6 +58,7 @@
                   name="phoneNum-first"
                   maxlength="3"
                   value="010"
+                  disabled
                 />
                 -
               </label>
@@ -94,7 +94,7 @@
           </form>
         </article>
       </section>
-      <a href="./../protectorMypage-main/protectorMypage-main.html" class="mypage-undo">돌아가기 &#10095;</a>
+      <a href="protectorMypage-main.html" class="mypage-undo">돌아가기 &#10095;</a>
     </main>
     </section>
     <footer></footer>
