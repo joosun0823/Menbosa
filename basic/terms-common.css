@@ -49,10 +49,6 @@
     --color-hover-shadow: rgba(254,122,21,0.5);
   }
   
-  
-  #header{height: 80px; background-color: aliceblue;}
-  #footer{height: 200px; background-color: aliceblue;}
-
   h1{
     font-size: 24px;
     font-weight: 600;
