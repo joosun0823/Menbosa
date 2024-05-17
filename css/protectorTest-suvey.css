@@ -47,53 +47,6 @@
 a{text-decoration-line: none;}
 li{list-style: none;}
 
-/* 헤더 */
-.header {
-  width: 970px;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-}
-
-.headerLogo img {
-  width: 80px;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.headerNav {
-  width: 600px;
-  height: 80px;
-}
-
-.headerNav-container {
-  display: flex;
-}
-
-.headerNav-container li {
-  width: 120px;
-  height: 80px;
-  text-align: center;
-  line-height: 80px;
-}
-
-.headerNav-container li:hover {
-  border-bottom: 2px solid var(--color-main);
-}
-
-.headerLogin img {
-  width: 60px;
-}
-
-
 /* 버튼 */
 .suvey-button{
   background-color: var(--color-main);
@@ -170,43 +123,6 @@ main{
   margin-bottom: 30px;
  }
 
- /* 푸터 */
-.footerContainer {
-  width: 970px;
-  margin: auto;
-}
-
-.footerText li:nth-of-type(5) a,
-.footerText li:nth-of-type(7) a {
-  font-weight: bold;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.footerText1 {
-  display: flex;
-}
-
-.footerText1 li {
-  padding-right: 20px;
-}
-
-.footerText1,
-.footerText2,
-.footerText3 {
-  margin: 20px 0;
-<<<<<<< HEAD
-=======
-}
-
-
-
 /* 모달창 */
 .protector-result-background{
   background-color: rgba(26, 26, 26, 0.5);
@@ -222,7 +138,7 @@ a {
   /* 모달 창 높이 위치는 적절하게 잡아주세요 */
   background-color: white;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 50px;
   width: 900px;
   height: 640px;
   border-radius: 20px;
@@ -298,5 +214,4 @@ a {
 .protector-result-warningText{
   color: #A7A9AC;
   font-size: 16px;
->>>>>>> jsh
 }
