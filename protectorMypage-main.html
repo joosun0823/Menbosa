@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>알흠:謁欽 --마이페이지</title>
+    <title>알흠:謁欽</title>
     <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,27 +12,26 @@
       rel="stylesheet"
     />
     <!-- css -->
-    <link rel="stylesheet" href="./../mypage-common.css" />
-    <link rel="stylesheet" href="protectorMypage-main.css" />
+    <link rel="stylesheet" href="css/protectorMypage-common.css" />
+    <link rel="stylesheet" href="css/protectorMypage-main.css" />
     <!-- js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="./../mypage-aside-common.js"></script>
-    <script defer src="protectorMypage-main.js"></script>
-    <script defer src="./../../../basic/header/headerMember/headerMember.js"></script>
-    <script defer src="./../../../basic/footer/footer.js"></script>
+    <script defer src="js/protectorMypage-aside-common.js"></script>
+    <script defer src="js/protectorMypage-main.js"></script>
+    <script defer src="js/headerMember.js"></script>
+    <script defer src="js/footer.js"></script>
   </head>
   <body>
-    <!-- 헤더높이 80 푸터 높이 200 width 970 -->
     <header></header>
     <section id="protectorMypage">
       <aside>
         <div class="mypage-alheum-logo-mid"
-          ><img src="./../../../img/protectorImg/mypage_alheum_logo.svg" alt="알흠로고"
+          ><img src="img/alheum_logo.svg" alt="알흠로고"
         /></div>
         <ul>
-          <a href="./../protectorMypage-main/protectorMypage-main.html"><li>마이페이지</li></a>
-          <a href="./../protectorMypage-modify/protectorMypage-modify.html"><li>개인정보 수정</li></a>
-          <a href="./../protectorMypage-inquiry/protectorMypage-inquiryList/protectorMypage-inquiryList.html"><li>1:1문의</li></a>
+          <a href="protectorMypage-main.html"><li>마이페이지</li></a>
+          <a href="passwordVerify-mypage.html"><li>개인정보 수정</li></a>
+          <a href="protectorMypage-inquiryList.html"><li>1:1문의</li></a>
           <li class="mypage-warningsecession">로그아웃</li>
           <li id="mypage-asidesecession" class="mypage-warningsecession">탈퇴하기</li>
         </ul>
@@ -46,7 +45,7 @@
           <!-- 클릭메뉴S -->
           <div class="protectorMypage-mycontents-clickmenu">
             <ul>
-              <a href="#"><li>수정</li></a>
+              <a href="protectorCommunity-retouch.html"><li>수정</li></a>
               <li class="mypage-import">삭제</li>
             </ul>
           </div>
@@ -112,14 +111,14 @@
           <!-- 클릭메뉴S -->
           <div class="protectorMypage-seniorinfo-clickmenu">
             <ul>
-              <a href="./../protectorMypage-seniorDetails/protectorMypage-seniorDetails.html"><li>상세보기</li></a>
+              <a href="protectorMypage-seniorDetails.html"><li>상세보기</li></a>
               <li class="mypage-import">동록해제</li>
             </ul>
           </div>
           <!-- 클릭메뉴E -->
         </div>
         <section id="protectorMypage-seniorinfo" class="mypage-contents-container">
-          <a href="./../protectorMypage-seniorAdd/protectorMypage-seniorAdd.html" class="protectorMypage-addtext">추가등록 &#10095;</a>
+          <a href="protectorMypage-seniorAdd.html" class="protectorMypage-addtext">추가등록 &#10095;</a>
           <div class="protectorMypage-container-box">
             <article class="mypage-box-half">
               <!-- 클릭시 상세보기 삭제 js -->
