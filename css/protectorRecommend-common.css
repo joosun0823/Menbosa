@@ -72,10 +72,6 @@
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 
-header{
-  height: 80px;
-}
-
 .map_wrap{
   height: 91.5vh !important;
   position: relative;
@@ -97,4 +93,3 @@ header{
   font-size: 16px;
   padding: 8px 20px;
 }
-

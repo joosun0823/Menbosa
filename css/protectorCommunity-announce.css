@@ -17,10 +17,6 @@
   font-style: normal;
 }
 
-header{
-  height: 80px;
-}
-
 main{
   width: 970px;
   margin: 40px auto;
@@ -42,7 +38,6 @@ main{
   --color-gray: #8b8b8b;
   --color-gray-hover: #686868;
 }
-
 
 /* 공지 */
 .protectorCommunity-announce-title{
@@ -66,7 +61,7 @@ main{
 .protectorCommunity-announce-tabMenu > li{
 
   border: 1px solid  #E2E2E2;
-  width: 150px;
+  width: 180px;
   text-align: center;
   cursor: pointer;
   padding: 10px 20px;

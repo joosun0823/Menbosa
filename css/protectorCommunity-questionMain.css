@@ -34,10 +34,6 @@
   --color-gray-hover: #686868;
 }
 
-header{
-  height: 80px;
-}
-
 main{
   width: 970px;
   margin: 40px auto;
@@ -65,7 +61,7 @@ main{
 .protectorCommunity-question-tabMenu > li{
 
   border: 1px solid  #E2E2E2;
-  width: 150px;
+  width: 180px;
   text-align: center;
   cursor: pointer;
   padding: 10px 20px;

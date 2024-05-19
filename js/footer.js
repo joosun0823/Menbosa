@@ -1,4 +1,4 @@
-fetch('./headerMember/headerMember.html')
+fetch('./../footer.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('실패');
@@ -7,7 +7,7 @@ fetch('./headerMember/headerMember.html')
   })
   .then(html => {
     // console.log(html);
-    document.querySelector('header').innerHTML = html;
+    document.querySelector('footer').innerHTML = html;
   })
   .catch(error => {
     console.error('문제발생', error);
