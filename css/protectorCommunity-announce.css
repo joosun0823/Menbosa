@@ -17,10 +17,6 @@
   font-style: normal;
 }
 
-header{
-  height: 80px;
-}
-
 main{
   width: 970px;
   margin: 40px auto;
@@ -41,57 +37,6 @@ main{
   --color-sub-gree-hober: #9dc001;
   --color-gray: #8b8b8b;
   --color-gray-hover: #686868;
-}
-
-/* 헤더 */
-.header {
-  width: 970px;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-}
-
-.headerLogo img {
-  width: 80px;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.headerNav {
-  width: 600px;
-  height: 80px;
-}
-
-.headerNav-container {
-  display: flex;
-}
-
-.headerNav-container li {
-  width: 120px;
-  height: 80px;
-  text-align: center;
-  line-height: 80px;
-}
-
-.headerNav-container li:hover {
-  border-bottom: 2px solid var(--color-main);
-}
-
-.headerLogin img {
-  width: 60px;
-}
-
-main{
-  width: 970px;
-  margin: 40px auto;
 }
 
 /* 공지 */
@@ -116,7 +61,7 @@ main{
 .protectorCommunity-announce-tabMenu > li{
 
   border: 1px solid  #E2E2E2;
-  width: 150px;
+  width: 180px;
   text-align: center;
   cursor: pointer;
   padding: 10px 20px;
@@ -202,37 +147,4 @@ main{
 .protectorCommunity-announce-pageButton > span{
   border: 1px solid #D0D0D0;
   padding: 2px 10px;
-}
-
-/* 푸터 */
-.footerContainer {
-  width: 970px;
-  margin: auto;
-}
-
-.footerText li:nth-of-type(5) a,
-.footerText li:nth-of-type(7) a {
-  font-weight: bold;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.footerText1 {
-  display: flex;
-}
-
-.footerText1 li {
-  padding-right: 20px;
-}
-
-.footerText1,
-.footerText2,
-.footerText3 {
-  margin: 20px 0;
 }
