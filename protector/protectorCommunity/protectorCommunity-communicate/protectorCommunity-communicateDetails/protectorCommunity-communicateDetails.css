@@ -332,3 +332,87 @@ main{
   display: block;
 }
 
+/* 헤더 */
+.header {
+  width: 970px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.headerLogo img {
+  width: 80px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.headerNav {
+  width: 600px;
+  height: 80px;
+}
+
+.headerNav-container {
+  display: flex;
+}
+
+.headerNav-container li {
+  width: 120px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+}
+
+.headerNav-container li:hover {
+  border-bottom: 2px solid var(--color-main);
+}
+
+.headerLogin img {
+  width: 60px;
+}
+
+main{
+  width: 970px;
+  margin: 40px auto;
+}
+
+/* 푸터 */
+.footerContainer {
+  width: 970px;
+  margin: auto;
+}
+
+.footerText li:nth-of-type(5) a,
+.footerText li:nth-of-type(7) a {
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footerText1 {
+  display: flex;
+}
+
+.footerText1 li {
+  padding-right: 20px;
+}
+
+.footerText1,
+.footerText2,
+.footerText3 {
+  margin: 20px 0;
+}
+
