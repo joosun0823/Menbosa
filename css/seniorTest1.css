@@ -145,6 +145,7 @@
   position: fixed;
   top: 0;
   z-index: 9999;
+  display: none;
 }
 
 /* 모달창 */
@@ -159,6 +160,7 @@
   box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.2);
   padding: 20px;
   text-align: center;
+  /* display: none; */
 }
 
 
