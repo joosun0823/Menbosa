@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>protectorLogin</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- login CSS -->
+  <link rel="stylesheet" href="./../../static/css/protectorLogin.css">
+  <!-- login JS -->
+  <script defer src="./../../static/js/protectorLogin.js"></script>
+  <!-- fetch -->
+  <script defer src="./../../static/js/headerNonMember.js"></script>
+  <script defer src="./../../static/js/footer.js"></script>
+  <link rel="stylesheet" href="./../../static/css/headerNonMember.css">
+  <link rel="stylesheet" href="./../../static/css/footer.css">
+</head>
+<body>
+  <header></header>
+
+  <main>
+    <div class="protectorLoginTitle">
+      <p>로그인</p>
+    </div>
+    <div class="protectorLoginCnt">
+      <div class="protectorLoginMain">
+        <form class="protectorLoginMainCnt" action="#">
+          <p class="protectorLoginNum">전화번호</p>
+          <input type="text" class="protectorPhoneNum" placeholder="전화번호를 입력해주세요.">
+          <p class="protectorLoginPw">비밀번호</p>
+          <input type="password" class="protectorPassword" placeholder="비밀번호를 입력해주세요.">
+          <div class="protectorLoginBtn">
+            <button>로그인</button>
+          </div>
+          <div class="protectorLogin-subMenu">
+            <a href="./../../templates/protector/protectorPassword-find.html">비밀번호 찾기</a>
+            <p>|</p>
+            <a href="./../../templates/protector/protectorJoin.html">회원가입</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+</body>
+</html>
