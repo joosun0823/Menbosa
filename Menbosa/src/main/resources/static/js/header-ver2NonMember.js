@@ -1,4 +1,4 @@
-fetch('./../header-ver2NonMember.html')
+fetch('./../../templates/basic/header-ver2NonMember.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('실패');

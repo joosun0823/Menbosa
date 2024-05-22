@@ -1,4 +1,4 @@
-fetch('./../footer.html')
+fetch('./../../templates/basic/footer.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('실패');
