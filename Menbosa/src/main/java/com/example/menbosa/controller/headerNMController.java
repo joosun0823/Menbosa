@@ -5,8 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/header")
-public class headerController {
+@RequestMapping("/headerNM")
+public class headerNMController {
+
+    @GetMapping
+    public String headerNM() {
+        return "/protector/protectorMain-mainNonMember";
+    }
 
     @GetMapping("/home")
     public String home() {
@@ -23,14 +28,14 @@ public class headerController {
         return "/protector/protectorRecommend-hospital";
     }
 
-    @GetMapping("/division")
+    @GetMapping("/survey")
     public String division() {
         return "/basic/division";
     }
 
     @GetMapping("/community")
     public String community() {
-        return "/protector/protectorCommunity-communicateMain";
+        return "/protector/protectorLogin";
     }
 
     @GetMapping("/join")
