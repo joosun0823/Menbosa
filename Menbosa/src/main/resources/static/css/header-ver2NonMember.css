@@ -46,8 +46,6 @@ header {
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  background-color: var(--color-main);
-
 }
 
 .headerLogo img {
