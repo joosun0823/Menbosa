@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/alheum/user")
 public class UserController {
-    @GetMapping()
+
+
+
+    @GetMapping("/login")
     public String login() {
         return "/protector/protectorLogin";
     }
@@ -22,23 +25,8 @@ public class UserController {
         return "/protector/protectorJoin";
     }
 
-    @GetMapping("/map/hospital")
-    public String mapHospital() {
-        return "/protector/protectorRecommend-hospital";
-    }
-
-    @GetMapping("/map/sanatorium")
-    public String mapSanatorium() {
-        return "/protector/protectorRecommend-sanatorium";
-    }
-
-    @GetMapping("/map/welfare")
-    public String mapWelfare(){
-        return "/protector/protectorRecomment-welfare";
-    }
-
-    @GetMapping("/intro")
-    public String intro() {
-        return "/protector/protectorIntroduce";
+    @GetMapping("/mypage")
+    public String mypage() {
+        return "/protector/protectorMypage-main";
     }
 }

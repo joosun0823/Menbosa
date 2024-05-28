@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/alheum/postScript")
 public class PostscriptController {
 
-    @GetMapping("postMain")
-    @GetMapping("postWrite")
-    @GetMapping("postDetails")
-    @GetMapping("postModify")
+//    @GetMapping("postMain")
+//    @GetMapping("postWrite")
+//    @GetMapping("postDetails")
+//    @GetMapping("postModify")
 
 
 }
