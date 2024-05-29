@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,12 @@
   <script defer th:src="@{/js/protectorMain-mainNonMember.js}"></script>
   <!-- header CSS -->
   <link rel="stylesheet" th:href="@{/css/header-ver2NonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/header-ver2Member.css}">
   <!-- footer CSS -->
   <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
-<!--  <header th:replace="~{/basic/header-ver2NonMember :: header}"></header>-->
+  <header th:replace="~{/basic/header-ver2 :: header2}"></header>
   
   <main>
     <!-- 메인 컨테이너 -->
@@ -30,9 +31,9 @@
           <div class="protectorMain-topText">
             <p>"알흠(謁欽)"</p>
             <p>
-              "알리다" 와 "공경"을 합친 말로, 
+              "알리다" 와 "공경"을 합친 말로,
               <br>
-              윗사람을 공경하자는 마음을 널리 퍼트리자는 의미를 담고 있습니다. 
+              윗사람을 공경하자는 마음을 널리 퍼트리자는 의미를 담고 있습니다.
               <br>
               대표 상징인 지문은 공경하는 마음을 변하지 않겠다는 의지를 보여줍니다.
             </p>
@@ -44,25 +45,25 @@
       <div class="protectorMain-menubar">
         <ul class="protectorMain-menubarCnt">
           <li>
-            <a href="#">인지기능검사</a>
+            <a th:href="@{#}">인지기능검사</a>
           </li>
 
           <p>|</p>
 
           <li>
-            <a href="#">상태진단설문</a>
+            <a th:href="@{#}">상태진단설문</a>
           </li>
 
           <p>|</p>
-          
+
           <li>
-            <a href="#">검사결과</a>
+            <a th:href="@{#}">검사결과</a>
           </li>
-          
+
           <p>|</p>
 
           <li>
-            <a href="#">자주묻는질문</a>
+            <a th:href="@{#}">자주묻는질문</a>
           </li>
         </ul>
       </div>
@@ -85,23 +86,23 @@
           <div class="protectorMain-noticebanner">
             <ul class="protectorMain-noticeCnt">
               <li>
-                <a href="#"></a>
+                <a th:href="@{#}"></a>
               </li>
-              
+
               <li>
-                <a href="#"></a>
+                <a th:href="@{#}"></a>
               </li>
-              
+
               <li>
-                <a href="#"></a>
+                <a th:href="@{#}"></a>
               </li>
-              
+
               <li>
-                <a href="#"></a>
+                <a th:href="@{#}"></a>
               </li>
-              
+
               <li>
-                <a href="#"></a>
+                <a th:href="@{#}"></a>
               </li>
             </ul>
           </div>
@@ -120,19 +121,19 @@
           <div class="protectorMain-bannerCnt">
             <ul class="protectorMain-bannerImg">
               <li>
-                <a href="#">
+                <a th:href="@{#}">
                   <img src="/img/protectorMain-bannerImg.png" alt="">
                 </a>
               </li>
 
               <li>
-                <a href="#">
+                <a th:href="@{#}">
                   <img src="/img/protectorMain-bannerImg.png" alt="">
                 </a>
               </li>
 
               <li>
-                <a href="#">
+                <a th:href="@{#}">
                   <img src="/img/protectorMain-bannerImg.png" alt="">
                 </a>
               </li>

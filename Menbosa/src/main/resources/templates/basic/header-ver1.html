@@ -5,12 +5,12 @@
   <title>header</title>
 </head>
 <body>
-<header th:fragment="header">
+<header th:fragment="header1">
   <!-- 헤더 로고 -->
   <div class="header">
     <div class="headerLogo">
       <a th:href="@{/alheum}">
-        <img src="/img/alheum_logo_white.svg" alt="">
+        <img src="/img/alheum_logo.svg" alt="">
       </a>
     </div>
 
@@ -22,19 +22,19 @@
         </li>
 
         <li>
-          <a th:href="@{/protector/protectorIntroduce}">소개/안내</a>
+          <a th:href="@{/alheum/introduce}">소개/안내</a>
         </li>
 
         <li>
-          <a th:href="@{/protector/protectorRecommend-hospital}">시설추천</a>
+          <a th:href="@{/alheum/recommend}">시설추천</a>
         </li>
 
         <li>
-          <a th:href="@{}">설문/검사</a>
+          <a th:href="@{/alheum/survey}">설문/검사</a>
         </li>
 
         <li>
-          <a th:href="@{}">커뮤니티</a>
+           <a th:href="@{#}">커뮤니티</a>
         </li>
       </ul>
     </div>
@@ -51,7 +51,7 @@
         </li>
       </ul>
 
-      <span th:unless="${session.proMemNum == null}">
+      <span th:unless="${session.proMemName == null}">
         <a th:href="@{/alheum/user/mypage}">
           <img src="/img/protectorMain-profile.png" alt="">
         </a>
