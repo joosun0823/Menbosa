@@ -1,47 +1,63 @@
-<!-- 헤더 로고 -->
-<div class="header">
-  <div class="headerLogo">
-    <a href="./../../templates/protector/protectorMain-mainNonMember.html">
-      <img src="./../../static/img/alheum_logo_white.svg" alt="">
-    </a>
-  </div> 
-  
-  <!-- 헤더 네비게이션 바 -->
-  <div class="headerNav">
-    <ul class="headerNav-container">
-      <li>
-        <a href="./../../templates/protector/protectorMain-mainNonMember.html">홈</a>
-      </li>
-      
-      <li>
-        <a href="./../../templates/protector/protectorIntroduce.html">소개/안내</a>
-      </li>
-      
-      <li>
-        <a href="./../../templates/protector/protectorRecommend-hospital.html">시설추천</a>
-      </li>
-      
-      <li>
-        <a href="./../../templates/basic/division.html">설문/검사</a>
-      </li>
-      
-      <li>
-        <a href="./../../templates/protector/protectorCommunity-announce.html">커뮤니티</a>
-      </li>
-    </ul>
-  </div>
-  
-  <!-- 헤더 로그인/회원가입 -->
-  <div class="headerLogin">
-    <ul class="headerLogin-container">
-      <li>
-        <a href="./../../templates/protector/protectorJoin.html">회원가입</a>
-      </li>
-      
-      <li>
-        <a href="./../../templates/protector/protectorLogin.html">로그인</a>
-      </li>
-    </ul>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>header</title>
+</head>
+<body>
+<header th:fragment="header">
+  <!-- 헤더 로고 -->
+  <div class="header">
+    <div class="headerLogo">
+      <a th:href="@{/alheum}">
+        <img src="/img/alheum_logo_white.svg" alt="">
+      </a>
+    </div>
 
+    <!-- 헤더 네비게이션 바 -->
+    <div class="headerNav">
+      <ul class="headerNav-container">
+        <li>
+          <a th:href="@{/alheum}">홈</a>
+        </li>
+
+        <li>
+          <a th:href="@{/protector/protectorIntroduce}">소개/안내</a>
+        </li>
+
+        <li>
+          <a th:href="@{/protector/protectorRecommend-hospital}">시설추천</a>
+        </li>
+
+        <li>
+          <a th:href="@{}">설문/검사</a>
+        </li>
+
+        <li>
+          <a th:href="@{}">커뮤니티</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 헤더 로그인/회원가입 -->
+    <div class="headerLogin">
+      <ul class="headerLogin-container" th:if="${session.proMemNum == null}">
+        <li>
+          <a th:href="@{/alheum/user/join}">회원가입</a>
+        </li>
+
+        <li>
+          <a th:href="@{/alheum/user/login}">로그인</a>
+        </li>
+      </ul>
+
+      <span th:unless="${session.proMemNum == null}">
+        <a th:href="@{/alheum/user/mypage}">
+          <img src="/img/protectorMain-profile.png" alt="">
+        </a>
+      </span>
+    </div>
+  </div>
+</header>
+</body>
+</html>
