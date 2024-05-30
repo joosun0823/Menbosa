@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- announceDetails CSS -->
-  <link rel="stylesheet" href="./../../static/css/protectorCommunity-announceDetails.css">
+  <link rel="stylesheet" href="/css/protectorCommunity-announceDetails.css">
   <!-- fetch -->
   <script defer src="./../../static/js/headerMember.js"></script>
   <script defer src="./../../static/js/footer.js"></script>
@@ -17,37 +17,37 @@
   <link rel="stylesheet" href="./../../static/css/footer.css">
 </head>
 <body>
-  <header></header>
+<header></header>
 
-  <main>
+<main>
+  <div th:each = "mainDetail : ${mainDetail}">
     <div class="protectorCommunity-announceDetails-title">
       <div class="title-top">
         <p>
           <span>[공지]</span>
-          <span>보고싶다</span>
+          <span th:text='${mainDetail.announceTitle}'></span>
         </p>
       </div>
       <div class="title-bottom">
-        <span>작성자</span>
-        <span>2024-05-11</span>
+        <!--        <span>작성자</span>-->
+        <span th:text='${mainDetail.announceDate}'></span>
       </div>
     </div>
 
     <div class="protectorCommunity-announceDetails-content">
+      <p th:text='${mainDetail.announceContents}'></p>
       <p>
-        보고싶다
-      </p>
-      <p>
-        <img src="./../../static/img/community-example.png" alt="">
+        <img src="/img/community-example.png" alt="">
       </p>
     </div>
+  </div>
 
 
-    <div class="protectorCommunity-announceDetails-listButton">
-      <a href="./../../templates/protector/protectorCommunity-announce.html">목록으로</a>
-    </div>
-  </main>
+  <div class="protectorCommunity-announceDetails-listButton">
+    <a th:href="@{/alheum/community/main}">목록으로</a>
+  </div>
+</main>
 
-  <footer></footer>
+<footer></footer>
 </body>
 </html>

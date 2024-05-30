@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,38 +9,38 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- commnuicateWrite CSS -->
-  <link rel="stylesheet" href="./../../static/css/protectorCommunity-communicateWrite.css">
+  <link rel="stylesheet" href="/css/protectorCommunity-communicateWrite.css">
   <!-- commnuicateWrite JS -->
-  <script defer src="./../../static/js/protectorCommunity-communicateWrite.js"></script>
+  <script defer src="/js/protectorCommunity-communicateWrite.js"></script>
   <!-- fetch -->
-  <script defer src="./../../static/js/headerMember.js"></script>
-  <script defer src="./../../static/js/footer.js"></script>
-  <link rel="stylesheet" href="./../../static/css/headerMember.css">
-  <link rel="stylesheet" href="./../../static/css/footer.css">
+  <script defer src="/js/headerMember.js"></script>
+  <script defer src="/js/footer.js"></script>
+  <link rel="stylesheet" href="/css/headerMember.css">
+  <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
-  <header></header>
+<header></header>
 
-  <main>
-    <h2>소통</h2>
-    <form action="" method="">
-      <div class="write-title">
-        <label for="">제목</label>
-        <input type="text" name="" id="">
-      </div>
-      <textarea name="" id="write-content"></textarea>
-      <div class="write-inputFile">
-        <span>첨부파일</span>
-        <input type="file" id="write-file">
-        <button type="button" onclick="deleteFile(this)">삭제</button>
-      </div>
-      <div class="write-buttons">
-        <a href="./../../templates/protector/protectorCommunity-communicateMain.html">취소</a>
-        <button>작성완료</button>
-      </div>
-    </form>
-  </main>
-  
-  <footer></footer>
+<main>
+  <h2>소통</h2>
+  <form th:action="@{/alheum/community/commuWrite}"  method="post"  enctype="multipart/form-data">
+    <div class="write-title">
+      <label for="">제목</label>
+      <input type="text" name="boardCommuTitle" id="" >
+    </div>
+    <textarea name="boardCommuContents" id="write-content"></textarea>
+    <div class="write-inputFile">
+      <span>첨부파일</span>
+      <input type="file" id="write-file" name="boardFile" multiple>
+      <button type="button" onclick="deleteFile(this)">삭제</button>
+    </div>
+    <div class="write-buttons">
+      <a th:href="@{/alheum/community/commuMain}">취소</a>
+      <button type="submit">작성완료</button>
+    </div>
+  </form>
+</main>
+
+<footer></footer>
 </body>
 </html>

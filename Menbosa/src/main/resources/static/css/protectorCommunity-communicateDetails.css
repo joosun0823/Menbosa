@@ -91,12 +91,16 @@ main{
   background-color: #f8f8f8;
 }
 
-.menuButton-modifyDelete > li:nth-of-type(1) > a{
+.modifyButtn{
   display: inline-block;
   width: 60px;
+  height: 30px;
+  background: none;
 }
 
-.menuButton-modifyDelete > li:nth-of-type(2) > span{
+.deleteButtn{
+  background: none;
+  height: 30px;
   color: red;
 }
 
