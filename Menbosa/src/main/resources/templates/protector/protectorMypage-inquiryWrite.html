@@ -9,33 +9,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- inquiryWrite CSS -->
-  <link rel="stylesheet" href="./../../static/css/protectorMypage-inquiryWrite.css">
+  <link rel="stylesheet" href="/css/protectorMypage-inquiryWrite.css">
   <!-- inquiryWrite JS -->
-  <script defer src="./../../static/js/protectorMypage-inquiryWrite.js"></script>
+  <script defer src="/js/protectorMypage-inquiryWrite.js"></script>
   <!-- fetch -->
-  <script defer src="./../../static/js/headerMember.js"></script>
-  <script defer src="./../../static/js/footer.js"></script>
-  <link rel="stylesheet" href="./../../static/css/headerMember.css">
-  <link rel="stylesheet" href="./../../static/css/footer.css">
+  <script defer src="/js/headerMember.js"></script>
+  <script defer src="/js/footer.js"></script>
+  <link rel="stylesheet" href="/css/headerMember.css">
+  <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
   <header></header>
 
   <main>
     <h2>1:1문의</h2>
-    <form action="" method="">  
+    <form action="" method="post">
       <div class="inquiryWrite-title">
-        <label for="">제목</label>
-        <input type="text" name="" id="">
+        <label for="title">제목</label>
+        <input type="text" name="boardInquTitle" id="title">
       </div>
-      <textarea name="" id="inquiryWrite-content"></textarea>
-      <div class="inquiryWrite-inputFile">
-        <span>첨부파일</span>
-        <input type="file" id="inquiryWrite-file">
-        <button type="button" onclick = "deleteFile(this)">삭제</button>
-      </div>
+      <textarea name="boardInquContents" id="inquiryWrite-content"></textarea>
+<!--      <div class="inquiryWrite-inputFile">-->
+<!--        <span>첨부파일</span>-->
+<!--        <input type="file" id="inquiryWrite-file">-->
+<!--        <button type="button" onclick = "deleteFile(this)">삭제</button>-->
+<!--      </div>-->
       <div class="inquiryWrite-buttons">
-        <a href="./../../templates/protector/protectorMypage-inquiryList.html">취소</a>
+        <a th:href="@{/alheum/inquiry}">취소</a>
         <button>작성완료</button>
       </div>
     </form>

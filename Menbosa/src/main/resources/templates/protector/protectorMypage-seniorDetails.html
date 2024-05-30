@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"/>
     <!-- senior-details css -->
-    <link rel="stylesheet" href="./../../static/css/protectorMypage-common.css" />
-    <link rel="stylesheet" href="./../../static/css/protectorMypage-seniorDetails.css" />
+    <link rel="stylesheet" href="/css/protectorMypage-common.css" />
+    <link rel="stylesheet" href="/css/protectorMypage-seniorDetails.css" />
     <!-- senior-details js -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -18,12 +18,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script defer src="./../../static/js/protectorMypage-aside-common.js"></script>
+    <script defer src="/js/protectorMypage-aside-common.js"></script>
     <!-- fetch -->
-    <script defer src="./../../static/js/headerMember.js"></script>
-    <script defer src="./../../static/js/footer.js"></script>
-    <link rel="stylesheet" href="./../../static/css/headerMember.css">
-    <link rel="stylesheet" href="./../../static/css/footer.css">
+    <script defer src="/js/headerMember.js"></script>
+    <script defer src="/js/footer.js"></script>
+    <link rel="stylesheet" href="/css/headerMember.css">
+    <link rel="stylesheet" href="/css/footer.css">
   </head>
   <body>
     <header></header>
@@ -31,13 +31,13 @@
     <section id="protectorMypage-seniorDetails">
       <aside>
         <div class="mypage-alheum-logo-mid">
-          <img src="./../../static/img/alheum_logo.svg" alt="알흠로고" />
+          <img src="/img/alheum_logo.svg" alt="알흠로고" />
         </div>
         <ul>
-          <a href="./../../templates/protector/protectorMypage-main.html"><li>마이페이지</li></a>
-          <a href="./../../templates/protector/passwordVerify-mypage.html"><li>개인정보 수정</li></a>
-          <a href="./../../templates/protector/protectorMypage-inquiryList.html"><li>1:1문의</li></a>
-          <li class="mypage-warningsecession">로그아웃</li>
+          <a th:href="@{/alheum/mypage}"><li>마이페이지</li></a>
+          <a th:href="@{/alheum/mypage/check}"><li>개인정보 수정</li></a>
+          <a th:href="@{/alheum/inquiry}"><li>1:1문의</li></a>
+          <a th:href="@{/alheum/mypage/logout}"><li class="mypage-warningsecession">로그아웃</li></a>
           <li id="mypage-asidesecession" class="mypage-warningsecession">
             탈퇴하기
           </li>
@@ -46,23 +46,26 @@
       <main>
         <div class="mypage-subtitle-box">어르신 정보상세</div>
         <section class="mypage-contents-container">
-          <section class="senior-info-container-flex">
+          <section th:each="info:${MySenDetails}" class="senior-info-container-flex">
+            <!--              TODO 임의의 값 600설정-->
             <article>
               <img
                 class="mypage-icon-user"
-                src="./../../static/img/mypage_icon_user.svg"
+                src="/img/mypage_icon_user.svg"
                 alt="유저"
-              /><span>장*혁님</span>
+              />
+              <span th:text="${info.senMemName}"></span>
             </article>
             <article>
-              <div>생년월일 : <span>0000/00/00</span></div>
+              <div>생년월일 : <span th:text="${#temporals.format(info.senMemBirth, 'yyyy/MM/dd')}"></span></div>
             </article>
             <article>
               <div>
-                전화번호 : <span>010</span>-<span>0000</span>-<span>0000</span>
+                전화번호 : <span>010</span>-<span th:text="${info.senMemPhoneMid}">0000</span>-<span th:text="${info.senMemPhoneBack}">0000</span>
               </div>
             </article>
           </section>
+<!--          FIXME 서혁님이 만든 쿼리+DTO 불러오면 됨-->
           <div id="senior-info-resultall-title" class="mypage-subtitle-box">
             <span>000</span>님의 검사결과 모아보기
           </div>
@@ -80,13 +83,6 @@
                   <span class="mypage-state-box mypage-state-good">양호</span>
                 </p>
               </div>
-              <div class="mypage-tr">
-                <p class="mypage-td">ex.2024.05.09.</p>
-                <p class="mypage-td">ex.기본인지기능검사</p>
-                <p class="mypage-td">
-                  <span class="mypage-state-box mypage-state-mid">주의</span>
-                </p>
-              </div>
               <p class="mypage-warning">
                 이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를
                 임의로 해석하거나 처치를 진행하지마세요.
@@ -94,7 +90,7 @@
             </div>
           </article>
         </section>
-        <a href="./../../templates/protector/protectorMypage-main.html" class="mypage-undo"
+        <a th:href="@{/alheum/mypage}" class="mypage-undo"
           >돌아가기 &#10095;
         </a>
       </main>
