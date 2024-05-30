@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- login CSS -->
+<<<<<<< HEAD
   <link rel="stylesheet" href="/css/protectorLogin.css">
   <!-- login JS -->
   <script defer src="/js/protectorLogin.js"></script>
@@ -17,9 +18,19 @@
   <script defer src="/js/footer.js"></script>
   <link rel="stylesheet" href="/css/headerNonMember.css">
   <link rel="stylesheet" href="/css/footer.css">
+=======
+  <link rel="stylesheet" th:href="@{/css/protectorLogin.css}">
+  <!-- login JS -->
+  <script defer th:src="@{/js/protectorLogin.js}"></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+>>>>>>> 2baf3be55adad163055d68aca5e341cb2f372b55
 </head>
 <body>
-  <header></header>
+  <header th:replace="~{/basic/header-ver1 :: header1}"></header>
 
   <main>
     <div class="protectorLoginTitle">
@@ -27,24 +38,30 @@
     </div>
     <div class="protectorLoginCnt">
       <div class="protectorLoginMain">
-        <form class="protectorLoginMainCnt" action="#">
+        <form class="protectorLoginMainCnt" action="" method="post">
           <p class="protectorLoginNum">전화번호</p>
-          <input type="text" class="protectorPhoneNum" placeholder="전화번호를 입력해주세요.">
+          <input name="proMemPhone" type="text" class="protectorPhoneNum" placeholder="전화번호를 입력해주세요.">
           <p class="protectorLoginPw">비밀번호</p>
-          <input type="password" class="protectorPassword" placeholder="비밀번호를 입력해주세요.">
+          <input name="proMemPassword" type="password" class="protectorPassword" placeholder="비밀번호를 입력해주세요.">
           <div class="protectorLoginBtn">
             <button>로그인</button>
           </div>
           <div class="protectorLogin-subMenu">
+<<<<<<< HEAD
             <a href="/login/findPassword">비밀번호 찾기</a>
             <p>|</p>
             <a href="/login/join">회원가입</a>
+=======
+            <a th:href="@{/alheum/user/findPassword}">비밀번호 찾기</a>
+            <p>|</p>
+            <a th:href="@{/alheum/user/join}">회원가입</a>
+>>>>>>> 2baf3be55adad163055d68aca5e341cb2f372b55
           </div>
         </form>
       </div>
     </div>
   </main>
 
-  <footer></footer>
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>

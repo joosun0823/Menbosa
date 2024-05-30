@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
 <mapper namespace="com.example.menbosa.mapper.TimeMapper">
+=======
+<mapper namespace="com.example.finalapp.mapper.TimeMapper">
+>>>>>>> 2baf3be55adad163055d68aca5e341cb2f372b55
     <select id="selectTime" resultType="string">
         select sysdate from dual
     </select>
