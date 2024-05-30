@@ -7,5 +7,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserSessionDTO {
     private Long proMemNum;
-    private String proMemName;
+    private int proMemPhone;
 }
