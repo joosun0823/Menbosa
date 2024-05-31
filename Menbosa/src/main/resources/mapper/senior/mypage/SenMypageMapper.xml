@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.senior.mypage.SenMypageMapper">
+    <select id="selectSenInfo" resultType="SenUserDTO">
+        SELECT SEN_MEM_NAME, SEN_MEM_BIRTH, SEN_MEM_PHONE_MID, SEN_MEM_PHONE_BACK, SEN_MEM_PASSWORD
+        FROM MBS_SEN_MEMBER
+        WHERE SEN_MEM_NUM = 600
+    </select>
+
+    <select id="selectProInfo" resultType="SenMypageProDTO">
+        SELECT P.PRO_MEM_NAME, P.PRO_MEM_PHONE_MID, P.PRO_MEM_PHONE_BACK
+        FROM MBS_PRO_MEMBER P JOIN MBS_SEN_MEMBER S
+        ON S.PRO_MEM_NUM = P.PRO_MEM_NUM
+        WHERE SEN_MEM_NUM = 600
+    </select>
+
+    <select id="selectTestInfo" resultType="SenMypageTestDTO">
+        SELECT R.TEST_RESULT_DATE
+             , R.TEST_RESULT_SCORE
+             , L.TEST_LIST_NAME
+        FROM MBS_TEST_RESULT R JOIN MBS_TEST_LIST L
+                                    ON R.TEST_LIST_NUM = L.TEST_LIST_NUM
+        WHERE SEN_MEM_NUM = 600
+        ORDER BY TEST_RESULT_DATE DESC
+    </select>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.senior.test.SenTestMapper">
+    <select id="selectTestList" resultType="SenTestListDTO">
+        ---[ ]  **SELECT** 시니어 검사리스트
+        SELECT TEST_LIST_NUM
+             , TEST_LIST_NAME
+             , TEST_LIST_DIFFI
+             , TEST_LIST_AGE
+        FROM MBS_TEST_LIST
+        ORDER BY TEST_LIST_NUM
+    </select>
+
+    <select id="selectTestQuest" resultType="SenTestQuestDTO">
+        --- [ ]  **SELECT** 시니어 검사
+        SELECT TEST_QUEST_ORDER
+             , TEST_QUEST_CONTENTS
+             , TEST_QUEST_IMG
+             , TEST_QUEST_ANSWER
+             , TEST_LIST_NUM
+        FROM MBS_TEST_QUESTION
+        WHERE TEST_LIST_NUM = #{testListNum}
+          AND TEST_QUEST_ORDER = #{testQuestOrder}
+    </select>
+
+    <select id="selectTestItems" resultType="SenTestItemsDTO">
+        --- [ ]  **SELECT** 시니어 검사 보기
+        SELECT TEST_ITEM_ONE
+             , TEST_ITEM_TWO
+             , TEST_ITEM_THREE
+             , TEST_ITEM_FOUR
+        FROM MBS_TEST_ITEMS
+        WHERE TEST_QUEST_NUM = #{testQuestNum}
+    </select>
+
+
+</mapper>
