@@ -54,15 +54,10 @@
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
-    align-items: end;
 }
-.mypage-box-textsmall span{
+.mypage-box-textsmall > span{
   font-size: 12px;
   color: var(--font-lightgrey);
-}
-
-.deleteBoard{
-    cursor: pointer;
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
@@ -114,24 +109,3 @@
   position: relative;
   left: 0;
 }
-
-
-.seniorinfo-top{
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0 0 0;
-    padding: 2px 5px 0 5px;
-}
-
-.seniorinfo-warning{
-    font-size: 14px;
-    /*color: red;*/
-    color: var(--font-color-grey);
-    cursor: pointer;
-}
-
-.seniorinfo-details{
-    font-size: 14px;
-    color: var(--font-color-grey);
-}
-

@@ -1,15 +1,5 @@
 package com.example.menbosa.controller.protector.user;
 
-<<<<<<< HEAD
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-@RequestMapping("/alheum/user")
-public class UserController {
-    @GetMapping()
-=======
 import com.example.menbosa.dto.protector.user.UserDTO;
 import com.example.menbosa.dto.protector.user.UserSessionDTO;
 import com.example.menbosa.service.protector.user.UserService;
@@ -29,16 +19,10 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/login")
->>>>>>> 2baf3be55adad163055d68aca5e341cb2f372b55
     public String login() {
         return "/protector/protectorLogin";
     }
 
-<<<<<<< HEAD
-    @GetMapping("/findPassword")
-    public String findPassword() {
-        return "/protector/protectorPassword-find";
-=======
     @PostMapping("/login")
     public String login(String proMemPhone, String proMemPassword, HttpSession session) {
         try {
@@ -49,7 +33,6 @@ public class UserController {
             return "redirect:/alheum/user/login";
         }
         return "redirect:/alheum";
->>>>>>> 2baf3be55adad163055d68aca5e341cb2f372b55
     }
 
     @GetMapping("/join")
@@ -57,26 +40,6 @@ public class UserController {
         return "/protector/protectorJoin";
     }
 
-<<<<<<< HEAD
-    @GetMapping("/map/hospital")
-    public String mapHospital() {
-        return "/protector/protectorRecommend-hospital";
-    }
-
-    @GetMapping("/map/sanatorium")
-    public String mapSanatorium() {
-        return "/protector/protectorRecommend-sanatorium";
-    }
-
-    @GetMapping("/map/welfare")
-    public String mapWelfare(){
-        return "/protector/protectorRecomment-welfare";
-    }
-
-    @GetMapping("/intro")
-    public String intro() {
-        return "/protector/protectorIntroduce";
-=======
     @PostMapping("/join")
     public String join(UserDTO userDTO) {
         userService.registerUser(userDTO);
@@ -91,6 +54,5 @@ public class UserController {
     @GetMapping("/mypage")
     public String mypage() {
         return "/protector/protectorMypage-main";
->>>>>>> 2baf3be55adad163055d68aca5e341cb2f372b55
     }
 }
