@@ -82,4 +82,9 @@ public class MypageServiceimpl implements MypageService{
        mypageMapper.updateOnlyEmail(proMemEmail, proMemNumString);
     }
 
+    @Override
+    public void deleteProMem(long proMemNum) {
+        mypageMapper.deleteProMem(proMemNum);
+    }
+
 }

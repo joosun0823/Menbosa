@@ -96,7 +96,6 @@ main{
   border-radius: 30px;
   cursor: pointer;
   border: 2px solid var(--color-table-grey);
-  background-color: var(--color-back-white);
  }
 
  .protectorTest-suvey-testContents-title span{
@@ -218,4 +217,16 @@ main{
 .protector-result-warningText{
   color: #A7A9AC;
   font-size: 16px;
+}
+
+/*----------*/
+
+.active{
+    background-color: var(--color-sub-yell);
+    /*width: 250px;*/
+    /*padding: 8px 0;*/
+    /*text-align: center;*/
+    /*border-radius: 30px;*/
+    /*cursor: pointer;*/
+    /*border: 2px solid var(--color-table-grey);*/
 }

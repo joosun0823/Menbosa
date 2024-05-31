@@ -89,4 +89,9 @@ class MypageServiceimplTest {
     void updateOnlyEmail(){
         mypageService.updateOnlyEmail("test3@email.com", 600);
     }
+
+    @Test
+    void deleteUserpro(){
+        mypageService.deleteProMem(603);
+    }
 }

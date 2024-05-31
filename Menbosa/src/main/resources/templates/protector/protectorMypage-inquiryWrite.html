@@ -9,17 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- inquiryWrite CSS -->
-  <link rel="stylesheet" href="/css/protectorMypage-inquiryWrite.css">
+  <link rel="stylesheet" th:href="@{/css/protectorMypage-inquiryWrite.css}">
   <!-- inquiryWrite JS -->
-  <script defer src="/js/protectorMypage-inquiryWrite.js"></script>
+  <script defer th:src="@{/js/protectorMypage-inquiryWrite.js}"></script>
   <!-- fetch -->
-  <script defer src="/js/headerMember.js"></script>
-  <script defer src="/js/footer.js"></script>
-  <link rel="stylesheet" href="/css/headerMember.css">
-  <link rel="stylesheet" href="/css/footer.css">
+  <script defer th:src="@{/js/headerMember.js}"></script>
+  <script defer th:src="@{/js/footer.js}"></script>
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
-  <header></header>
+<!--<header class="header" th:replace="~{/fragment/header :: header}"></header>-->
 
   <main>
     <h2>1:1문의</h2>
@@ -41,6 +41,6 @@
     </form>
   </main>
 
-  <footer></footer>
+<!--<footer class="footer" th:replace="~{/fragment/footer :: footer}"></footer>-->
 </body>
 </html>
