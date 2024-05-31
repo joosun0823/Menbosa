@@ -29,7 +29,19 @@ class UserMapperTest {
         userMapper.insertUser(userDTO);
         System.out.println(userMapper);
         System.out.println(userDTO);
-//        System.out.println(userDTO.getProMemNum());
+        System.out.println(userDTO.getProMemNum());
 
+    }
+
+    @Test
+    void testInsertUser() {
+    }
+
+    @Test
+    void selectId() {
+    }
+
+    @Test
+    void selectUserInfo() {
     }
 }
