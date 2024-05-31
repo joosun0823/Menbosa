@@ -20,9 +20,8 @@
 
 .mypage-text-big{
   font-size: 18px;
-  font-weight: 500;
-  margin: 5px 0 10px 0;
-  color: var(--font-color-grey);
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 input[name='phoneNum_last']{

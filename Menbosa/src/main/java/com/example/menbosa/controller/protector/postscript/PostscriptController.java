@@ -12,9 +12,4 @@ public class PostscriptController {
 //    @GetMapping("postWrite")
 //    @GetMapping("postDetails")
 //    @GetMapping("postModify")
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 2baf3be55adad163055d68aca5e341cb2f372b55
 }
