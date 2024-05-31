@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 @Service
 @Transactional
@@ -22,5 +24,10 @@ public class FileServiceImpl implements FileService{
     @Override
     public void removeFile(Long boardCommuNum) {
         fileMapper.deleteFile(boardCommuNum);
+    }
+
+    @Override
+    public List<FileDto> findFile(Long boardCommuNum) {
+        return fileMapper.selectFile(boardCommuNum);
     }
 }

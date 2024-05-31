@@ -22,10 +22,10 @@
 <main>
   <h2 class="protectorCommunity-communicate-title">소통</h2>
   <ul class="protectorCommunity-communicate-tabMenu">
-<!--    <li><a href="/protector/protectorCommunity-announce.html">공지</a></li>-->
-<!--    <li><a href="/protector/protectorCommunity-communicateMain.html">소통</a></li>-->
-<!--    <li><a href="/protector/protectorCommunity-postcriptMain.html">시설후기</a></li>-->
-<!--    <li><a href="/protector/protectorCommunity-questionMain.html">자주하는 질문</a></li>-->
+    <li><a th:href="@{/alheum/community/main}" >공지</a></li>
+    <li><a th:href="@{/alheum/community/commuMain}">소통</a></li>
+    <li><a href="/protector/protectorCommunity-postcriptMain.html">시설후기</a></li>
+    <li><a href="/protector/protectorCommunity-questionMain.html">자주하는 질문</a></li>
   </ul>
   <div class="protectorCommunity-communicate-searchbar">
     <form action="" method="">
@@ -52,20 +52,46 @@
         <span th:text="${commuList.boardCommuNum}"></span>
         <a th:text="${commuList.boardCommuTitle}" th:href="@{/alheum/community/commuDetails(boardCommuNum=${commuList.boardCommuNum})}"></a>
         <span th:text="${commuList.proMemName}"></span>
-        <span th:text="${#temporals.format(commuList.boardCommuDate, 'yy-M-d')}"></span>
+        <span th:text="${commuList.boardCommuDate}"></span>
       </li>
     </ul>
   </div>
   <div class="protectorCommunity-communicate-writeButton">
     <a th:href="@{/alheum/community/commuWrite}">글쓰기</a>
   </div>
-  <div class="protectorCommunity-communicate-pageButton">
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
-    <span>4</span>
-    <span>5</span>
+
+  <!-- 페이징 처리 -->
+  <div class="page-container">
+    <ul class="page-box">
+      <a th:href="@{/alheum/community/commuMain(page=${page.startPage - 1})}" class="page-a" th:if="${page.prev}">
+        <li class="page-num prev"> &lt </li>
+      </a>
+
+      <!--        th:block은 화면에 영향을 주지않는 가짜 태그
+                  타임리프 문법을 사용하기 위해 만들어 쓴다.
+      -->
+      <th:block th:each="i : ${#numbers.sequence(page.startPage, page.endPage)}">
+        <a th:href="@{/alheum/community/commuMain(page=${i})}" class="page-a">
+          <li class="page-num" th:classappend="${i == page.criteria.page ? 'active' : ''}" th:text="${i}"></li>
+        </a>
+      </th:block>
+
+      <a th:href="@{/alheum/community/commuMain(page=${page.endPage + 1})}" class="page-a" th:if="${page.next}">
+        <li class="page-num next"> &gt </li>
+      </a>
+    </ul>
   </div>
+
+
+
+
+<!--  <div class="protectorCommunity-communicate-pageButton">-->
+<!--    <span>1</span>-->
+<!--    <span>2</span>-->
+<!--    <span>3</span>-->
+<!--    <span>4</span>-->
+<!--    <span>5</span>-->
+<!--  </div>-->
 </main>
 
 <footer></footer>

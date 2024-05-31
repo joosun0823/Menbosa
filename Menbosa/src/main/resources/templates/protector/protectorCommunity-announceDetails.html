@@ -30,7 +30,7 @@
       </div>
       <div class="title-bottom">
         <!--        <span>작성자</span>-->
-        <span th:text='${mainDetail.announceDate}'></span>
+        <span th:text='${#temporals.format(mainDetail.announceDate, "yyyy-MM-dd HH:mm")}'></span>
       </div>
     </div>
 

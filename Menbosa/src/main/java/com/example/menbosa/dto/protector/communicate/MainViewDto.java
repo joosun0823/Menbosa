@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter @Setter @ToString
 @NoArgsConstructor
@@ -13,5 +14,5 @@ public class MainViewDto {
     private Long announceNum;
     private String announceTitle;
     private String announceContents;
-    private LocalDate announceDate;
+    private LocalDateTime announceDate;
 }

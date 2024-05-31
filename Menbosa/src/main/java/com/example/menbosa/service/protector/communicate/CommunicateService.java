@@ -1,6 +1,7 @@
 package com.example.menbosa.service.protector.communicate;
 
 import com.example.menbosa.dto.protector.communicate.*;
+import com.example.menbosa.dto.protector.page.Criteria;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -10,6 +11,16 @@ import java.util.List;
 
 @Service
 public interface CommunicateService {
+    //    공지 목록 조회
+    List<MainListDto> findAll();
+
+    //    공지 상세글 조회
+    MainViewDto findByNum(Long announceNum);
+
+    //    공지 페이징 처리
+    List<MainListDto> findAllPageAnno(Criteria criteria);
+    int findTotalAnno();
+
     //    소통 게시글 목록
     List<CommuListDto> selectCommuList();
 
@@ -33,9 +44,9 @@ public interface CommunicateService {
     void removeCommu(Long boardCommuNum);
 
 
-    List<MainListDto> findAll();
+    // 소통 페이징 처리
+    List<CommuListDto> findAllPage(Criteria criteria);
 
-    MainViewDto findByNum(Long announceNum);
-
+    int findTotal();
 
 }

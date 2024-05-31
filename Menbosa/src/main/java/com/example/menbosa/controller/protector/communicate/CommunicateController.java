@@ -1,6 +1,8 @@
 package com.example.menbosa.controller.protector.communicate;
 
 import com.example.menbosa.dto.protector.communicate.*;
+import com.example.menbosa.dto.protector.page.Criteria;
+import com.example.menbosa.dto.protector.page.Page;
 import com.example.menbosa.service.protector.communicate.CommunicateService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,17 +19,25 @@ import java.util.List;
 @RequestMapping("/alheum/community")
 public class CommunicateController {
 
-        private final CommunicateService communicateService;
+    private final CommunicateService communicateService;
 
-        public CommunicateController(CommunicateService communicateService) {
-        this.communicateService = communicateService;
-        }
+    public CommunicateController(CommunicateService communicateService) {
+    this.communicateService = communicateService;
+    }
 
     // 공지 목록 페이지
     @GetMapping("/main")
-    public String commuAnnounce(Model model){
-        List<MainListDto> mainList = communicateService.findAll();
+    public String commuAnnounce(Model model, Criteria criteria){
+//        List<MainListDto> mainList = communicateService.findAll();
+//        model.addAttribute("mainList", mainList);
+
+        List<MainListDto> mainList = communicateService.findAllPageAnno(criteria);
+        int total = communicateService.findTotalAnno();
+        Page page = new Page(criteria, total);
+
         model.addAttribute("mainList", mainList);
+        model.addAttribute("page", page);
+
         return "protector/protectorCommunity-announce";
     }
 
@@ -40,12 +51,19 @@ public class CommunicateController {
 
         // 소통 목록 페이지
         @GetMapping("/commuMain")
-        public String commuMain(Model model) {
-            List<CommuListDto> commuList = communicateService.selectCommuList();
+        public String commuMain(Model model, Criteria criteria) {
+//            List<CommuListDto> commuList = communicateService.selectCommuList();
+
+            List<CommuListDto> commuList = communicateService.findAllPage(criteria);
+            int total = communicateService.findTotal();
+            Page page = new Page(criteria, total);
+
             model.addAttribute("commuList", commuList);
+            model.addAttribute("page", page);
 
             return "protector/protectorCommunity-communicateMain";
         }
+
 
         // 소통 글쓰기 페이지
         @GetMapping("/commuWrite")
@@ -112,5 +130,12 @@ public class CommunicateController {
             redirectAttributes.addFlashAttribute("boardCommuNum", boardCommuNum);
 
             return "redirect:/alheum/community/commuDetails?boardCommuNum=" + boardCommuNum;
+        }
+
+
+        @GetMapping("/commuRemove")
+        public RedirectView commuRemove(Long boardCommuNum){
+            communicateService.removeCommu(boardCommuNum);
+            return new RedirectView("/alheum/community/commuMain");
         }
 }

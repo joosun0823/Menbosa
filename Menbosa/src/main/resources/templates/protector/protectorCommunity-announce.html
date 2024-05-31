@@ -45,13 +45,31 @@
       </li>
     </ul>
   </div>
-  <div class="protectorCommunity-announce-pageButton">
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
-    <span>4</span>
-    <span>5</span>
+
+  <!-- 페이징 처리 -->
+  <div class="page-container">
+    <ul class="page-box">
+      <a th:href="@{/alheum/community/main(page=${page.startPage - 1})}" class="page-a" th:if="${page.prev}">
+        <li class="page-num prev"> &lt </li>
+      </a>
+      <th:block th:each="i : ${#numbers.sequence(page.startPage, page.endPage)}">
+        <a th:href="@{/alheum/community/main(page=${i})}" class="page-a">
+          <li class="page-num" th:classappend="${i == page.criteria.page ? 'active' : ''}" th:text="${i}"></li>
+        </a>
+      </th:block>
+
+      <a th:href="@{/alheum/community/main(page=${page.endPage + 1})}" class="page-a" th:if="${page.next}">
+        <li class="page-num next"> &gt </li>
+      </a>
+    </ul>
   </div>
+  <!--  <div class="protectorCommunity-announce-pageButton">-->
+  <!--    <span>1</span>-->
+  <!--    <span>2</span>-->
+  <!--    <span>3</span>-->
+  <!--    <span>4</span>-->
+  <!--    <span>5</span>-->
+  <!--  </div>-->
 </main>
 
 <footer></footer>

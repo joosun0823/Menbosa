@@ -78,6 +78,53 @@
 
 
 
+
+
+    <select id="selectAllPage" parameterType="Criteria" resultType="CommuListDto">
+        <![CDATA[
+        SELECT BOARD_COMMU_NUM, BOARD_COMMU_TITLE, BOARD_COMMU_DATE ,PRO_MEM_NAME
+        FROM (
+                 SELECT ROWNUM AS RNUM, BOARD_COMMU_NUM, BOARD_COMMU_TITLE, BOARD_COMMU_DATE ,PRO_MEM_NAME
+                 FROM(
+                         SELECT B.BOARD_COMMU_NUM, B.BOARD_COMMU_TITLE, B.BOARD_COMMU_DATE , U.PRO_MEM_NAME
+                         FROM MBS_BOARD_COMMU B JOIN MBS_PRO_MEMBER U
+                                                     ON B.PRO_MEM_NUM = U.PRO_MEM_NUM
+                         ORDER BY BOARD_COMMU_NUM DESC
+                     )
+                 WHERE ROWNUM <= #{page} * #{amount}
+             )
+        WHERE RNUM > (#{page}-1) * #{amount}
+        ORDER BY BOARD_COMMU_DATE DESC
+        ]]>
+    </select>
+
+    <select id="selectTotal" resultType="int">
+        SELECT COUNT(BOARD_COMMU_NUM) FROM MBS_BOARD_COMMU
+    </select>
+
+
+    <select id="selectAllPageAnno" parameterType="Criteria" resultType="MainListDto">
+        --------------------- 공지 페이징처리 -------------------------------
+        <![CDATA[
+        SELECT ANNOUNCE_NUM, ANNOUNCE_TITLE, ANNOUNCE_DATE
+        FROM (
+                 SELECT ROWNUM AS RNUM, ANNOUNCE_NUM, ANNOUNCE_TITLE, ANNOUNCE_DATE
+                 FROM(
+                         SELECT ANNOUNCE_NUM, ANNOUNCE_TITLE, ANNOUNCE_DATE
+                         FROM MBS_ANNOUNCE
+                         ORDER BY ANNOUNCE_NUM DESC
+                     )
+                 WHERE ROWNUM <= #{page} * #{amount}
+             )
+        WHERE RNUM > (#{page}-1) * #{amount}
+        ORDER BY ANNOUNCE_DATE DESC
+        ]]>
+    </select>
+
+    <select id="selectTotalAnno" resultType="int">
+        SELECT COUNT(ANNOUNCE_NUM) FROM MBS_ANNOUNCE
+    </select>
+
     <!--    <select id="">-->
 <!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 댓글, 대댓글 조회&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 <!--        SELECT-->

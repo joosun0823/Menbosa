@@ -2,6 +2,7 @@ package com.example.menbosa.service.protector.communicate;
 
 
 import com.example.menbosa.dto.protector.communicate.*;
+import com.example.menbosa.dto.protector.page.Criteria;
 import com.example.menbosa.mapper.protector.communicate.CommunicateMapper;
 import com.example.menbosa.mapper.protector.communicate.FileMapper;
 import lombok.RequiredArgsConstructor;
@@ -114,13 +115,37 @@ public class CommunicateServiceImpl implements CommunicateService{
 
     @Override
     public void removeCommu(Long boardCommuNum) {
+        List<FileDto> fileList = fileMapper.selectFile(boardCommuNum);
+        fileMapper.deleteFile(boardCommuNum);
         communicateMapper.deleteCommu(boardCommuNum);
+
+        for (FileDto file : fileList) {
+            File target = new File(fileDir, file.getFileExt() + "/" + file.getFileServer() + "_" + file.getFileUser());
+
+            if(target.exists()){
+                target.delete();
+            }
+        }
+
     }
 
     private String getUploadPath() {
         return new SimpleDateFormat("yyyy/MM/dd").format(new Date());
     }
 
+    // 소통 페이징처리
+    @Override
+    public List<CommuListDto> findAllPage(Criteria criteria) {
+        return communicateMapper.selectAllPage(criteria);
+    }
+
+    @Override
+    public int findTotal() {
+        return communicateMapper.selectTotal();
+    }
+
+
+    //    공지
     @Override
     public List<MainListDto> findAll() {
         return communicateMapper.selectMain();
@@ -131,5 +156,12 @@ public class CommunicateServiceImpl implements CommunicateService{
         return communicateMapper.selectByNum(announceNum);
     }
 
+    @Override
+    public List<MainListDto> findAllPageAnno(Criteria criteria) { return communicateMapper.selectAllPageAnno(criteria); }
+
+    @Override
+    public int findTotalAnno() {
+        return communicateMapper.selectTotalAnno();
+    }
 
 }

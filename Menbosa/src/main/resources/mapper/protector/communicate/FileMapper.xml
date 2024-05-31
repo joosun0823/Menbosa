@@ -13,4 +13,10 @@
         DELETE FROM MBS_FILE
         WHERE BOARD_COMMU_NUM = #{boardCommuNum}
     </delete>
+
+    <select id="selectFile" parameterType="Long" resultType="FileDto">
+        SELECT FILE_NUM, FILE_USER, FILE_SERVER, FILE_EXT, BOARD_COMMU_NUM
+        FROM MBS_FILE
+        WHERE BOARD_COMMU_NUM = #{boardCommuNum}
+    </select>
 </mapper>

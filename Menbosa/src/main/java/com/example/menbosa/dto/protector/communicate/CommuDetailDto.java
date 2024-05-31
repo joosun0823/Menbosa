@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter @Setter @ToString
 @NoArgsConstructor
@@ -14,7 +15,7 @@ public class CommuDetailDto {
     private Long boardCommuNum;
     private String boardCommuTitle;
     private String boardCommuContents;
-    private LocalDate boardCommuDate;
+    private LocalDateTime boardCommuDate;
     private String proMemName;
     private String fileUser;
 }
