@@ -28,4 +28,6 @@ public interface MypageService {
     boolean selectFindEmail(String proMemEmail);
 
     void updateOnlyEmail(String proMemEmail, long proMemNum);
+
+    void deleteProMem(long proMemNum);
 }

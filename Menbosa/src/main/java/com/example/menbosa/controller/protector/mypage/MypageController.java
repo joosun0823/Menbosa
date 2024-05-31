@@ -26,6 +26,13 @@ public class MypageController {
         return new RedirectView("/alheum/user");
     }
 
+    @GetMapping("/leave")
+    public RedirectView leave(@SessionAttribute("proMemNum")long proMemNum, HttpSession session){
+        mypageService.deleteProMem(proMemNum);
+        session.invalidate();
+        return new RedirectView("/alheum/user");
+    }
+
     //   메인 마이페이지 화면
     //   TODO 임의의 값 600설정
     @GetMapping
@@ -43,18 +50,23 @@ public class MypageController {
     //  마이페이지 시니어 상세보기
     //     TODO 임의의값 600
     @GetMapping("/seninfo")
-    public String mypageSenInfo(Model model
-//                                ,@RequestParam("senMemNum")long boardInquNum
-    ) {
-        ProMypageSenDetailsDTO MySenDetails = mypageService.selectMySenDetails(600);
+    public String mypageSenInfo(Model model, @RequestParam("senMemNum")long senMemNum) {
+        ProMypageSenDetailsDTO MySenDetails = mypageService.selectMySenDetails(senMemNum);
         model.addAttribute("MySenDetails", MySenDetails);
         return "/protector/protectorMypage-seniorDetails";
+    }
+
+    // 시니어 연결 해제
+    @GetMapping("/deleteSenMem")
+    public RedirectView mypageSenConnectDelete(@RequestParam("senMemNum")long senMemNum){
+        mypageService.updateSenAddClear(senMemNum);
+        return new RedirectView("/alheum/mypage");
     }
 
     //  검증페이지
     @PostMapping("/check")
     public String mypageCheck(Model model, String password
-                            //세션
+//            ,@SessionAttribute("proMemNum")long proMemNum
                             ) {
         String passwordDb = mypageService.selectCheckPassword(600);
         return passwordDb.equals(password)? "redirect:modify" : "redirect:check";
@@ -68,7 +80,9 @@ public class MypageController {
     //    개인정보 수정 페이지
     //    TODO 임의의 값 600
     @GetMapping("/modify")
-    public String mypageModify(Model model) {
+    public String mypageModify(Model model
+//                            ,@SessionAttribute("proMemNum")long proMemNum
+    ) {
         ProMypageInfoDTO MyInfo = mypageService.selectMyInfo(600);
         model.addAttribute("MyInfo", MyInfo);
         return "/protector/protectorMypage-modify";
@@ -77,8 +91,8 @@ public class MypageController {
     @PostMapping("/modify")
     public String mypageModify(
 //            @SessionAttribute("proMemNum") long proMemNum,
-            ProMypageModifyDTO proMypageModifyDTO
-    ) {
+            ProMypageModifyDTO proMypageModifyDTO) {
+
         proMypageModifyDTO.setProMemNum(600);
 
         try {
@@ -126,5 +140,6 @@ public class MypageController {
         }
         return "redirect:/alheum/mypage";
     }
+
 
 }

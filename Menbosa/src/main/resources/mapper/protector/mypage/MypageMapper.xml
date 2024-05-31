@@ -135,10 +135,10 @@
 <!--        WHERE BOARD_RECOM_NUM = #{boardRecomNum}-->
 <!--    </delete>-->
 
-<!--    <delete id="">-->
-<!--        -&#45;&#45; [ ]  **DELETE**보호자계정삭제-->
-<!--        DELETE-->
-<!--        FROM MBS_PRO_MEMBER-->
-<!--        WHERE PRO_MEM_NUM = #{proMemNum}-->
-<!--    </delete>-->
+    <delete id="deleteProMem" parameterType="long">
+        --- [ ]  **DELETE**보호자계정삭제
+        DELETE
+        FROM MBS_PRO_MEMBER
+        WHERE PRO_MEM_NUM = #{proMemNum}
+    </delete>
 </mapper>

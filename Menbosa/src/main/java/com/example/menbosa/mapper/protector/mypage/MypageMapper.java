@@ -31,4 +31,6 @@ public interface MypageMapper {
     String selectFindEmail(String proMemEmail);
 
     void updateOnlyEmail(String proMemEmail, String proMemNumString);
+
+    void deleteProMem(long proMemNum);
 }
