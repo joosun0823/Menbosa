@@ -11,14 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- announce CSS -->
   <link rel="stylesheet" href="/css/protectorCommunity-announce.css">
-  <!-- fetch -->
-  <script defer src="/js/headerMember.js"></script>
-  <script defer src="/js/footer.js"></script>
-  <link rel="stylesheet" href="/css/headerMember.css">
-  <link rel="stylesheet" href="/css/footer.css">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
-<header></header>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
 
 <main>
   <h2 class="protectorCommunity-announce-title">공지</h2>
@@ -72,6 +72,6 @@
   <!--  </div>-->
 </main>
 
-<footer></footer>
+<footer th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>

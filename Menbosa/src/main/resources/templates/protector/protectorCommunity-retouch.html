@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="/css/protectorCommunity-retouch.css">
   <!-- retouch JS -->
   <script defer src="/js/protectorCommunity-retouch.js"></script>
-  <!-- fetch -->
-  <script defer src="/js/headerMember.js"></script>
-  <script defer src="/js/footer.js"></script>
-  <link rel="stylesheet" href="/css/headerMember.css">
-  <link rel="stylesheet" href="./css/footer.css">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
-  <header></header>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
 
   <main>
     <h2>수정하기</h2>
@@ -42,6 +42,6 @@
     </form>
   </main>
 
-  <footer></footer>
+<footer th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>
