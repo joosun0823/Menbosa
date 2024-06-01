@@ -21,8 +21,8 @@ public class InquiryController {
     //    1:1문의
     // TODO 600
     @GetMapping
-    public String mypageInquiry(Model model) {
-        List<ProInqDTO> proInqList = inquiryService.selectProInq(600);
+    public String mypageInquiry(Model model, @SessionAttribute("proMemNum")Long proMemNum) {
+        List<ProInqDTO> proInqList = inquiryService.selectProInq(proMemNum);
         model.addAttribute("proInqList", proInqList);
         return "/protector/protectorMypage-inquiryList";
     }
@@ -30,8 +30,8 @@ public class InquiryController {
     // TODO 600
     @GetMapping("/details")
     public String mypageInquiryDetails(Model model,
-                                       @RequestParam("boardInquNum")long boardInquNum) {
-        ProInqDetailsDTO proInqDetails = inquiryService.selectProInqDetails(600,boardInquNum);
+                                       @RequestParam("boardInquNum")long boardInquNum, @SessionAttribute("proMemNum")Long proMemNum) {
+        ProInqDetailsDTO proInqDetails = inquiryService.selectProInqDetails(proMemNum,boardInquNum);
         model.addAttribute("proInqDetails", proInqDetails);
         return "/protector/protectorMypage-inquiryDetails";
     }
@@ -43,10 +43,9 @@ public class InquiryController {
 
     @PostMapping("/write")
     public String mypageInquiryWrite(
-//            @SessionAttribute("proMemNum") long senMemNum,
-            ProInqDetailsDTO proInqDetailsDTO, RedirectAttributes redirectAttributes
-    ){
-        proInqDetailsDTO.setProMemNum(600);
+            @SessionAttribute("proMemNum") Long proMemNum,
+            ProInqDetailsDTO proInqDetailsDTO){
+        proInqDetailsDTO.setProMemNum(proMemNum);
         inquiryService.insertInqu(proInqDetailsDTO);
         return "redirect:/alheum/inquiry";
     }

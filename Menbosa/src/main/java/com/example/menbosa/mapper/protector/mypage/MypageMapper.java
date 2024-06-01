@@ -8,29 +8,29 @@ import java.util.Optional;
 
 @Mapper
 public interface MypageMapper {
-    List<ProMypageResultDTO> selectMyResult(long proMemNum);
+    List<ProMypageResultDTO> selectMyResult(Long proMemNum);
 
-    List<ProMypageSenInfoDTO> selectMySenInfo(long proMemNum);
+    List<ProMypageSenInfoDTO> selectMySenInfo(Long proMemNum);
 
-    List<ProMypageBoardDTO> selectMyBoard(long proMemNum);
+    List<ProMypageBoardDTO> selectMyBoard(Long proMemNum);
 
-    ProMypageInfoDTO selectMyInfo(long proMemNum);
+    ProMypageInfoDTO selectMyInfo(Long proMemNum);
 
-    ProMypageSenDetailsDTO selectMySenDetails(long senMemNum);
+    ProMypageSenDetailsDTO selectMySenDetails(Long senMemNum);
 
     void updateMyModify(ProMypageModifyDTO proMypageModifyDTO);
 
     void updateSenAddNew(ProMypageSenConnecDTO proMypageSenConnecDTO);
 
-    void updateSenAddClear(long senMemNum);
+    void updateSenAddClear(Long senMemNum);
 
     Optional<Long> selectFindSenMem(ProMypageFindSenDTO proMypageFindSenDTO);
 
-    Optional<String> selectCheckPassword(long proMemNum);
+    Optional<String> selectCheckPassword(Long proMemNum);
 
     String selectFindEmail(String proMemEmail);
 
     void updateOnlyEmail(String proMemEmail, String proMemNumString);
 
-    void deleteProMem(long proMemNum);
+    void deleteProMem(Long proMemNum);
 }
