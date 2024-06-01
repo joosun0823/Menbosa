@@ -172,6 +172,7 @@ article{
 .mypage-state-good{background-color: #27AAE1;}
 .mypage-state-mid{background-color: #F7941D;}
 .mypage-state-bad{background-color: #EF4136;}
+.mypage-state-not{background-color: var(--font-lightgrey);}
 
 .mypage-table{
   border-collapse: collapse;
