@@ -107,11 +107,33 @@ menus.forEach(function(menu){
   });
 
 //삭제 confirm
-let $menudelete_1 = $(".protectorMypage-mycontents-clickmenu .mypage-import");
-let menudelete_1_value = false;
-$menudelete_1.on('click',()=>{
-  menudelete_1_value = confirm("게시물을 삭제하시겠습니까?")
+// let $menudelete_1 = $(".protectorMypage-mycontents-clickmenu .mypage-import");
+// let menudelete_1_value = false;
+// $menudelete_1.on('click',()=>{
+//   menudelete_1_value = confirm("게시물을 삭제하시겠습니까?")
+// });
+
+let deleteBoard = document.getElementsByClassName("deleteBoard");
+let deleteBoard_value = false;
+Array.from(deleteBoard).forEach(function(board){
+  board.addEventListener('click',()=>{
+    deleteBoard_value = confirm("정말 삭제하시겠습니까?");
+    let division = board.dataset.division;
+    if(deleteBoard_value){
+      switch (division){
+              case '100' :
+                alert("소통");
+          // location.href = `/alheum/mypage/deleteSenMem?senMemNum=${division}`;
+                      break;
+              case '200' :
+                alert("시설후기");
+          // location.href = `/alheum/mypage/deleteSenMem?senMemNum=${division}`;
+                      break;
+      }
+    }
+  });
 });
+
 
 // ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -135,11 +157,18 @@ $clickmenu_2.on('mouseleave',()=>{
   $clickmenu_2.css("visibility", "hidden");
 });
 
-//삭제 confirm
-let $menudelete_2 = $(".protectorMypage-seniorinfo-clickmenu .mypage-import");
-let menudelete_2_value = false;
-$menudelete_2.on('click',()=>{
-  menudelete_2_value = confirm("등록을 해제하시겠습니까?")
+//연결해제 confirm
+let disConnect = document.getElementsByClassName("seniorinfo-warning");
+let disConnect_value = false;
+Array.from(disConnect).forEach(function(menu){
+  menu.addEventListener('click',()=>{
+    disConnect_value = confirm("정말 연결을 해제하시겠습니까?");
+    let user = menu.dataset.user;
+    if(disConnect_value){
+      location.href = `/alheum/mypage/deleteSenMem?senMemNum=${user}`;
+    }
+  });
 });
+
 
 ///////////////////////////////////////////////////////////////

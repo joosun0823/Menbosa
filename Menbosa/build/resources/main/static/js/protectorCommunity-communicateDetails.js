@@ -45,15 +45,27 @@ replyButton.forEach((e,i) => {
   })
 })
 
-
-const detailDelete = document.querySelector(".menuButton-modifyDelete > li:nth-of-type(2)");
-detailDelete.addEventListener("click", function(){
-  confirm("삭제하시겠습니까?")
-})
-
 const commentDelete = document.querySelectorAll(".comments-list-submenu > li:nth-of-type(2)");
 commentDelete.forEach((e,i) => {
   e.addEventListener("click", ()=>{
     confirm("삭제하시겠습니까?")
   })
+})
+
+
+let $modifyBtn = document.querySelector('.modifyButtn');
+
+$modifyBtn?.addEventListener("click", function () {
+  let boardCommuNum = this.dataset.id;
+  console.log(boardCommuNum)
+  location.href = `/alheum/community/commuModify?boardCommuNum=${boardCommuNum}`;
+});
+
+let $removeBtn = document.querySelector('.deleteButtn');
+
+$removeBtn?.addEventListener("click", function (){
+  let boardCommuNum = this.dataset.id;
+  if(confirm("삭제하시겠습니까?")){
+    location.href = `/alheum/community/commuRemove?boardCommuNum=${boardCommuNum}`;
+  }
 })

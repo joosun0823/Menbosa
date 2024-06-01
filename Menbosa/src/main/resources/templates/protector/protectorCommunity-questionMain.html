@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="./../../static/css/protectorCommunity-questionMain.css">
   <!-- questionMain JS -->
   <script defer src="./../../static/js/protectorCommunity-questionMain.js"></script>
-  <!-- fetch -->
-  <script defer src="./../../static/js/headerMember.js"></script>
-  <script defer src="./../../static/js/footer.js"></script>
-  <link rel="stylesheet" href="./../../static/css/headerMember.css">
-  <link rel="stylesheet" href="./../../static/css/footer.css">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
-  <header></header>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
 
   <main>
     <h2 class="protectorCommunity-question-title">자주하는 질문</h2>
@@ -98,6 +98,6 @@
     </ul>
   </main>
 
-  <footer></footer>
+<footer th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>
