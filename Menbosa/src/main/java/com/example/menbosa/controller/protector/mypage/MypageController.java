@@ -23,23 +23,23 @@ public class MypageController {
     @GetMapping("/logout")
     public RedirectView logout(HttpSession session){
         session.invalidate();
-        return new RedirectView("/alheum/user/login");
+        return new RedirectView("/alheum/user");
     }
 
     @GetMapping("/leave")
-    public RedirectView leave(@SessionAttribute("proMemNum")Long proMemNum, HttpSession session){
+    public RedirectView leave(@SessionAttribute("proMemNum")long proMemNum, HttpSession session){
         mypageService.deleteProMem(proMemNum);
         session.invalidate();
-        return new RedirectView("/alheum/user/login");
+        return new RedirectView("/alheum/user");
     }
 
     //   메인 마이페이지 화면
     //   TODO 임의의 값 600설정
     @GetMapping
-    public String mypage(@SessionAttribute("proMemNum")Long proMemNum,Model model) {
-        List<ProMypageResultDTO> MyResultList = mypageService.selectMyResult(proMemNum);
-        List<ProMypageSenInfoDTO> MySenInfoList = mypageService.selectMySenInfo(proMemNum);
-        List<ProMypageBoardDTO> MyBoardList = mypageService.selectMyBoard(proMemNum);
+    public String mypage(Model model) {
+        List<ProMypageResultDTO> MyResultList = mypageService.selectMyResult(600);
+        List<ProMypageSenInfoDTO> MySenInfoList = mypageService.selectMySenInfo(600);
+        List<ProMypageBoardDTO> MyBoardList = mypageService.selectMyBoard(600);
 
         model.addAttribute("MyResultList", MyResultList);
         model.addAttribute("MySenInfoList", MySenInfoList);
@@ -50,7 +50,7 @@ public class MypageController {
     //  마이페이지 시니어 상세보기
     //     TODO 임의의값 600
     @GetMapping("/seninfo")
-    public String mypageSenInfo(Model model, @RequestParam("senMemNum")Long senMemNum) {
+    public String mypageSenInfo(Model model, @RequestParam("senMemNum")long senMemNum) {
         ProMypageSenDetailsDTO MySenDetails = mypageService.selectMySenDetails(senMemNum);
         model.addAttribute("MySenDetails", MySenDetails);
         return "/protector/protectorMypage-seniorDetails";
@@ -58,15 +58,17 @@ public class MypageController {
 
     // 시니어 연결 해제
     @GetMapping("/deleteSenMem")
-    public RedirectView mypageSenConnectDelete(@RequestParam("senMemNum")Long senMemNum){
+    public RedirectView mypageSenConnectDelete(@RequestParam("senMemNum")long senMemNum){
         mypageService.updateSenAddClear(senMemNum);
         return new RedirectView("/alheum/mypage");
     }
 
     //  검증페이지
     @PostMapping("/check")
-    public String mypageCheck(Model model, String password ,@SessionAttribute("proMemNum")Long proMemNum ) {
-        String passwordDb = mypageService.selectCheckPassword(proMemNum);
+    public String mypageCheck(Model model, String password
+//            ,@SessionAttribute("proMemNum")long proMemNum
+                            ) {
+        String passwordDb = mypageService.selectCheckPassword(600);
         return passwordDb.equals(password)? "redirect:modify" : "redirect:check";
     }
 
@@ -78,19 +80,23 @@ public class MypageController {
     //    개인정보 수정 페이지
     //    TODO 임의의 값 600
     @GetMapping("/modify")
-    public String mypageModify(Model model ,@SessionAttribute("proMemNum")Long proMemNum) {
-        ProMypageInfoDTO MyInfo = mypageService.selectMyInfo(proMemNum);
+    public String mypageModify(Model model
+//                            ,@SessionAttribute("proMemNum")long proMemNum
+    ) {
+        ProMypageInfoDTO MyInfo = mypageService.selectMyInfo(600);
         model.addAttribute("MyInfo", MyInfo);
         return "/protector/protectorMypage-modify";
     }
 
     @PostMapping("/modify")
-    public String mypageModify( @SessionAttribute("proMemNum") Long proMemNum, ProMypageModifyDTO proMypageModifyDTO) {
+    public String mypageModify(
+//            @SessionAttribute("proMemNum") long proMemNum,
+            ProMypageModifyDTO proMypageModifyDTO) {
 
-        proMypageModifyDTO.setProMemNum(proMemNum);
+        proMypageModifyDTO.setProMemNum(600);
 
         try {
-            if (!proMypageModifyDTO.getProMemEmail().equals(mypageService.selectMyInfo(proMemNum).getProMemEmail())) {
+            if (!proMypageModifyDTO.getProMemEmail().equals(mypageService.selectMyInfo(600).getProMemEmail())) {
                 //이메일이 수정되었으니 검증 진행
                 if (mypageService.selectFindEmail(proMypageModifyDTO.getProMemEmail())) {
                     //이미 db에 있는 이메일이다
@@ -100,7 +106,7 @@ public class MypageController {
 
             if (proMypageModifyDTO.getProMemPassword().isEmpty()) {
                 // 비밀번호가 비어있다면 이메일만 저장
-                mypageService.updateOnlyEmail(proMypageModifyDTO.getProMemEmail(), proMemNum);
+                mypageService.updateOnlyEmail(proMypageModifyDTO.getProMemEmail(), 600);
             } else {
                 //이메일이 수정되지 않음 또는 수정 가능한 이메일
                 mypageService.updateMyModify(proMypageModifyDTO);
@@ -120,12 +126,12 @@ public class MypageController {
 
     @PostMapping("/seniorAdd")
     public String mypageSeniorAdd(
-            @SessionAttribute("proMemNum") Long proMemNum,
+//            @SessionAttribute("proMemNum") long proMemNum
             ProMypageFindSenDTO proMypageFindSenDTO
     ){
         try {
             proMypageSenConnecDTO.setSenMemNum(mypageService.selectFindSenMem(proMypageFindSenDTO));
-            proMypageSenConnecDTO.setProMemNum(proMemNum);
+            proMypageSenConnecDTO.setProMemNum(600);
 
             mypageService.updateSenAddNew(proMypageSenConnecDTO);
             System.out.println("연결완료");
