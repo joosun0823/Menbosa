@@ -5,29 +5,29 @@ import com.example.menbosa.dto.protector.mypage.*;
 import java.util.List;
 
 public interface MypageService {
-    List<ProMypageResultDTO> selectMyResult(long proMemNum);
+    List<ProMypageResultDTO> selectMyResult(Long proMemNum);
 
-    List<ProMypageSenInfoDTO> selectMySenInfo(long proMemNum);
+    List<ProMypageSenInfoDTO> selectMySenInfo(Long proMemNum);
 
-    List<ProMypageBoardDTO> selectMyBoard(long proMemNum);
+    List<ProMypageBoardDTO> selectMyBoard(Long proMemNum);
 
-    ProMypageInfoDTO selectMyInfo(long proMemNum);
+    ProMypageInfoDTO selectMyInfo(Long proMemNum);
 
-    ProMypageSenDetailsDTO selectMySenDetails(long senMemNum);
+    ProMypageSenDetailsDTO selectMySenDetails(Long senMemNum);
 
     void updateMyModify(ProMypageModifyDTO proMypageModifyDTO);
 
     void updateSenAddNew(ProMypageSenConnecDTO proMypageSenConnecDTO);
 
-    void updateSenAddClear(long senMemNum);
+    void updateSenAddClear(Long senMemNum);
 
     Long selectFindSenMem(ProMypageFindSenDTO proMypageFindSenDTO);
 
-    String selectCheckPassword(long proMemNum);
+    String selectCheckPassword(Long proMemNum);
 
     boolean selectFindEmail(String proMemEmail);
 
-    void updateOnlyEmail(String proMemEmail, long proMemNum);
+    void updateOnlyEmail(String proMemEmail, Long proMemNum);
 
-    void deleteProMem(long proMemNum);
+    void deleteProMem(Long proMemNum);
 }

@@ -8,9 +8,9 @@ import java.util.List;
 
 @Mapper
 public interface InquiryMapper {
-    List<ProInqDTO> selectProInq(long proMemNum);
+    List<ProInqDTO> selectProInq(Long proMemNum);
 
-    ProInqDetailsDTO selectProInqDetails(long proMemNum, long boardInquNum);
+    ProInqDetailsDTO selectProInqDetails(Long proMemNum, Long boardInquNum);
 
     void insertInqu(ProInqDetailsDTO proInqDetailsDTO);
 }
