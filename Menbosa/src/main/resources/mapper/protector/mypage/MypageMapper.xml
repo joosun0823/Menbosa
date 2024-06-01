@@ -86,7 +86,7 @@
         WHERE PRO_MEM_NUM = #{proMemNumString}
     </update>
 
-    <select id="selectCheckPassword" parameterType="long" resultType="String">
+    <select id="selectCheckPassword" parameterType="Long" resultType="String">
         --- [ ]  **SELECT**비밀번호 유효성검사 셀렉트
         SELECT PRO_MEM_PASSWORD
         FROM MBS_PRO_MEMBER mpm
@@ -115,7 +115,7 @@
         WHERE SEN_MEM_NUM = #{senMemNum}
     </update>
 
-    <update id="updateSenAddClear" parameterType="long">
+    <update id="updateSenAddClear" parameterType="Long">
         --- [ ]  **UPDATE**시니어 연결 삭제
         UPDATE MBS_SEN_MEMBER
         SET PRO_MEM_NUM = NULL
@@ -135,7 +135,7 @@
 <!--        WHERE BOARD_RECOM_NUM = #{boardRecomNum}-->
 <!--    </delete>-->
 
-    <delete id="deleteProMem" parameterType="long">
+    <delete id="deleteProMem" parameterType="Long">
         --- [ ]  **DELETE**보호자계정삭제
         DELETE
         FROM MBS_PRO_MEMBER

@@ -15,12 +15,12 @@ public class InquiryServiceimpl implements InquiryService{
     private final InquiryMapper inquiryMapper;
 
     @Override
-    public List<ProInqDTO> selectProInq(long proMemNum) {
+    public List<ProInqDTO> selectProInq(Long proMemNum) {
         return inquiryMapper.selectProInq(proMemNum);
     }
 
     @Override
-    public ProInqDetailsDTO selectProInqDetails(long proMemNum, long boardInquNum) {
+    public ProInqDetailsDTO selectProInqDetails(Long proMemNum, Long boardInquNum) {
         return inquiryMapper.selectProInqDetails(proMemNum, boardInquNum);
     }
 

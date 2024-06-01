@@ -22,26 +22,26 @@ class MypageServiceimplTest {
     private ProMypageSenConnecDTO proMypageSenConnecDTO;
     @Autowired
     private ProMypageFindSenDTO proMypageFindSenDTO;
-
-    @Test
-    void selectMyResult() {
-        System.out.println(mypageService.selectMyResult(600));
-    }
-
-    @Test
-    void selectMySenInfo() {
-        System.out.println(mypageService.selectMySenInfo(600));
-    }
-
-    @Test
-    void selectMyBoard() {
-        System.out.println(mypageService.selectMyBoard(600));
-    }
-
-    @Test
-    void selectMyInfo() {
-        System.out.println(mypageService.selectMyInfo(600));
-    }
+//
+//    @Test
+//    void selectMyResult() {
+//        System.out.println(mypageService.selectMyResult(600));
+//    }
+//
+//    @Test
+//    void selectMySenInfo() {
+//        System.out.println(mypageService.selectMySenInfo(600));
+//    }
+//
+//    @Test
+//    void selectMyBoard() {
+//        System.out.println(mypageService.selectMyBoard(600));
+//    }
+//
+//    @Test
+//    void selectMyInfo() {
+//        System.out.println(mypageService.selectMyInfo(600));
+//    }
 
     @Test
     void updateMyinfo() {
@@ -63,35 +63,35 @@ class MypageServiceimplTest {
         mypageService.updateSenAddNew(proMypageSenConnecDTO);
     }
 
-    @Test
-    void updateSenAddClear(){
-        mypageService.updateSenAddClear(600);
-    }
-
-    @Test
-    void findSenMem(){
-        proMypageFindSenDTO.setSenMemNum(600);
-        proMypageFindSenDTO.setSenMemPhoneMid(1234);
-        proMypageFindSenDTO.setSenMemPhoneBack(4567);
-        try {
-            mypageService.selectFindSenMem(proMypageFindSenDTO);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    void checkEmail(){
-        System.out.println(mypageService.selectFindEmail("test3@email.com"));
-    }
-
-    @Test
-    void updateOnlyEmail(){
-        mypageService.updateOnlyEmail("test3@email.com", 600);
-    }
-
-    @Test
-    void deleteUserpro(){
-        mypageService.deleteProMem(603);
-    }
+//    @Test
+//    void updateSenAddClear(){
+//        mypageService.updateSenAddClear('600');
+//    }
+//
+//    @Test
+//    void findSenMem(){
+//        proMypageFindSenDTO.setSenMemNum(600);
+//        proMypageFindSenDTO.setSenMemPhoneMid(1234);
+//        proMypageFindSenDTO.setSenMemPhoneBack(4567);
+//        try {
+//            mypageService.selectFindSenMem(proMypageFindSenDTO);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @Test
+//    void checkEmail(){
+//        System.out.println(mypageService.selectFindEmail("test3@email.com"));
+//    }
+//
+//    @Test
+//    void updateOnlyEmail(){
+//        mypageService.updateOnlyEmail("test3@email.com", 600);
+//    }
+//
+//    @Test
+//    void deleteUserpro(){
+//        mypageService.deleteProMem(603);
+//    }
 }

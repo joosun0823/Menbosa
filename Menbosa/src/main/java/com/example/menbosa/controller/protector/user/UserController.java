@@ -51,9 +51,12 @@ public class UserController {
     public String findPassword() {
         return "/protector/protectorPassword-find";
     }
+<<<<<<< HEAD
 
     @GetMapping("/mypage")
     public String mypage() {
         return "/protector/protectorMypage-main";
     }
+=======
+>>>>>>> 36fa3ca8d0e6ac5254265f94b83fb95efc1e1049
 }
