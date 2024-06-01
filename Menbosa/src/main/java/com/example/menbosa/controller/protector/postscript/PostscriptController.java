@@ -12,6 +12,8 @@ public class PostscriptController {
 //    @GetMapping("postWrite")
 //    @GetMapping("postDetails")
 //    @GetMapping("postModify")
+//    안녕하세요
+    
 
 
 }
