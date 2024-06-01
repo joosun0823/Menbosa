@@ -1,3 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.menbosa.mapper.protector.postscript.PostScriptMapper"></mapper>
+<mapper namespace="com.example.menbosa.mapper.protector.postscript.PostScriptMapper">
+    <insert id="insertPost" parameterType="PostWriteDTO">
+        <selectKey keyProperty="boardRecomNum" resultType="Long" order="BEFORE">
+            SELECT SEQ_BOARD_RECOM.nextVal FROM DUAL
+        </selectKey>
+        INSERT INTO MBS_BOARD_RECOM(
+            BOARD_RECOM_NUM,
+            BOARD_RECOM_TITLE,
+            BOARD_RECOM_CONTENTS,
+            BOARD_RECOM_DATE,
+            PRO_MEM_NUM
+                                    )
+        VALUES(
+            #{boardRecomNum},
+            #{boardRecomTitle},
+            #{boardRecomContents},
+            #{boardRecomDate},
+            #{ProMemNum}
+        )
+    </insert>
+    
+    <delete id="deletePost" parameterType="Long">
+        DELETE FROM MBS_BOARD_RECOM
+        WHERE BOARD_RECOM_NUM = #{boardRecomNum}
+    </delete>
+    
+    <update id="updatePost" parameterType="PostUpdateDTO">
+        UPDATE MBS_BOARD_RECOM
+        SET BOARD_RECOM_NUM = #{boardRecomNum},
+            BOARD_RECOM_TITLE = #{boardRecomTitle},
+            BOARD_RECOM_CONTENTS = #{boardRecomContents},
+            BOARD_RECOM_DATE = #{boardRecomDate},
+            PRO_MEM_NUM = #{ProMemNum}
+        WHERE BOARD_RECOM_NUM = #{boardRecomNum}
+    </update>
+
+    <select id="selectPostNum" parameterType="Long" resultType="PostViewDTO">
+        SELECT BOARD_RECOM_NUM,
+               BOARD_RECOM_TITLE,
+               BOARD_RECOM_CONTENTS,
+               BOARD_RECOM_DATE,
+               P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
+               P.PRO_MEM_NUM
+        FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEM P
+        ON B.BOARD_RECOM_NUM = #{boardRecomNum} AND B.PRO_MEM_NUM = P.PRO_MEM_NUM
+    </select>
+
+    <select id="selectALL" resultType="PostListDTO">
+        SELECT BOARD_RECOM_NUM,
+               BOARD_RECOM_TITLE,
+               P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
+        FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEM P
+        ON B.PRO_MEM_NUM = P.PRO_MEM_NUM
+        ORDER BY BOARD_RECOM_NUM DESC
+    </select>
+
+    <select id="selectPostALL" parameterType="Criteria" resultType="PostListDTO">
+        <![CDATA[
+        SELECT BOARD_RECOM_NUM,
+               BOARD_RECOM_TITLE,
+               P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
+               IMG_FILE_NUM,
+               IMG_FILE_USER,
+               IMG_FILE_SERVER,
+               IMG_FILE_EXT
+        FROM (
+                 SELECT ROWNUM,
+                        BOARD_RECOM_NUM,
+                        BOARD_RECOM_TITLE,
+                        P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
+                        IMG_FILE_NUM,
+                        IMG_FILE_USER,
+                        IMG_FILE_SERVER,
+                        IMG_FILE_EXT
+                 FROM(
+                         SELECT B.BOARD_RECOM_NUM,
+                                BOARD_RECOM_TITLE,
+                                P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
+                                F.IMG_FILE_NUM,
+                                F.IMG_FILE_USER,
+                                F.IMG_FILE_SERVER,
+                                F.IMG_FILE_EXT
+                         FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEM P
+                         ON B.PRO_MEM_NUM = P.PRO_MEM_NUM
+                         LEFT JOIN (
+                                SELECT FILE_ID, NAME, UPLOAD_PATH, UUID, BOARD_ID
+                                FROM (
+                                      SELECT IMG_FILE_NUM,
+                                             IMG_FILE_USER,
+                                             IMG_FILE_SERVER,
+                                             IMG_FILE_EXT,
+                                             BOARD_RECOM_NUM,
+                                             RANK() OVER(PARTITION BY BOARD_ID ORDER BY FILE_ID) RK
+                                      FROM MBS_IMG_FILE
+                                )
+                                WHERE RK = 1
+                         ) F
+                         ON B.BOARD_RECOM_NUM = F.BOARD_RECOM_NUM
+                         ORDER BY BOARD_RECOM_NUM DESC
+                     )
+                 WHERE ROWNUM <= #{page} * #{amount}
+             )
+        WHERE RNUM > (#{page} - 1) * #{amount}
+        ]]>
+    </select>
+
+    <select id="selectTotal" resultType="int">
+        SELECT COUNT(BOARD_RECOM_NUM) FROM MBS_BOARD_RECOM
+    </select>
+</mapper>
