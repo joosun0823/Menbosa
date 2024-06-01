@@ -30,8 +30,12 @@ public class InquiryController {
     // TODO 600
     @GetMapping("/details")
     public String mypageInquiryDetails(Model model,
+<<<<<<< HEAD
                                        @RequestParam("boardInquNum")Long boardInquNum,
                                        @SessionAttribute("proMemNum")Long proMemNum) {
+=======
+                                       @RequestParam("boardInquNum")long boardInquNum, @SessionAttribute("proMemNum")Long proMemNum) {
+>>>>>>> hjy
         ProInqDetailsDTO proInqDetails = inquiryService.selectProInqDetails(proMemNum,boardInquNum);
         model.addAttribute("proInqDetails", proInqDetails);
         return "/protector/protectorMypage-inquiryDetails";
@@ -44,10 +48,16 @@ public class InquiryController {
 
     @PostMapping("/write")
     public String mypageInquiryWrite(
+<<<<<<< HEAD
             @SessionAttribute("proMemNum") long senMemNum,
             ProInqDetailsDTO proInqDetailsDTO, RedirectAttributes redirectAttributes
     ){
         proInqDetailsDTO.setProMemNum(senMemNum);
+=======
+            @SessionAttribute("proMemNum") Long proMemNum,
+            ProInqDetailsDTO proInqDetailsDTO){
+        proInqDetailsDTO.setProMemNum(proMemNum);
+>>>>>>> hjy
         inquiryService.insertInqu(proInqDetailsDTO);
         return "redirect:/alheum/inquiry";
     }

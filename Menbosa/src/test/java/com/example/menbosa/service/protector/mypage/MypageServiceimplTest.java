@@ -22,7 +22,11 @@ class MypageServiceimplTest {
     private ProMypageSenConnecDTO proMypageSenConnecDTO;
     @Autowired
     private ProMypageFindSenDTO proMypageFindSenDTO;
+<<<<<<< HEAD
 //
+=======
+
+>>>>>>> hjy
 //    @Test
 //    void selectMyResult() {
 //        System.out.println(mypageService.selectMyResult(600));
@@ -42,6 +46,7 @@ class MypageServiceimplTest {
 //    void selectMyInfo() {
 //        System.out.println(mypageService.selectMyInfo(600));
 //    }
+<<<<<<< HEAD
 
     @Test
     void updateMyinfo() {
@@ -66,6 +71,32 @@ class MypageServiceimplTest {
 //    @Test
 //    void updateSenAddClear(){
 //        mypageService.updateSenAddClear('600');
+=======
+//
+//    @Test
+//    void updateMyinfo() {
+//        proMypageModifyDTO = new ProMypageModifyDTO();
+//        proMypageModifyDTO.setProMemNum(600);
+//        proMypageModifyDTO.setProMemEmail("test@email.com");
+//        proMypageModifyDTO.setProMemPassword("123456");
+//        proMypageModifyDTO.setProMemPasswordVerify("123456");
+//
+//        mypageService.updateMyModify(proMypageModifyDTO);
+//    }
+//
+//    @Test
+//    void updateSenAddNew(){
+//        proMypageSenConnecDTO = new ProMypageSenConnecDTO();
+//        proMypageSenConnecDTO.setProMemNum(600);
+//        proMypageSenConnecDTO.setSenMemNum(600);
+//
+//        mypageService.updateSenAddNew(proMypageSenConnecDTO);
+//    }
+//
+//    @Test
+//    void updateSenAddClear(){
+//        mypageService.updateSenAddClear(600);
+>>>>>>> hjy
 //    }
 //
 //    @Test
