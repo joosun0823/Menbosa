@@ -36,11 +36,7 @@ public class MypageController {
     //   메인 마이페이지 화면
     //   TODO 임의의 값 600설정
     @GetMapping
-<<<<<<< HEAD
     public String mypage(Model model, @SessionAttribute("proMemNum")Long proMemNum) {
-=======
-    public String mypage(@SessionAttribute("proMemNum")Long proMemNum,Model model) {
->>>>>>> hjy
         List<ProMypageResultDTO> MyResultList = mypageService.selectMyResult(proMemNum);
         List<ProMypageSenInfoDTO> MySenInfoList = mypageService.selectMySenInfo(proMemNum);
         List<ProMypageBoardDTO> MyBoardList = mypageService.selectMyBoard(proMemNum);
@@ -69,11 +65,7 @@ public class MypageController {
 
     //  검증페이지
     @PostMapping("/check")
-<<<<<<< HEAD
-    public String mypageCheck(Model model, String password, @SessionAttribute("proMemNum")Long proMemNum) {
-=======
     public String mypageCheck(Model model, String password ,@SessionAttribute("proMemNum")Long proMemNum ) {
->>>>>>> hjy
         String passwordDb = mypageService.selectCheckPassword(proMemNum);
         return passwordDb.equals(password)? "redirect:modify" : "redirect:check";
     }
@@ -86,23 +78,14 @@ public class MypageController {
     //    개인정보 수정 페이지
     //    TODO 임의의 값 600
     @GetMapping("/modify")
-<<<<<<< HEAD
-    public String mypageModify(Model model, @SessionAttribute("proMemNum")Long proMemNum) {
-=======
     public String mypageModify(Model model ,@SessionAttribute("proMemNum")Long proMemNum) {
->>>>>>> hjy
         ProMypageInfoDTO MyInfo = mypageService.selectMyInfo(proMemNum);
         model.addAttribute("MyInfo", MyInfo);
         return "/protector/protectorMypage-modify";
     }
 
     @PostMapping("/modify")
-<<<<<<< HEAD
-    public String mypageModify(@SessionAttribute("proMemNum") Long proMemNum, ProMypageModifyDTO proMypageModifyDTO) {
-=======
     public String mypageModify( @SessionAttribute("proMemNum") Long proMemNum, ProMypageModifyDTO proMypageModifyDTO) {
-
->>>>>>> hjy
         proMypageModifyDTO.setProMemNum(proMemNum);
 
         try {
@@ -135,14 +118,7 @@ public class MypageController {
     }
 
     @PostMapping("/seniorAdd")
-<<<<<<< HEAD
     public String mypageSeniorAdd(@SessionAttribute("proMemNum") Long proMemNum, ProMypageFindSenDTO proMypageFindSenDTO){
-=======
-    public String mypageSeniorAdd(
-            @SessionAttribute("proMemNum") Long proMemNum,
-            ProMypageFindSenDTO proMypageFindSenDTO
-    ){
->>>>>>> hjy
         try {
             proMypageSenConnecDTO.setSenMemNum(mypageService.selectFindSenMem(proMypageFindSenDTO));
             proMypageSenConnecDTO.setProMemNum(proMemNum);

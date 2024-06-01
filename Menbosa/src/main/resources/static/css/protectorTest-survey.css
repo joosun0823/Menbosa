@@ -223,13 +223,4 @@ main{
 
 .active{
     background-color: var(--color-sub-yell);
-<<<<<<< HEAD
-    /*width: 250px;*/
-    /*padding: 8px 0;*/
-    /*text-align: center;*/
-    /*border-radius: 30px;*/
-    /*cursor: pointer;*/
-    /*border: 2px solid var(--color-table-grey);*/
-=======
->>>>>>> hjy
 }
