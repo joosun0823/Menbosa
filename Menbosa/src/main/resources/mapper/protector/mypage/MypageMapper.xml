@@ -135,7 +135,7 @@
 <!--        WHERE BOARD_RECOM_NUM = #{boardRecomNum}-->
 <!--    </delete>-->
 
-    <delete id="deleteProMem" parameterType="long">
+    <delete id="deleteProMem" parameterType="Long">
         --- [ ]  **DELETE**보호자계정삭제
         DELETE
         FROM MBS_PRO_MEMBER

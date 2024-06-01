@@ -51,4 +51,5 @@ public class UserController {
     public String findPassword() {
         return "/protector/protectorPassword-find";
     }
+
 }
