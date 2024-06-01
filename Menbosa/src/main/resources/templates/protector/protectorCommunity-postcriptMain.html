@@ -10,14 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- postcriptMain CSS -->
   <link rel="stylesheet" href="./../../static/css/protectorCommunity-postscriptMain.css">
-  <!-- fetch -->
-  <script defer src="./../../static/js/headerMember.js"></script>
-  <script defer src="./../../static/js/footer.js"></script>
-  <link rel="stylesheet" href="./../../static/css/headerMember.css">
-  <link rel="stylesheet" href="./../../static/css/footer.css">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
-  <header></header>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
 
   <main>
     <h2 class="protectorCommunity-postscript-title">시설후기</h2>
@@ -69,6 +69,6 @@
     </div>
   </main>
 
-  <footer></footer>
+<footer th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>
