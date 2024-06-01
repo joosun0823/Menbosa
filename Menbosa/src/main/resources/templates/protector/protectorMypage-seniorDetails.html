@@ -19,15 +19,14 @@
             referrerpolicy="no-referrer"
     ></script>
     <script defer th:src="@{/js/protectorMypage-aside-common.js}"></script>
-    <!-- fetch -->
-    <script defer th:src="@{/js/headerMember.js}"></script>
-    <script defer th:src="@{/js/footer.js}"></script>
+    <!-- header CSS -->
+    <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
     <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+    <!-- footer CSS -->
     <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
-<!--<header class="header" th:replace="~{/fragment/header :: header}"></header>-->
-
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
 <section id="protectorMypage-seniorDetails">
     <aside>
         <div class="mypage-alheum-logo-mid">
@@ -101,6 +100,6 @@
     </main>
 </section>
 
-<!--<footer class="footer" th:replace="~{/fragment/footer :: footer}"></footer>-->
+<footer th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>

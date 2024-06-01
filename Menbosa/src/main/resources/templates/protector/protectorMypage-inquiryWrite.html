@@ -12,15 +12,14 @@
   <link rel="stylesheet" th:href="@{/css/protectorMypage-inquiryWrite.css}">
   <!-- inquiryWrite JS -->
   <script defer th:src="@{/js/protectorMypage-inquiryWrite.js}"></script>
-  <!-- fetch -->
-  <script defer th:src="@{/js/headerMember.js}"></script>
-  <script defer th:src="@{/js/footer.js}"></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
   <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
   <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
-<!--<header class="header" th:replace="~{/fragment/header :: header}"></header>-->
-
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
   <main>
     <h2>1:1문의</h2>
     <form action="" method="post">
@@ -41,6 +40,6 @@
     </form>
   </main>
 
-<!--<footer class="footer" th:replace="~{/fragment/footer :: footer}"></footer>-->
+<footer th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>

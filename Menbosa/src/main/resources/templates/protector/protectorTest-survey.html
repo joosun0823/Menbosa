@@ -13,14 +13,14 @@
     <!--js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       <script defer th:src="@{/js/protectorTest-survey.js}"></script>
-    <!-- fetch -->
-<!--    <script defer th:src="@{/js/headerMember.js}"></script>-->
-<!--    <script defer th:src="@{/js/footer.js}"></script>-->
-<!--    <link rel="stylesheet" th:href="@{/css/headerMember.css}">-->
-<!--    <link rel="stylesheet" th:href="@{/css/footer.css}">-->
+      <!-- header CSS -->
+      <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+      <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+      <!-- footer CSS -->
+      <link rel="stylesheet" th:href="@{/css/footer.css}">
   </head>
   <body>
-    <header></header>
+  <header th:replace="~{/basic/header-ver1 :: header1}"></header>
 
     <main>
       <!-- http://www.silverweb.or.kr/load.v2.asp?subPage=710 -->
@@ -64,5 +64,7 @@
         <p class="protector-result-warningText">이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를 임의로 해석하거나 처치를 진행하지마세요.</p>
       </div>
     </section>
+
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
   </body>
 </html>

@@ -7,14 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/alheum/postScript")
 public class PostscriptController {
-
+//
 //    @GetMapping("postMain")
 //    @GetMapping("postWrite")
 //    @GetMapping("postDetails")
 //    @GetMapping("postModify")
-<<<<<<< HEAD
+//    안녕하세요
+//    하하하
+    
+    
 
 
-=======
->>>>>>> 2baf3be55adad163055d68aca5e341cb2f372b55
 }

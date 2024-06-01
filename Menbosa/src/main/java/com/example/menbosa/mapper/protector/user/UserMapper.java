@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface UserMapper {
     void insertUser(UserDTO userDTO);
 
-    Optional<Long> selectId(@Param("loginId") String loginId, @Param("password") String password);
+    Optional<Long> selectId(@Param("proMemPhone") String proMemPhone, @Param("password") String password);
 
     Optional<UserSessionDTO> selectUserInfo(String proMemPhone, String proMemPassword);
 }
