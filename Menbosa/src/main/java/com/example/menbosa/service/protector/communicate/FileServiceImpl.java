@@ -30,4 +30,6 @@ public class FileServiceImpl implements FileService{
     public List<FileDto> findFile(Long boardCommuNum) {
         return fileMapper.selectFile(boardCommuNum);
     }
+
+
 }

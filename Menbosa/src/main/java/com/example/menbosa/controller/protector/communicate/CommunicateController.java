@@ -133,9 +133,26 @@ public class CommunicateController {
         }
 
 
+        // 소통 글 삭제
+
         @GetMapping("/commuRemove")
         public RedirectView commuRemove(Long boardCommuNum){
             communicateService.removeCommu(boardCommuNum);
             return new RedirectView("/alheum/community/commuMain");
         }
+
+<<<<<<< HEAD
+    // 자주하는 질문
+    @GetMapping("/commuQuestion")
+    public String commuQuestion(){
+        return "protector/protectorCommunity-questionMain";
+    }
+=======
+
+        // 자주하는 질문
+        @GetMapping("/commuQuestion")
+        public String commuQuestion(){
+            return "protector/protectorCommunity-questionMain";
+        }
+>>>>>>> kmj
 }
