@@ -8,4 +8,5 @@ import lombok.NoArgsConstructor;
 public class UserSessionDTO {
     private Long proMemNum;
     private int proMemPhone;
+    private String proMemName;
 }
