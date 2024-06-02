@@ -16,23 +16,23 @@ class InquiryServiceimplTest {
     @Autowired
     private ProInqDetailsDTO proInqDetailsDTO;
 
-//    @Test
-//    void selectProInqTest(){
-//        System.out.println(inquiryService.selectProInq(600));
-//    }
-//
-//    @Test
-//    void selectProInqDetailsTest(){
-//        System.out.println(inquiryService.selectProInqDetails(600,600));
-//    }
-//
-//    @Test
-//    void insertInqTest(){
-//        proInqDetailsDTO = new ProInqDetailsDTO();
-//        proInqDetailsDTO.setProMemNum(600);
-//        proInqDetailsDTO.setBoardInquTitle("testtitle");
-//        proInqDetailsDTO.setBoardInquContents("testcontent");
-//        System.out.println("testtttttt");
-//        inquiryService.insertInqu(proInqDetailsDTO);
-//    }
+    @Test
+    void selectProInqTest(){
+        System.out.println(inquiryService.selectProInq(600));
+    }
+
+    @Test
+    void selectProInqDetailsTest(){
+        System.out.println(inquiryService.selectProInqDetails(600,600));
+    }
+
+    @Test
+    void insertInqTest(){
+        proInqDetailsDTO = new ProInqDetailsDTO();
+        proInqDetailsDTO.setProMemNum(600);
+        proInqDetailsDTO.setBoardInquTitle("testtitle");
+        proInqDetailsDTO.setBoardInquContents("testcontent");
+        System.out.println("testtttttt");
+        inquiryService.insertInqu(proInqDetailsDTO);
+    }
 }

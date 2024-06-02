@@ -9,8 +9,9 @@
         ORDER BY SURVEY_QUEST_NUM
     </select>
 
-<!--    <insert id="">-->
-<!--        -&#45;&#45; [ ]  **INSERT** 설문결과-->
-<!--        INSERT INTO MBS_RESULT_SURVEY mrs VALUES(SEQ_RESULT_SERVEY.NEXTVAL, SYSDATE, #{resultSurveyScore}, #{proMemNum})-->
-<!--    </insert>-->
+    <insert id="insertSurvey" parameterType="Long">
+        --- [ ]  **INSERT** 설문결과
+        INSERT INTO MBS_RESULT_SURVEY mrs
+        VALUES(SEQ_RESULT_SERVEY.NEXTVAL, SYSDATE, #{resultSurveyScore}, #{proMemNum})
+    </insert>
 </mapper>

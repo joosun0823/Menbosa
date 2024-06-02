@@ -11,4 +11,5 @@ public class ProInqDTO {
     private long boardInquNum;
     private String boardInquTitle;
     private LocalDateTime boardInquDate;
+//    private long proMemNum;
 }
