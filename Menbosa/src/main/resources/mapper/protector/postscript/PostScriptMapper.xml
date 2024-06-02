@@ -63,8 +63,8 @@
                P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
                IMG_FILE_NUM,
                IMG_FILE_USER,
-               IMG_FILE_SERVER,
-               IMG_FILE_EXT
+               IMG_FILE_EXT,
+               IMG_FILE_SERVER
         FROM (
                  SELECT ROWNUM,
                         BOARD_RECOM_NUM,
@@ -72,25 +72,25 @@
                         P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
                         IMG_FILE_NUM,
                         IMG_FILE_USER,
-                        IMG_FILE_SERVER,
-                        IMG_FILE_EXT
+                        IMG_FILE_EXT,
+                        IMG_FILE_SERVER
                  FROM(
                          SELECT B.BOARD_RECOM_NUM,
                                 BOARD_RECOM_TITLE,
                                 P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
                                 F.IMG_FILE_NUM,
                                 F.IMG_FILE_USER,
-                                F.IMG_FILE_SERVER,
-                                F.IMG_FILE_EXT
+                                F.IMG_FILE_EXT,
+                                F.IMG_FILE_SERVER
                          FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEM P
                          ON B.PRO_MEM_NUM = P.PRO_MEM_NUM
                          LEFT JOIN (
-                                SELECT FILE_ID, NAME, UPLOAD_PATH, UUID, BOARD_ID
+                                SELECT IMG_FILE_NUM, IMG_FILE_USER, IMG_FILE_EXT, IMG_FILE_SERVER, BOARD_RECOM_NUM
                                 FROM (
                                       SELECT IMG_FILE_NUM,
                                              IMG_FILE_USER,
-                                             IMG_FILE_SERVER,
                                              IMG_FILE_EXT,
+                                             IMG_FILE_SERVER,
                                              BOARD_RECOM_NUM,
                                              RANK() OVER(PARTITION BY BOARD_ID ORDER BY FILE_ID) RK
                                       FROM MBS_IMG_FILE
