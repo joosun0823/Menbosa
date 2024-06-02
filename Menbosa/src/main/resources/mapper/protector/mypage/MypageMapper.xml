@@ -37,14 +37,17 @@
         SELECT BOARDTITLE
              , BOARDDATE
              , DIVISION
+             , BOARDNUM
         FROM (SELECT BOARD_COMMU_TITLE BOARDTITLE
                    , BOARD_COMMU_DATE  BOARDDATE
+                   , BOARD_COMMU_NUM BOARDNUM
                    , '100' AS          division
               FROM MBS_BOARD_COMMU mbc
               WHERE PRO_MEM_NUM = #{proMemNum}
               UNION ALL
               SELECT BOARD_RECOM_TITLE BOARDTITLE
                    , BOARD_RECOM_DATE  BOARDDATE
+                   , BOARD_RECOM_NUM BOARDNUM
                    , '200' AS          division
               FROM MBS_BOARD_RECOM mbr
               WHERE PRO_MEM_NUM = #{proMemNum})
@@ -86,7 +89,7 @@
         WHERE PRO_MEM_NUM = #{proMemNumString}
     </update>
 
-    <select id="selectCheckPassword" parameterType="Long" resultType="String">
+    <select id="selectCheckPassword" parameterType="long" resultType="String">
         --- [ ]  **SELECT**비밀번호 유효성검사 셀렉트
         SELECT PRO_MEM_PASSWORD
         FROM MBS_PRO_MEMBER mpm
@@ -115,7 +118,7 @@
         WHERE SEN_MEM_NUM = #{senMemNum}
     </update>
 
-    <update id="updateSenAddClear" parameterType="Long">
+    <update id="updateSenAddClear" parameterType="long">
         --- [ ]  **UPDATE**시니어 연결 삭제
         UPDATE MBS_SEN_MEMBER
         SET PRO_MEM_NUM = NULL

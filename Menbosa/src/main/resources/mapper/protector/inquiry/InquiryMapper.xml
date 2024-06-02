@@ -11,6 +11,24 @@
         ORDER BY BOARD_INQU_NUM DESC
     </select>
 
+    <select id="selectInqPage" parameterType="InquCriteria" resultType="ProInqDTO">
+        <![CDATA[
+        SELECT BOARD_INQU_NUM, BOARD_INQU_TITLE, BOARD_INQU_DATE
+        FROM (SELECT ROWNUM AS RNUM, BOARD_INQU_NUM, BOARD_INQU_TITLE, BOARD_INQU_DATE, PRO_MEM_NUM
+              FROM (SELECT BOARD_INQU_NUM, BOARD_INQU_TITLE, BOARD_INQU_DATE, PRO_MEM_NUM
+                    FROM MBS_BOARD_INQU
+                    ORDER BY BOARD_INQU_NUM DESC)
+              WHERE ROWNUM <= #{page} * #{amount})
+        WHERE RNUM > (#{page} - 1) * #{amount}
+          AND PRO_MEM_NUM = #{proMemNum}
+        ORDER BY BOARD_INQU_DATE DESC
+        ]]>
+        </select>
+
+    <select id="selectInquTotal" resultType="int" parameterType="Long">
+        SELECT COUNT(BOARD_INQU_NUM) FROM  MBS_BOARD_INQU WHERE PRO_MEM_NUM = #{proMemNum}
+    </select>
+
     <select id="selectProInqDetails" resultType="ProInqDetailsDTO">
         --- [ ]  **SELECT**문의글 상세보기 셀렉트
         SELECT BOARD_INQU_TITLE

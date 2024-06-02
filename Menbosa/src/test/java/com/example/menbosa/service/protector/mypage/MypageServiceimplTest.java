@@ -42,7 +42,6 @@ class MypageServiceimplTest {
 //    void selectMyInfo() {
 //        System.out.println(mypageService.selectMyInfo(600));
 //    }
-
 //
 //    @Test
 //    void updateMyinfo() {
