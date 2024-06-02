@@ -69,3 +69,10 @@ $removeBtn?.addEventListener("click", function (){
     location.href = `/alheum/community/commuRemove?boardCommuNum=${boardCommuNum}`;
   }
 })
+
+
+// ---------- 댓글 ----------
+import * as comment from "./comment.js";
+let page = 1;
+let hasNext = true;
+
