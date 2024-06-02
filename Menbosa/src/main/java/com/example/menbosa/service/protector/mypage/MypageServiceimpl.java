@@ -14,27 +14,27 @@ public class MypageServiceimpl implements MypageService{
     private final MypageMapper mypageMapper;
 
     @Override
-    public List<ProMypageResultDTO> selectMyResult(Long proMemNum) {
+    public List<ProMypageResultDTO> selectMyResult(long proMemNum) {
         return mypageMapper.selectMyResult(proMemNum);
     }
 
     @Override
-    public List<ProMypageSenInfoDTO> selectMySenInfo(Long proMemNum) {
+    public List<ProMypageSenInfoDTO> selectMySenInfo(long proMemNum) {
         return mypageMapper.selectMySenInfo(proMemNum);
     }
 
     @Override
-    public List<ProMypageBoardDTO> selectMyBoard(Long proMemNum) {
+    public List<ProMypageBoardDTO> selectMyBoard(long proMemNum) {
         return mypageMapper.selectMyBoard(proMemNum);
     }
 
     @Override
-    public ProMypageInfoDTO selectMyInfo(Long proMemNum) {
+    public ProMypageInfoDTO selectMyInfo(long proMemNum) {
         return mypageMapper.selectMyInfo(proMemNum);
     }
 
     @Override
-    public ProMypageSenDetailsDTO selectMySenDetails(Long senMemNum) {
+    public ProMypageSenDetailsDTO selectMySenDetails(long senMemNum) {
         return mypageMapper.selectMySenDetails(senMemNum);
     }
 
@@ -49,7 +49,7 @@ public class MypageServiceimpl implements MypageService{
     }
 
     @Override
-    public void updateSenAddClear(Long senMemNum) {
+    public void updateSenAddClear(long senMemNum) {
         mypageMapper.updateSenAddClear(senMemNum);
     }
 
@@ -61,7 +61,7 @@ public class MypageServiceimpl implements MypageService{
     }
 
     @Override
-    public String selectCheckPassword(Long proMemNum) {
+    public String selectCheckPassword(long proMemNum) {
         return mypageMapper.selectCheckPassword(proMemNum).orElseThrow(()->new IllegalStateException("일치하지 않는 비밀번호"));
     }
 
@@ -77,13 +77,13 @@ public class MypageServiceimpl implements MypageService{
     }
 
     @Override
-    public void updateOnlyEmail(String proMemEmail, Long proMemNum) {
+    public void updateOnlyEmail(String proMemEmail, long proMemNum) {
        String proMemNumString = ""+ proMemNum;
        mypageMapper.updateOnlyEmail(proMemEmail, proMemNumString);
     }
 
     @Override
-    public void deleteProMem(Long proMemNum) {
+    public void deleteProMem(long proMemNum) {
         mypageMapper.deleteProMem(proMemNum);
     }
 

@@ -17,4 +17,9 @@ public class SurveyServiceimpl implements SurveyService {
     public List<ProSurveyQDTO> selectSurveyQ() {
         return surveyMapper.selectSurveyQ();
     }
+
+    @Override
+    public void insertSurvey(Long resultSurveyScore, Long proMemNum) {
+        surveyMapper.insertSurvey(resultSurveyScore, proMemNum);
+    }
 }

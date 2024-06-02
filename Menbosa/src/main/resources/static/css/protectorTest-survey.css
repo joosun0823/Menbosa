@@ -164,10 +164,10 @@ main{
     margin-bottom: 40px;
 }
 
-.protector-result-colorButtonDiv{
+.protector-result-button{
     width: 120px;
     height: 50px;
-    background-color: #27aae1;
+    /*background-color: #27aae1;*/
     color: white;
     text-align: center;
     line-height: 50px;
@@ -178,8 +178,12 @@ main{
     margin-bottom: 30px;
 }
 
+.state-good{background-color: #27AAE1;}
+.state-mid{background-color: #F7941D;}
+.state-bad{background-color: #EF4136;}
+
 .protector-result-explanation{
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .protector-result-movementButton{
@@ -196,7 +200,7 @@ main{
     color: white;
     text-decoration-line: none;
     line-height: 55px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .protector-result-gohome{
@@ -211,7 +215,7 @@ main{
     color: #FE7A15;
     text-decoration-line: none;
     line-height: 40px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .protector-result-warningText{
