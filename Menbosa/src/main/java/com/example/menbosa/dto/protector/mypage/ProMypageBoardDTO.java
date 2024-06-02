@@ -11,4 +11,5 @@ public class ProMypageBoardDTO {
     private String boardTitle;
     private LocalDateTime boardDate;
     private int division;
+    private Long boardNum;
 }

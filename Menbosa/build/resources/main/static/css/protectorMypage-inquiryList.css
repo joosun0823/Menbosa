@@ -160,16 +160,37 @@ main{
 
 
 .protectorMypage-inquiry-writeButton > a:nth-of-type(2){
-  background-color: var(--color-sub-yell);
+  background-color: var(--color-main);
 }
 
 .protectorMypage-inquiry-writeButton > a:nth-of-type(1):hover{
   background-color: #b1b1b1;
 }
 
+/* 페이지 버튼 */
+
+.page-container{
+
+
+}
+
+
+.page-box{
+  display: flex;
+  justify-content: center;
+}
+
+.page-a{
+  padding: 10px;
+}
+
+.active{
+  color: #FE7A15;
+}
+
 
 .protectorMypage-inquiry-writeButton > a:nth-of-type(2):hover{
-  background-color: var(--color-sub-yell-hover);
+  background-color: var(--color-main-hover);
 }
 
 

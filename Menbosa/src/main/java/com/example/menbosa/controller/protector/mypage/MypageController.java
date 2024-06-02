@@ -1,14 +1,20 @@
 package com.example.menbosa.controller.protector.mypage;
 
+import com.example.menbosa.dto.protector.communicate.CommuDetailDto;
+import com.example.menbosa.dto.protector.communicate.CommuUpdateDto;
 import com.example.menbosa.dto.protector.mypage.*;
+import com.example.menbosa.service.protector.communicate.CommunicateService;
 import com.example.menbosa.service.protector.mypage.MypageService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -131,5 +137,13 @@ public class MypageController {
         return "redirect:/alheum/mypage";
     }
 
+//-------------------------------------------------------------------------------------------
+//소통 글 삭제페이지
+    private final CommunicateService communicateService;
 
+    @GetMapping("/commuRemove")
+    public RedirectView commuRemove(Long boardCommuNum){
+        communicateService.removeCommu(boardCommuNum);
+        return new RedirectView("/alheum/mypage");
+    }
 }
