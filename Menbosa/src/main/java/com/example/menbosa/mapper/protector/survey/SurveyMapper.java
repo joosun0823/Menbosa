@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface SurveyMapper {
     List<ProSurveyQDTO> selectSurveyQ();
+    void insertSurvey(Long resultSurveyScore, Long proMemNum);
 }

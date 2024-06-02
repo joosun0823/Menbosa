@@ -2,6 +2,8 @@ package com.example.menbosa.controller.protector.inquiry;
 
 import com.example.menbosa.dto.protector.inquiry.ProInqDTO;
 import com.example.menbosa.dto.protector.inquiry.ProInqDetailsDTO;
+import com.example.menbosa.dto.protector.inqupage.InquCriteria;
+import com.example.menbosa.dto.protector.inqupage.InquPage;
 import com.example.menbosa.service.protector.inquiry.InquiryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -19,18 +21,26 @@ public class InquiryController {
     private final InquiryService inquiryService;
 
     //    1:1문의
-    // TODO 600
     @GetMapping
-    public String mypageInquiry(Model model, @SessionAttribute("proMemNum")Long proMemNum) {
-        List<ProInqDTO> proInqList = inquiryService.selectProInq(proMemNum);
+    public String mypageInquiry(Model model, @SessionAttribute("proMemNum")Long proMemNum, InquCriteria inquCriteria) {
+        List<ProInqDTO> proInqList = inquiryService.selectInqPage(proMemNum, inquCriteria);
+        int total = inquiryService.selectInquTotal(proMemNum);
+        InquPage page = new InquPage(inquCriteria, total);
         model.addAttribute("proInqList", proInqList);
+        model.addAttribute("page", page);
         return "/protector/protectorMypage-inquiryList";
     }
+//        public String mypageInquiry(Model model, @SessionAttribute("proMemNum")Long proMemNum) {
+//        List<ProInqDTO> proInqList = inquiryService.selectProInq(proMemNum);
+//        model.addAttribute("proInqList", proInqList);
+//        return "/protector/protectorMypage-inquiryList";
+//    }
+
     //    1:1문의 상세
-    // TODO 600
     @GetMapping("/details")
     public String mypageInquiryDetails(Model model,
-                                       @RequestParam("boardInquNum")long boardInquNum, @SessionAttribute("proMemNum")Long proMemNum) {
+                                       @RequestParam("boardInquNum")long boardInquNum,
+                                       @SessionAttribute("proMemNum")Long proMemNum) {
         ProInqDetailsDTO proInqDetails = inquiryService.selectProInqDetails(proMemNum,boardInquNum);
         model.addAttribute("proInqDetails", proInqDetails);
         return "/protector/protectorMypage-inquiryDetails";
@@ -44,7 +54,8 @@ public class InquiryController {
     @PostMapping("/write")
     public String mypageInquiryWrite(
             @SessionAttribute("proMemNum") Long proMemNum,
-            ProInqDetailsDTO proInqDetailsDTO){
+            ProInqDetailsDTO proInqDetailsDTO
+    ){
         proInqDetailsDTO.setProMemNum(proMemNum);
         inquiryService.insertInqu(proInqDetailsDTO);
         return "redirect:/alheum/inquiry";
