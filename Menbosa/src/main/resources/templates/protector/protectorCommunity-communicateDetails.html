@@ -45,8 +45,8 @@
 
     <div class="protectorCommunity-communicateDetails-content">
       <p th:text="${detail.boardCommuContents}"></p>
-      <p>
-        <img src="/img/community-example.png" alt="">
+      <p class="post-images">
+<!--              이미지 들어갈 공간    -->
       </p>
     </div>
 
@@ -115,8 +115,8 @@
 
       <div class="protectorCommunity-communicateDetails-commentsInput">
         <form action="">
-          <input type="text" name="" placeholder="댓글을 남겨보세요">
-          <button>등록</button>
+          <input type="text" id="comment-content" name="" placeholder="댓글을 남겨보세요">
+          <button type="submit" class="btn-comment">등록</button>
         </form>
       </div>
     </div>
