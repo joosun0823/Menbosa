@@ -162,12 +162,13 @@
   background-color: #DCDCDC;
   display: block;
   text-align: center;
+  line-height: 64px;
   width: 470px;
   height: 64px;
   color: white;
   font-size: 30px;
   text-decoration-line: none;
-  padding-top: 10px;
+  cursor: pointer;
 }
 
 .seniorBackgroundImg{

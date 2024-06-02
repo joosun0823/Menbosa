@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.senior.user.SenUserMapper">
+    <insert id="insertSenUser" parameterType="SenUserJoinDTO">
+        <selectKey keyProperty="senMemNum" resultType="Long" order="BEFORE">
+            SELECT SEQ_SEN_MEMBER.nextVal FROM DUAL
+        </selectKey>
+        INSERT INTO MBS_SEN_MEMBER(SEN_MEM_NUM, SEN_MEM_NAME, SEN_MEM_PHONE_MID, SEN_MEM_PHONE_BACK, SEN_MEM_PASSWORD)
+        VALUES(#{senMemNum}, #{senMemName}, #{senMemPhoneMid}, #{senMemPhoneBack}, #{senMemPassword})
+    </insert>
+</mapper>

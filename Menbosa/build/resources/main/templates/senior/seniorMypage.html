@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./../../static/css/seniorMypage.css">
+  <link rel="stylesheet" th:href="@{/css/seniorMypage.css}"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> 
-  <script defer src="./../../static/js/seniorMypage.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <script defer th:src="@{/js/seniorMypage.js}"></script>
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
   <main>
-    <img src="./../../static/img/seniorBackgroundImg.png" alt="" class="seniorBackgroundImg">
+    <img th:src="@{/img/seniorBackgroundImg.png}" alt="" class="seniorBackgroundImg">
     <div class="seniorMypage-container">
       <div class="seniorMypage-top">
-        <img src="./../../static/img/senior-alheum_logo.svg" alt="" class="seniorMypage-logo">
+        <img th:src="@{/img/senior-alheum_logo.svg}" alt="" class="seniorMypage-logo">
         <div>내 정보</div>
       </div>
       <div class="seniorMypage-info">
@@ -24,27 +26,28 @@
           <div class="seniorMypage-myInfo-info">
             <div class="seniorMypage-myInfo-info-key">
               <p>성함</p>
-              <p>생년원일</p>
+              <p>생년월일</p>
               <p>전화번호</p>
               <p>비밀번호</p>
               <p>비밀번호 재확인</p>
             </div>
-            <div class="seniorMypage-myInfo-info-value">
-              <p>어르신</p>
+            <div class="seniorMypage-myInfo-info-value" th:each="senMyInfo : ${senMyInfo}">
+              <p  th:text="${senMyInfo.senMemName}"></p>
               <div class="seniorMypage-myInfo-info-value-birth">
-                <input type="text" name="seniorBrithYear" id="birth-year" placeholder="1900">
-                <p>&nbsp;/&nbsp;</p>
-                <input type="text" name="seniorBrithMonth" id="birth-month" placeholder="10">
-                <p>&nbsp;/&nbsp;</p>
-                <input type="text" name="seniorBrithDay" id="birth-day" placeholder="30">
+                <input type="text" name="seniorBrithYear" id="birth-year" th:placeholder="${senMyInfo.senMemBirth}">
+<!--                <p>&nbsp;/&nbsp;</p>-->
+<!--                <input type="text" name="seniorBrithMonth" id="birth-month" placeholder="10">-->
+<!--                <p>&nbsp;/&nbsp;</p>-->
+<!--                <input type="text" name="seniorBrithDay" id="birth-day" placeholder="30">-->
+<!--                th:placeholder="${senMyInfo.senMemBirth}"-->
               </div>
-              <p>010 - 1234 - 5678</p>
+              <p th:text="${senMyInfo.senMemPhone}"></p>
               <input type="password" name="seniorPassword" id="password" placeholder="변경할 비밀번호">
               <input type="password" name="seniorConfirmPassword" id="confirmPassword" placeholder="다시 입력해주세요">
             </div>
           </div>
         </div>
-        <div class="seniorMypage-protectorInfo">
+        <div class="seniorMypage-protectorInfo"  th:each="senMyProInfo : ${senMyProInfo}">
           <div class="seniorMypage-protectorInfo-title">보호자 정보</div>
           <div class="seniorMypage-protectorInfo-info">
             <div class="seniorMypage-protectorInfo-info-key">
@@ -52,8 +55,8 @@
               <p>전화번호</p>
             </div>
             <div class="seniorMypage-protectorInfo-info-value">
-              <p>보호자</p>
-              <p>010 - 1234 - 5678</p>
+              <p th:text="${senMyProInfo.proMemName}"></p>
+              <p th:text="${senMyProInfo.proMemPhone}"></p>
             </div>
           </div>
         </div>
@@ -63,33 +66,25 @@
         <div class="seniorMypage-testResults-container">
           <div class="seniorMypage-testResults-testDate">
             <p style="color: #BCBEC0;">검사 날짜</p>
-            <p>2024.05.09</p>
-            <p>2024.05.09</p>
-            <p>2024.05.09</p>
-            <p>2024.05.09</p>
-            <p>2024.05.09</p>
-            <p>2024.05.09</p>
-            <p>2024.05.09</p>
+            <div th:each="senMyTestInfo : ${senMyTestInfo}">
+              <p th:text="${senMyTestInfo.testResultDate}"></p>
+            </div>
           </div>
           <div class="seniorMypage-testResults-testName">
             <p style="color: #BCBEC0;">검사명</p>
-            <p>기본 인지기능검사</p>
-            <p>기본 인지기능검사</p>
-            <p>기본 인지기능검사</p>
-            <p>기본 인지기능검사</p>
-            <p>기본 인지기능검사</p>
-            <p>기본 인지기능검사</p>
-            <p>기본 인지기능검사</p>
+            <div th:each="senMyTestInfo : ${senMyTestInfo}">
+              <p th:text="${senMyTestInfo.testListName}"></p>
+            </div>
+
           </div>
           <div class="seniorMypage-testResults-testDanger">
             <p style="color: #BCBEC0;">위험도</p>
-            <span class="seniorMypage-testResults-good">양호</span>
-            <span class="seniorMypage-testResults-good">양호</span>
-            <span class="seniorMypage-testResults-good">양호</span>
-            <span class="seniorMypage-testResults-good">양호</span>
-            <span class="seniorMypage-testResults-good">양호</span>
-            <span class="seniorMypage-testResults-caution">주의</span>
-            <span class="seniorMypage-testResults-danger">위험</span>
+            <div th:each="senMyTestInfo : ${senMyTestInfo}">
+              <span th:if="${senMyTestInfo.testResultScore} >= 5" class="seniorMypage-testResults-good">양호</span>
+              <span th:if="${senMyTestInfo.testResultScore} >= 3 and ${senMyTestInfo.testResultScore} <= 4 " class="seniorMypage-testResults-caution">주의</span>
+              <span th:if="${senMyTestInfo.testResultScore} >= 1 and ${senMyTestInfo.testResultScore} <= 2" class="seniorMypage-testResults-danger">위험</span>
+
+            </div>
           </div>
         </div>
         <div class="seniorMypage-testResults-footer">이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를 임의로 해석하거나 처치를 진행하지마세요.</div>
@@ -101,6 +96,6 @@
       </div>
     </div>
   </main>
-  <footer></footer>
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>
