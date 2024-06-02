@@ -2,7 +2,10 @@ package com.example.menbosa.api;
 
 import com.example.menbosa.dto.protector.communicate.CommentListDto;
 import com.example.menbosa.dto.protector.communicate.CommentWriteDto;
+<<<<<<< HEAD
 import com.example.menbosa.dto.protector.communicate.CommuListDto;
+=======
+>>>>>>> kmj
 import com.example.menbosa.dto.protector.page.Criteria;
 import com.example.menbosa.dto.protector.page.Slice;
 import com.example.menbosa.service.protector.communicate.CommentService;
@@ -48,4 +51,8 @@ public class CommentApi {
     public void deleteComment(@PathVariable("commentCommuNum") long commentCommuNum){
         commentService.removeComment(commentCommuNum);
     }
+<<<<<<< HEAD
  }
+=======
+}
+>>>>>>> kmj

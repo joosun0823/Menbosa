@@ -10,4 +10,5 @@ public interface FileService {
     void removeFile(Long boardCommuNum);
 
     List<FileDto> findFile(Long boardCommuNum);
+
 }
