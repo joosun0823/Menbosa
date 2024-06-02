@@ -14,5 +14,4 @@ public class ImgFileApi {
     @Value("C:/upload/")
     private String fileDir;
 
-
 }
