@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface SurveyService {
     List<ProSurveyQDTO> selectSurveyQ();
+    void insertSurvey(Long resultSurveyScore, Long proMemNum);
 }

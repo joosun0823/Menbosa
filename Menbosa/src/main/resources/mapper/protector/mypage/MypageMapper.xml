@@ -37,14 +37,17 @@
         SELECT BOARDTITLE
              , BOARDDATE
              , DIVISION
+             , BOARDNUM
         FROM (SELECT BOARD_COMMU_TITLE BOARDTITLE
                    , BOARD_COMMU_DATE  BOARDDATE
+                   , BOARD_COMMU_NUM BOARDNUM
                    , '100' AS          division
               FROM MBS_BOARD_COMMU mbc
               WHERE PRO_MEM_NUM = #{proMemNum}
               UNION ALL
               SELECT BOARD_RECOM_TITLE BOARDTITLE
                    , BOARD_RECOM_DATE  BOARDDATE
+                   , BOARD_RECOM_NUM BOARDNUM
                    , '200' AS          division
               FROM MBS_BOARD_RECOM mbr
               WHERE PRO_MEM_NUM = #{proMemNum})
@@ -135,7 +138,7 @@
 <!--        WHERE BOARD_RECOM_NUM = #{boardRecomNum}-->
 <!--    </delete>-->
 
-    <delete id="deleteProMem" parameterType="long">
+    <delete id="deleteProMem" parameterType="Long">
         --- [ ]  **DELETE**보호자계정삭제
         DELETE
         FROM MBS_PRO_MEMBER

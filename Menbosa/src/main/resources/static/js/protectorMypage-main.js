@@ -115,20 +115,22 @@ menus.forEach(function(menu){
 
 let deleteBoard = document.getElementsByClassName("deleteBoard");
 let deleteBoard_value = false;
-Array.from(deleteBoard).forEach(function(board){
-  board.addEventListener('click',()=>{
+Array.from(deleteBoard).forEach(function (board) {
+  board.addEventListener('click', () => {
     deleteBoard_value = confirm("정말 삭제하시겠습니까?");
     let division = board.dataset.division;
-    if(deleteBoard_value){
-      switch (division){
-              case '100' :
-                alert("소통");
+    let boardNum = board.dataset.board;
+    if (deleteBoard_value) {
+      switch (division) {
+        case '100' :
+          // alert("소통");
+          // console.log(boardNum);
+          location.href = `/alheum/mypage/commuRemove?boardCommuNum=${boardNum}`;
+          break;
+        case '200' :
+          alert("시설후기");
           // location.href = `/alheum/mypage/deleteSenMem?senMemNum=${division}`;
-                      break;
-              case '200' :
-                alert("시설후기");
-          // location.href = `/alheum/mypage/deleteSenMem?senMemNum=${division}`;
-                      break;
+          break;
       }
     }
   });

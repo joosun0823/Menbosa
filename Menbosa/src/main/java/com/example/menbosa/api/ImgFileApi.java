@@ -21,6 +21,8 @@ public class ImgFileApi {
     @Value("C:/upload/")
     private String fileDir;
 
+<<<<<<< HEAD
+=======
     @GetMapping("/v1/posts/${boardRecomNum}/imgFiles")
     public List<ImgFileDTO> ImgFileList(@RequestParam("boardRecomNum") Long boardRecomNum) {
         return imgFileService.findList(boardRecomNum);
@@ -32,4 +34,5 @@ public class ImgFileApi {
 
         return FileCopyUtils.copyToByteArray(file);
     }
+>>>>>>> yhj
 }

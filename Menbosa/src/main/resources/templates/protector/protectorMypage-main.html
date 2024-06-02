@@ -27,11 +27,11 @@
 <header th:replace="~{/basic/header-ver1 :: header1}"></header>
 <section id="protectorMypage">
     <aside>
-        <div class="mypage-alheum-logo-mid">
-            <img th:src="@{/img/alheum_logo.svg}" alt="알흠로고"/>
-        </div>
+<!--        <div class="mypage-alheum-logo-mid">-->
+<!--            <img th:src="@{/img/alheum_logo.svg}" alt="알흠로고"/>-->
+<!--        </div>-->
+<!--        <a th:href="@{/sms/send-one}">smstest</a>-->
         <ul>
-            <!--            <a href="javascript: confirm('준비 중입니다.');">alert Test</a>-->
             <a th:href="@{/alheum/mypage}">
                 <li>마이페이지</li>
             </a>
@@ -79,9 +79,9 @@
                         </span>
                         <span>
 <!--                            TODO 수정경로 나눠줄 것-->
-                            <a th:if="${board.division}==100" th:href="@{/alheum/community/commuModify}"><span>수정 |</span></a>
-                            <a th:if="${board.division}==200" th:href="@{/alheum/community/commuModify2}"><span>수정 |</span></a>
-                            <span class="deleteBoard" th:attr="data-division=${board.division}"> 삭제</span>
+                            <a th:if="${board.division}==100" th:href="@{/alheum/community/commuModify (boardCommuNum=${board.boardNum})}"><span>수정 |</span></a>
+                            <a th:if="${board.division}==200" th:href="@{/alheum/postScript/postModify (boardRecomNum=${board.boardNum})}"><span>수정 |</span></a>
+                            <span class="deleteBoard" th:attr="data-division=${board.division}, data-board=${board.boardNum}"> 삭제</span>
                         </span>
                     </div>
                 </article>
@@ -124,11 +124,11 @@
                             <!--                  <span th:if="${#strings.isEmpty(info.testResultScore)}">검사결과 없음</span>-->
                             <span th:if="${info.testResultScore} == 0"
                                   class="mypage-state-box mypage-state-not">없음</span>
-                            <span th:if="${info.testResultScore} > 0 and ${info.testResultScore} < 5"
+                            <span th:if="${info.testResultScore} > 1 and ${info.testResultScore} < 6"
                                   class="mypage-state-box mypage-state-good">양호</span>
-                            <span th:if="${info.testResultScore} >= 5 and ${info.testResultScore} < 10"
+                            <span th:if="${info.testResultScore} >= 6 and ${info.testResultScore} < 11"
                                   class="mypage-state-box mypage-state-mid">주의</span>
-                            <span th:if="${info.testResultScore} >= 10 and ${info.testResultScore} <= 100"
+                            <span th:if="${info.testResultScore} >= 11 and ${info.testResultScore} <= 31"
                                   class="mypage-state-box mypage-state-bad">위험</span>
                         </div>
                     </div>
@@ -153,11 +153,12 @@
                         <p class="mypage-td" th:text="${#temporals.format(test.resultSurveyDate, 'yy년 M월 d일')}"></p>
                         <p class="mypage-td">어르신 진단 보호자 설문</p>
                         <p class="mypage-td">
-                            <span th:if="${test.resultSurveyScore} >= 0 and ${test.resultSurveyScore} < 5"
+<!--                            검사 시작만 해도 점수 1이 부여됨 나중에 검사 결과 없음을 띄우게 된다면 점수 0으로 검증-->
+                            <span th:if="${test.resultSurveyScore} >= 1 and ${test.resultSurveyScore} < 6"
                                   class="mypage-state-box mypage-state-good">양호</span>
-                            <span th:if="${test.resultSurveyScore} >= 5 and ${test.resultSurveyScore} < 10"
+                            <span th:if="${test.resultSurveyScore} >= 6 and ${test.resultSurveyScore} < 11"
                                   class="mypage-state-box mypage-state-mid">주의</span>
-                            <span th:if="${test.resultSurveyScore} >= 10 and ${test.resultSurveyScore} <= 30"
+                            <span th:if="${test.resultSurveyScore} >= 11 and ${test.resultSurveyScore} <= 31"
                                   class="mypage-state-box mypage-state-bad">위험</span>
                         </p>
                     </div>

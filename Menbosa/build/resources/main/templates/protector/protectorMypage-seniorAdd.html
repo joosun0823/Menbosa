@@ -14,6 +14,7 @@
     <!-- senior-add js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer th:src="@{/js/protectorMypage-aside-common.js}"></script>
+    <script defer th:src="@{/js/protectorMypage-seniorAdd.js}"></script>
     <!-- header CSS -->
     <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
     <link rel="stylesheet" th:href="@{/css/headerMember.css}">
@@ -24,9 +25,9 @@
   <header th:replace="~{/basic/header-ver1 :: header1}"></header>
     <section id="protectorMypage-senioradd">
     <aside>
-      <div class="mypage-alheum-logo-mid"
-          ><img th:src="@{/img/alheum_logo.svg}" alt="알흠로고"
-        /></div>
+<!--      <div class="mypage-alheum-logo-mid"-->
+<!--          ><img th:src="@{/img/alheum_logo.svg}" alt="알흠로고"-->
+<!--        /></div>-->
         <ul>
           <a th:href="@{/alheum/mypage}"><li>마이페이지</li></a>
           <a th:href="@{/alheum/mypage/check}"><li>개인정보 수정</li></a>
@@ -83,7 +84,7 @@
                 placeholder="마지막자리"
                 />
               </label>
-              <button type="button" class="mypage-button">인증</button>
+              <button id="certiMessage" type="button" class="mypage-button">인증</button>
             </section>
             <section>
               <label for="phone-certi">

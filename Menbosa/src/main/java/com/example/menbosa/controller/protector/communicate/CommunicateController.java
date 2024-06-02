@@ -69,7 +69,7 @@ public class CommunicateController {
         @GetMapping("/commuWrite")
         public String commuWrite(HttpSession session) {
 
-            session.setAttribute("proMemNum", 601L);
+            session.setAttribute("proMemNum", 11L);
             return "protector/protectorCommunity-communicateWrite";
         }
 
@@ -133,9 +133,19 @@ public class CommunicateController {
         }
 
 
+        // 소통 글 삭제
+
         @GetMapping("/commuRemove")
         public RedirectView commuRemove(Long boardCommuNum){
             communicateService.removeCommu(boardCommuNum);
             return new RedirectView("/alheum/community/commuMain");
         }
+
+
+        // 자주하는 질문
+        @GetMapping("/commuQuestion")
+        public String commuQuestion(){
+            return "protector/protectorCommunity-questionMain";
+        }
+
 }
