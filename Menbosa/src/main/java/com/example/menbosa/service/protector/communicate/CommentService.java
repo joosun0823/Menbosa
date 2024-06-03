@@ -14,5 +14,5 @@ public interface CommentService {
 
     Slice<CommentListDto> findSlice(Criteria criteria, Long boardCommuNum);
 
-    void removeComment(Long boardCommuNum);
+    void removeComment(Long commentCommuNum);
 }

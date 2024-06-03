@@ -14,7 +14,7 @@ public interface CommentMapper {
 
     List<CommentListDto> selectCommentList(Long boardCommuNum);
 
-    void deleteComment(Long boardCommuNum);
+    void deleteComment(Long commentCommuNum);
 
     List<CommentListDto> selectSlice(@Param("criteria")Criteria criteria, @Param("boardCommuNum") Long boardCommuNum);
 }
