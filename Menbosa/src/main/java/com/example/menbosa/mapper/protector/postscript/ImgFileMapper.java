@@ -9,7 +9,7 @@ import java.util.List;
 public interface ImgFileMapper {
     void insertImgFile(ImgFileDTO imgFileDTO);
 
-    void deleteImgFile(Long imgFileDTO);
+    void deleteImgFile(Long boardRecomNum);
 
     List<ImgFileDTO> selectImgList(Long boardRecomNum);
 }

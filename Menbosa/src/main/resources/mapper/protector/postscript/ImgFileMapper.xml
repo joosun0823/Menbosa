@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.menbosa.mapper.postscript.ImgFileMapper">
+<mapper namespace="com.example.menbosa.mapper.protector.postscript.ImgFileMapper">
     <insert id="insertImgFile" parameterType="ImgFileDTO">
-        <selectKey keyProperty="ImgFileNum" resultType="Long" order="BEFORE">
-            SELECT SEQ_IMG_File.nextVal FROM DUAL
+        <selectKey keyProperty="imgFileNum" resultType="Long" order="BEFORE">
+            SELECT SEQ_IMG_FILE.nextVal FROM DUAL
         </selectKey>
-        INSERT INTO TBL_IMG_FILE(IMG_FILE_NUM, IMG_FILE_USER, IMG_FILE_EXT, IMG_FILE_SERVER, BOARD_RECOM_NUM)
+        INSERT INTO MBS_IMG_FILE(IMG_FILE_NUM, IMG_FILE_USER, IMG_FILE_EXT, IMG_FILE_SERVER, BOARD_RECOM_NUM)
         VALUES(#{imgFileNum}, #{imgFileUser}, #{imgFileExt}, #{imgFileServer}, #{boardRecomNum})
     </insert>
 
@@ -15,8 +15,8 @@
     </delete>
 
     <select id="selectImgList" parameterType="Long" resultType="ImgFileDTO">
-        SELECT FILE_ID, NAME, UPLOAD_PATH, UUID, BOARD_ID
-        FROM TBL_FILE
-        WHERE BOARD_ID = #{boardId}
+        SELECT IMG_FILE_NUM, IMG_FILE_USER, IMG_FILE_EXT, IMG_FILE_SERVER, BOARD_RECOM_NUM
+        FROM MBS_IMG_FILE
+        WHERE BOARD_RECOM_NUM = #{boardRecomNum}
     </select>
 </mapper>

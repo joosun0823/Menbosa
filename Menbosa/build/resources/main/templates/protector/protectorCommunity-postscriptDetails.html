@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- postscriptDetails CSS -->
-  <link rel="stylesheet" href="./../../static/css/protectorCommunity-postscriptDetails.css">
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-postscriptDetails.css}">
   <!-- postscriptDetails JS -->
-  <script defer src="./../../static/js/protectorCommunity-postscriptDetails.js"></script>
+  <script defer th:src="@{/js/protectorCommunity-postscriptDetails.js}"></script>
   <!-- header CSS -->
   <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
   <link rel="stylesheet" th:href="@{/css/headerMember.css}">
@@ -22,95 +22,97 @@
 <header th:replace="~{/basic/header-ver1 :: header1}"></header>
 
   <main>
+    <input type="hidden" id="boardRecomNum" th:value="${detail.boardRecomNum}">
     <div class="protectorCommunity-postscriptDetails-title">
       <div class="title-top">
         <p>
           <span>[시설후기]</span>
-          <span>여기 좋아요</span>
+          <span th:text="${detail.boardRecomTitle}"></span>
         </p>
         <div class="menuButton">
-          <img src="./../../static/img/community-menuButton.png" alt="">
+          <img src="/img/community-menuButton.png" alt="">
           <ul class="menuButton-modifyDelete">
-            <li><a href="./../../templates/protector/protectorCommunity-retouch.html">수정</a></li>
-            <li><span>삭제</span></li>
+            <a th:href="@{/alheum/community/postModify(boardRecomNum = ${detail.boardRecomNum})}">
+            <li>수정</li>
+            </a>
+            <a th:href="@{/alheum/community/postRemove(boardRecomNum = ${detail.boardRecomNum})}">
+            <li style="color: red">삭제</li>
+            </a>
           </ul>
         </div>
       </div>
       <div class="title-bottom">
-        <span>장서혁</span>
-        <span>2024-05-11</span>
+        <span th:text="${detail.proMemName}"></span>
+        <span th:text="${#temporals.format(detail.boardRecomDate, 'yyyy-MM-dd HH:mm')}"></span>
       </div>
     </div>
 
     <div class="protectorCommunity-postscriptDetails-content">
-      <p>
-        날 수 있어요
-      </p>
-      <p>
-        <img src="./../../static/img/community-example.png" alt="">
+      <p th:text="${detail.boardRecomContents}"></p>
+      <p class="post-images">
+        <!--              이미지 들어갈 공간    -->
       </p>
     </div>
 
     <div class="protectorCommunity-postscriptDetails-comments">
       <div class="comments-top">
-        <p><img src="./../../static/img/community-commentsLogo.png" alt=""></p>
+        <p><img src="/img/community-commentsLogo.png" alt=""></p>
         <span>Comments</span>
       </div>
       <ul class="comments-list">
-        <li>
-          <div class="comments-list-own">
-            <p><img src="./../../static/img/community-profile.png" alt=""></p>
-            <div>
-              <div class="comments-list-writer">
-                <span>작성자</span>
-                <div class="comments-menuButton">
-                  <img src="./../../static/img/community-menuButton.png" alt="">
-                  <ul class="comments-list-submenu">
-                    <li class="reply"><span>답글</span></li>
-                    <li><span>삭제</span></li>
-                  </ul>
-                </div>  
-              </div>
-              <p class="comments-list-contents">
-                <span>으미 기여븐거</span>
-                <span>20240511 15:08</span>
-              </p>
-            </div>
-          </div>
-          <ul class="comments-list-reply">
-            <div class="reply-inputBox">
-              <div class="reply-input">
-                <input type="text" name="" placeholder="댓글을 남겨보세요">
-                <button>등록</button>
-              </div>
-            </div>
-            <li>
-              <p>ㄴ</p>
-              <div>
-                <p class="reply-writer">
-                  <span>다른사람 1</span>
-                  <span></span>
-                </p>
-                <p class="reply-contents">
-                  <span>넘기여브넹</span>
-                  <span>20240511 15:08</span>
-                </p>
-              </div>
-            </li>
-          </ul>
-        </li>
-        
+<!--        <li>-->
+<!--          <div class="comments-list-own">-->
+<!--            <p><img src="/img/community-profile.png" alt=""></p>-->
+<!--            <div>-->
+<!--              <div class="comments-list-writer">-->
+<!--                <span>작성자</span>-->
+<!--                <div class="comments-menuButton">-->
+<!--                  <img src="/img/community-menuButton.png" alt="">-->
+<!--                  <ul class="comments-list-submenu">-->
+<!--                    <li class="reply"><span>답글</span></li>-->
+<!--                    <li><span>삭제</span></li>-->
+<!--                  </ul>-->
+<!--                </div>  -->
+<!--              </div>-->
+<!--              <p class="comments-list-contents">-->
+<!--                <span>으미 기여븐거</span>-->
+<!--                <span>20240511 15:08</span>-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <ul class="comments-list-reply">-->
+<!--            <div class="reply-inputBox">-->
+<!--              <div class="reply-input">-->
+<!--                <input type="text" name="" placeholder="댓글을 남겨보세요">-->
+<!--                <button>등록</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <li>-->
+<!--              <p>ㄴ</p>-->
+<!--              <div>-->
+<!--                <p class="reply-writer">-->
+<!--                  <span>다른사람 1</span>-->
+<!--                  <span></span>-->
+<!--                </p>-->
+<!--                <p class="reply-contents">-->
+<!--                  <span>넘기여브넹</span>-->
+<!--                  <span>20240511 15:08</span>-->
+<!--                </p>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </li>-->
       </ul>
       <div class="protectorCommunity-postscriptDetails-commentsInput">
         <form action="">
           <input type="text" name="" placeholder="댓글을 남겨보세요">
-          <button>등록</button>
+          <button type="submit">등록</button>
         </form>
       </div>
     </div>
 
     <div class="protectorCommunity-postscriptDetails-listButton">
-      <a href="./../../templates/protector/protectorCommunity-postcriptMain.html">목록으로</a>
+      <a th:href="@{/alheum/community/postMain}">목록으로</a>
     </div>
   </main>
 

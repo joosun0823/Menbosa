@@ -14,7 +14,7 @@ public interface PostService {
 
     ImgFileDTO saveImgFile(MultipartFile file) throws IOException;
 
-    void removeImgFile(Long boardRecomNum);
+    void removePost(Long boardRecomNum);
 
     void modifyImgFile(PostUpdateDTO postUpdateDTO, List<MultipartFile> files) throws IOException;
 

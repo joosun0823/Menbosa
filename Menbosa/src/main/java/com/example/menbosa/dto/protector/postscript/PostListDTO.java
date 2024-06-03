@@ -5,6 +5,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @ToString
@@ -13,6 +16,8 @@ public class PostListDTO {
     private Long boardRecomNum;
     private String boardRecomTitle;
     private String proMemPhone;
+    private String proMemName;
+    private LocalDateTime boardRecomDate;
     private Long IMG_FILE_NUM;
     private String IMG_FILE_USER;
     private String IMG_FILE_SERVER;

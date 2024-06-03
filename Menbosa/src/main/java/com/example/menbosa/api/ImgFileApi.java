@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
@@ -21,18 +21,15 @@ public class ImgFileApi {
     @Value("C:/upload/")
     private String fileDir;
 
-<<<<<<< HEAD
-=======
-    @GetMapping("/v1/posts/${boardRecomNum}/imgFiles")
-    public List<ImgFileDTO> ImgFileList(@RequestParam("boardRecomNum") Long boardRecomNum) {
+    @GetMapping("/v1/posts/{boardRecomNum}/files")
+    public List<ImgFileDTO> fileList(@PathVariable("boardRecomNum") Long boardRecomNum){
         return imgFileService.findList(boardRecomNum);
     }
 
-    @GetMapping("/v1/files")
+    @GetMapping("/v1/imgFiles")
     public byte[] display(String fileName) throws IOException {
         File file = new File(fileDir, fileName);
 
         return FileCopyUtils.copyToByteArray(file);
     }
->>>>>>> yhj
 }

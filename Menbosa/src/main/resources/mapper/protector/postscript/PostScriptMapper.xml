@@ -16,8 +16,8 @@
             #{boardRecomNum},
             #{boardRecomTitle},
             #{boardRecomContents},
-            #{boardRecomDate},
-            #{ProMemNum}
+            SYSDATE,
+            #{proMemNum}
         )
     </insert>
     
@@ -28,11 +28,9 @@
     
     <update id="updatePost" parameterType="PostUpdateDTO">
         UPDATE MBS_BOARD_RECOM
-        SET BOARD_RECOM_NUM = #{boardRecomNum},
-            BOARD_RECOM_TITLE = #{boardRecomTitle},
+        SET BOARD_RECOM_TITLE = #{boardRecomTitle},
             BOARD_RECOM_CONTENTS = #{boardRecomContents},
-            BOARD_RECOM_DATE = #{boardRecomDate},
-            PRO_MEM_NUM = #{ProMemNum}
+            BOARD_RECOM_DATE = SYSDATE
         WHERE BOARD_RECOM_NUM = #{boardRecomNum}
     </update>
 
@@ -41,68 +39,36 @@
                BOARD_RECOM_TITLE,
                BOARD_RECOM_CONTENTS,
                BOARD_RECOM_DATE,
-               P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
+               P.PRO_MEM_NAME,
                P.PRO_MEM_NUM
-        FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEM P
+        FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEMBER P
         ON B.BOARD_RECOM_NUM = #{boardRecomNum} AND B.PRO_MEM_NUM = P.PRO_MEM_NUM
     </select>
 
     <select id="selectALL" resultType="PostListDTO">
         SELECT BOARD_RECOM_NUM,
                BOARD_RECOM_TITLE,
-               P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
-        FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEM P
+               P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK
+        FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEMBER P
         ON B.PRO_MEM_NUM = P.PRO_MEM_NUM
-        ORDER BY BOARD_RECOM_NUM DESC
+        ORDER BY BOARD_RECOM_DATE DESC
     </select>
 
     <select id="selectPostALL" parameterType="Criteria" resultType="PostListDTO">
         <![CDATA[
-        SELECT BOARD_RECOM_NUM,
-               BOARD_RECOM_TITLE,
-               P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
-               IMG_FILE_NUM,
-               IMG_FILE_USER,
-               IMG_FILE_EXT,
-               IMG_FILE_SERVER
+        SELECT BOARD_RECOM_NUM, BOARD_RECOM_TITLE, BOARD_RECOM_DATE ,PRO_MEM_NAME
         FROM (
-                 SELECT ROWNUM,
-                        BOARD_RECOM_NUM,
-                        BOARD_RECOM_TITLE,
-                        P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
-                        IMG_FILE_NUM,
-                        IMG_FILE_USER,
-                        IMG_FILE_EXT,
-                        IMG_FILE_SERVER
+                 SELECT ROWNUM AS RNUM, BOARD_RECOM_NUM, BOARD_RECOM_TITLE, BOARD_RECOM_DATE ,PRO_MEM_NAME
                  FROM(
-                         SELECT B.BOARD_RECOM_NUM,
-                                BOARD_RECOM_TITLE,
-                                P.PRO_MEM_PHONE_MID || P.PRO_MEM_PHONE_BACK,
-                                F.IMG_FILE_NUM,
-                                F.IMG_FILE_USER,
-                                F.IMG_FILE_EXT,
-                                F.IMG_FILE_SERVER
-                         FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEM P
-                         ON B.PRO_MEM_NUM = P.PRO_MEM_NUM
-                         LEFT JOIN (
-                                SELECT IMG_FILE_NUM, IMG_FILE_USER, IMG_FILE_EXT, IMG_FILE_SERVER, BOARD_RECOM_NUM
-                                FROM (
-                                      SELECT IMG_FILE_NUM,
-                                             IMG_FILE_USER,
-                                             IMG_FILE_EXT,
-                                             IMG_FILE_SERVER,
-                                             BOARD_RECOM_NUM,
-                                             RANK() OVER(PARTITION BY BOARD_ID ORDER BY FILE_ID) RK
-                                      FROM MBS_IMG_FILE
-                                )
-                                WHERE RK = 1
-                         ) F
-                         ON B.BOARD_RECOM_NUM = F.BOARD_RECOM_NUM
+                         SELECT B.BOARD_RECOM_NUM, B.BOARD_RECOM_TITLE, B.BOARD_RECOM_DATE , U.PRO_MEM_NAME
+                         FROM MBS_BOARD_RECOM B JOIN MBS_PRO_MEMBER U
+                                                     ON B.PRO_MEM_NUM = U.PRO_MEM_NUM
                          ORDER BY BOARD_RECOM_NUM DESC
                      )
                  WHERE ROWNUM <= #{page} * #{amount}
              )
-        WHERE RNUM > (#{page} - 1) * #{amount}
+        WHERE RNUM > (#{page}-1) * #{amount}
+        ORDER BY BOARD_RECOM_DATE DESC
         ]]>
     </select>
 
