@@ -50,71 +50,103 @@ public class CommunicateController {
     }
 
         // 소통 목록 페이지
-        @GetMapping("/commuMain")
-        public String commuMain(Model model, Criteria criteria) {
-//            List<CommuListDto> commuList = communicateService.selectCommuList();
+    @GetMapping("/commuMain")
+    public String commuMain(Model model, Criteria criteria) {
+//      List<CommuListDto> commuList = communicateService.selectCommuList();
 
-            List<CommuListDto> commuList = communicateService.findAllPage(criteria);
-            int total = communicateService.findTotal();
-            Page page = new Page(criteria, total);
+        List<CommuListDto> commuList = communicateService.findAllPage(criteria);
+        int total = communicateService.findTotal();
+        Page page = new Page(criteria, total);
 
-            model.addAttribute("commuList", commuList);
-            model.addAttribute("page", page);
+        model.addAttribute("commuList", commuList);
+        model.addAttribute("page", page);
 
-            return "protector/protectorCommunity-communicateMain";
+        return "protector/protectorCommunity-communicateMain";
+    }
+
+
+    // 소통 글쓰기 페이지
+    @GetMapping("/commuWrite")
+    public String commuWrite(HttpSession session) {
+
+        session.setAttribute("proMemNum", session.getAttribute("proMemNum"));
+        return "protector/protectorCommunity-communicateWrite";
+    }
+
+    @PostMapping("/commuWrite")
+    public String commuWrite(CommuWriteDto commuWriteDto, @SessionAttribute(value = "proMemNum") Long proMemNum,
+                             RedirectAttributes redirectAttributes,
+                             @RequestParam("boardFile") List<MultipartFile> files
+                             ){
+
+        commuWriteDto.setProMemNum(proMemNum);
+        try{
+            communicateService.registerCommuWithFile(commuWriteDto, files);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+//      redirectAttributes.addFlashAttribute("boardCommuNum", commuWriteDto.getBoardCommuNum());
 
-        // 소통 글쓰기 페이지
-        @GetMapping("/commuWrite")
-        public String commuWrite(HttpSession session) {
+        // 작성된 글의 번호를 가져와서 상세 페이지로 리다이렉트
+        Long boardCommuNum = commuWriteDto.getBoardCommuNum();
+        redirectAttributes.addFlashAttribute("boardCommuNum", boardCommuNum);
 
+<<<<<<< HEAD
             session.setAttribute("proMemNum", 11L);
             return "protector/protectorCommunity-communicateWrite";
+=======
+        // 상세 페이지 URL로 리다이렉트
+        return "redirect:/alheum/community/commuDetails?boardCommuNum=" + boardCommuNum;
+    }
+
+    // 소통 상세 페이지
+    @GetMapping("/commuDetails")
+    public String commuDetails(Long boardCommuNum, Model model){
+        CommuDetailDto detail = communicateService.findCommuDetail(boardCommuNum);
+        model.addAttribute("detail", detail);
+        return "protector/protectorCommunity-communicateDetails";
+    }
+
+
+    //소통 글 수정페이지
+    @GetMapping("/commuModify")
+    public String commuModify(Long boardCommuNum, Model model){
+        CommuDetailDto detail = communicateService.findCommuDetail(boardCommuNum);
+        model.addAttribute("detail", detail);
+
+        return "protector/protectorCommunity-retouch";
+    }
+
+
+    @PostMapping("/commuModify")
+    public String commuModify(CommuUpdateDto commuUpdateDto,
+                              @RequestParam("boardFile") List<MultipartFile> files,
+                              RedirectAttributes redirectAttributes){
+
+        try{
+            communicateService.modifyCommu(commuUpdateDto, files);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+>>>>>>> dd20961340cf66e39f534e11799537397d4894a0
         }
 
-        @PostMapping("/commuWrite")
-        public String commuWrite(CommuWriteDto commuWriteDto, @SessionAttribute(value = "proMemNum") Long proMemNum,
-                                 RedirectAttributes redirectAttributes,
-                                 @RequestParam("boardFile") List<MultipartFile> files
-                                 ){
+        Long boardCommuNum = commuUpdateDto.getBoardCommuNum();
+        redirectAttributes.addFlashAttribute("boardCommuNum", boardCommuNum);
 
-            commuWriteDto.setProMemNum(proMemNum);
-            try{
-                communicateService.registerCommuWithFile(commuWriteDto, files);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-//            redirectAttributes.addFlashAttribute("boardCommuNum", commuWriteDto.getBoardCommuNum());
-
-            // 작성된 글의 번호를 가져와서 상세 페이지로 리다이렉트
-            Long boardCommuNum = commuWriteDto.getBoardCommuNum();
-            redirectAttributes.addFlashAttribute("boardCommuNum", boardCommuNum);
-
-            // 상세 페이지 URL로 리다이렉트
-            return "redirect:/alheum/community/commuDetails?boardCommuNum=" + boardCommuNum;
-        }
-
-        // 소통 상세 페이지
-        @GetMapping("/commuDetails")
-        public String commuDetails(Long boardCommuNum, Model model){
-            CommuDetailDto detail = communicateService.findCommuDetail(boardCommuNum);
-            model.addAttribute("detail", detail);
-            return "protector/protectorCommunity-communicateDetails";
-        }
+        return "redirect:/alheum/community/commuDetails?boardCommuNum=" + boardCommuNum;
+    }
 
 
-        //소통 글 수정페이지
-        @GetMapping("/commuModify")
-        public String commuModify(Long boardCommuNum, Model model){
-            CommuDetailDto detail = communicateService.findCommuDetail(boardCommuNum);
-            model.addAttribute("detail", detail);
-
-            return "protector/protectorCommunity-retouch";
-        }
+    // 소통 글 삭제
+    @GetMapping("/commuRemove")
+    public RedirectView commuRemove(Long boardCommuNum){
+        communicateService.removeCommu(boardCommuNum);
+        return new RedirectView("/alheum/community/commuMain");
+    }
 
 
+<<<<<<< HEAD
         @PostMapping("/commuModify")
         public String commuModify(CommuUpdateDto commuUpdateDto,
                                   @RequestParam("boardFile") List<MultipartFile> files,
@@ -147,5 +179,14 @@ public class CommunicateController {
         public String commuQuestion(){
             return "protector/protectorCommunity-questionMain";
         }
+=======
+    // 자주하는 질문
+    @GetMapping("/commuQuestion")
+    public String commuQuestion(){
+        return "protector/protectorCommunity-questionMain";
+    }
+
+
+>>>>>>> dd20961340cf66e39f534e11799537397d4894a0
 
 }
