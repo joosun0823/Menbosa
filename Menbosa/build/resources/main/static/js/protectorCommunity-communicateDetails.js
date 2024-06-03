@@ -73,13 +73,7 @@ function imgAjax(){
           let fileName = list[i].fileExt + '/' + list[i].fileServer + '_' + list[i].fileUser;
           //파일 경로 조합
 
-<<<<<<< HEAD
-          tags += `
-                         <img src="/v1/files?fileName=${fileName}" data-id="${list[i].fileNum}" data-name="${fileName}"/>
-                        `;
-=======
           tags += `<img src="/v1/files?fileName=${fileName}" data-id="${list[i].fileNum}" data-name="${fileName}"/>`;
->>>>>>> dd20961340cf66e39f534e11799537397d4894a0
         }
 
         let $postImgs = document.querySelector('.post-images'); //이미지가 삽입될 요소
@@ -89,11 +83,6 @@ function imgAjax(){
 
 }
 
-<<<<<<< HEAD
-
-
-////////////////////////////////////////////////////////////////////////////
-=======
 // ====================================
 
 
@@ -258,6 +247,5 @@ $commentWrap.addEventListener('click', function (e) {
     }
 });
 
->>>>>>> dd20961340cf66e39f534e11799537397d4894a0
 
 

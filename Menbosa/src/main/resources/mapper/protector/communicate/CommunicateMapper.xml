@@ -19,20 +19,20 @@
     </select>
 
 
-<!--    <select id="selectCommuSearch" parameterType="String" resultType="CommuListDto">-->
+    <!--    <select id="selectCommuSearch" parameterType="String" resultType="CommuListDto">-->
 
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통게시글 리스트 조회하기&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        SELECT-->
-<!--            B.BOARD_COMMU_NUM,-->
-<!--            B.BOARD_COMMU_TITLE,-->
-<!--            B.BOARD_COMMU_CONTENTS,-->
-<!--            B.BOARD_COMMU_DATE,-->
-<!--            M.PRO_MEM_NAME-->
-<!--        FROM MBS_BOARD_COMMU B JOIN MBS_PRO_MEMBER M-->
-<!--                                    ON B.PRO_MEM_NUM = M.PRO_MEM_NUM-->
-<!--                                     AND B.BOARD_COMMU_TITLE LIKE '%'|| #{search} ||'%'-->
-<!--        ORDER BY B.BOARD_COMMU_DATE DESC-->
-<!--    </select>-->
+    <!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통게시글 리스트 조회하기&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+    <!--        SELECT-->
+    <!--            B.BOARD_COMMU_NUM,-->
+    <!--            B.BOARD_COMMU_TITLE,-->
+    <!--            B.BOARD_COMMU_CONTENTS,-->
+    <!--            B.BOARD_COMMU_DATE,-->
+    <!--            M.PRO_MEM_NAME-->
+    <!--        FROM MBS_BOARD_COMMU B JOIN MBS_PRO_MEMBER M-->
+    <!--                                    ON B.PRO_MEM_NUM = M.PRO_MEM_NUM-->
+    <!--                                     AND B.BOARD_COMMU_TITLE LIKE '%'|| #{search} ||'%'-->
+    <!--        ORDER BY B.BOARD_COMMU_DATE DESC-->
+    <!--    </select>-->
 
 
     <insert id="insertCommu" parameterType="CommuWriteDto">
@@ -41,7 +41,7 @@
             SELECT SEQ_BOARD_COMMU.NEXTVAL FROM DUAL
         </selectKey>
         INSERT INTO MBS_BOARD_COMMU(BOARD_COMMU_NUM, BOARD_COMMU_TITLE, BOARD_COMMU_CONTENTS, BOARD_COMMU_DATE, PRO_MEM_NUM)
-        VALUES(#{boardCommuNum}, #{boardCommuTitle}, #{boardCommuContents}, SYSDATE, #{proMemNum})
+        VALUES (#{boardCommuNum}, #{boardCommuTitle}, #{boardCommuContents}, SYSDATE, #{proMemNum})
     </insert>
 
 
@@ -144,59 +144,28 @@
         SELECT COUNT(ANNOUNCE_NUM) FROM MBS_ANNOUNCE
     </select>
 
-<<<<<<< HEAD
-    <insert id="insertComment" parameterType="CommentWriteDto">
-        <selectKey keyProperty="commentCommuNum" resultType="Long" order="BEFORE">
-            SELECT SEQ_COMMENT_COMMU.nextVal FROM DUAL
-        </selectKey>
-        INSERT INTO MBS_COMMENT_COMMU(COMMENT_COMMU_NUM, COMMENT_COMMU_DATE, COMMENT_COMMU_CONTENTS, BOARD_COMMU_NUM, PRO_MEM_NUM)
-        VALUES(#{commentCommuNum}, SYSDATE, #{commentCommuContents}, #{boardCommuNum}, #{proMemNum})
-    </insert>
-=======
 
 
->>>>>>> dd20961340cf66e39f534e11799537397d4894a0
 
 
-<<<<<<< HEAD
-    <select id="selectSlice" resultType="CommentListDto">
-        <![CDATA[
-        SELECT COMMENT_COMMU_NUM, COMMENT_COMMU_DATE, COMMENT_COMMU_CONTENTS, BOARD_COMMU_NUM, PRO_MEM_NUM
-        FROM(
-                SELECT ROWNUM AS RNUM, COMMENT_COMMU_NUM, COMMENT_COMMU_DATE, COMMENT_COMMU_CONTENTS, BOARD_COMMU_NUM, PRO_MEM_NUM
-                FROM (
-                         SELECT C.COMMENT_COMMU_NUM, C.COMMENT_COMMU_DATE, C.COMMENT_COMMU_CONTENTS, C.BOARD_COMMU_NUM, C.PRO_MEM_NUM
-                         FROM MBS_COMMENT_COMMU C JOIN MBS_PRO_MEMBER P
-                                                       ON C.PRO_MEM_NUM = P.PRO_MEM_NUM AND C.BOARD_COMMU_NUM = #{boardCommuNum}
-                     ) WHERE ROWNUM <= #{criteria.page} * #{criteria.amount} + 1
-            ) WHERE RNUM > (#{criteria.page} - 1) * #{criteria.amount}
-        ]]>
-    </select>
+    <!--    <delete id="deleteComment" parameterType="Long">-->
+    <!--        DELETE FROM MBS_COMMENT_COMMU-->
+    <!--        WHERE COMMENT_COMMU_NUM = #{commentCommuNum}-->
+    <!--    </delete>-->
 
-    <delete id="deleteComment" parameterType="Long">
-        DELETE FROM MBS_COMMENT_COMMU
-        WHERE COMMENT_COMMU_NUM = #{commentCommuNum}
-    </delete>
-=======
-<!--    <delete id="deleteComment" parameterType="Long">-->
-<!--        DELETE FROM MBS_COMMENT_COMMU-->
-<!--        WHERE COMMENT_COMMU_NUM = #{commentCommuNum}-->
-<!--    </delete>-->
 
->>>>>>> dd20961340cf66e39f534e11799537397d4894a0
+    <!--    <insert id="">-->
+    <!--        -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 대댓글 작성하기&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+    <!--        INSERT INTO MBS_REPLY_COMMU-->
+    <!--        (REPLY_COMMU_NUM, REPLY_COMMU_DATE, REPLY_COMMU_CONTENTS, COMMENT_COMMU_NUM, PRO_MEM_NUM)-->
+    <!--        VALUES-->
+    <!--            (#{replyCommuNum}, SYSDATE, #{replyCommuContents}, #{commentCommuNum}, #{proMemNum})-->
+    <!--    </insert>-->
 
-<!--    <insert id="">-->
-<!--        -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 대댓글 작성하기&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        INSERT INTO MBS_REPLY_COMMU-->
-<!--        (REPLY_COMMU_NUM, REPLY_COMMU_DATE, REPLY_COMMU_CONTENTS, COMMENT_COMMU_NUM, PRO_MEM_NUM)-->
-<!--        VALUES-->
-<!--            (#{replyCommuNum}, SYSDATE, #{replyCommuContents}, #{commentCommuNum}, #{proMemNum})-->
-<!--    </insert>-->
-
-<!--    <delete id="">-->
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 대댓글 삭제하기-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        DELETE FROM MBS_REPLY_COMMU-->
-<!--        WHERE REPLY_COMMU_NUM = #{replyCommuNum}-->
-<!--    </delete>-->
+    <!--    <delete id="">-->
+    <!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 대댓글 삭제하기-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+    <!--        DELETE FROM MBS_REPLY_COMMU-->
+    <!--        WHERE REPLY_COMMU_NUM = #{replyCommuNum}-->
+    <!--    </delete>-->
 
 </mapper>
