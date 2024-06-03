@@ -22,7 +22,7 @@ public class CommunicateController {
     private final CommunicateService communicateService;
 
     public CommunicateController(CommunicateService communicateService) {
-    this.communicateService = communicateService;
+        this.communicateService = communicateService;
     }
 
     // 공지 목록 페이지
@@ -49,7 +49,7 @@ public class CommunicateController {
         return "protector/protectorCommunity-announceDetails";
     }
 
-        // 소통 목록 페이지
+    // 소통 목록 페이지
     @GetMapping("/commuMain")
     public String commuMain(Model model, Criteria criteria) {
 //      List<CommuListDto> commuList = communicateService.selectCommuList();
@@ -77,7 +77,7 @@ public class CommunicateController {
     public String commuWrite(CommuWriteDto commuWriteDto, @SessionAttribute(value = "proMemNum") Long proMemNum,
                              RedirectAttributes redirectAttributes,
                              @RequestParam("boardFile") List<MultipartFile> files
-                             ){
+    ){
 
         commuWriteDto.setProMemNum(proMemNum);
         try{

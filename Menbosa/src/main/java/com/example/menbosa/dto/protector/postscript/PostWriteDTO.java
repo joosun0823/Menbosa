@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,6 +15,6 @@ public class PostWriteDTO {
     private Long boardRecomNum;
     private String boardRecomTitle;
     private String boardRecomContents;
-    private LocalDate boardRecomDate;
+    private LocalDateTime boardRecomDate;
     private Long proMemNum;
 }

@@ -8,22 +8,22 @@
         INSERT INTO MBS_PRO_MEMBER(
         PRO_MEM_NUM,
         PRO_MEM_NAME,
-        PRO_MEM_EMAIL,
         PRO_MEM_PHONE_MID,
         PRO_MEM_PHONE_BACK,
         PRO_MEM_CERTIFICATION,
         PRO_MEM_PASSWORD,
-        PRO_MEM_PASSWORD_VERIFY
+        PRO_MEM_PASSWORD_VERIFY,
+        PRO_MEM_EMAIL
         )
         values(
-            #{proMemNum},
-            #{proMemName},
-            #{proMemPhoneMid},
-            #{proMemPhoneBack},
-            #{proMemCertification},
-            #{proMemPassword},
-            #{proMemPasswordVerify},
-            #{proMemEmail}
+        #{proMemNum},
+        #{proMemName},
+        #{proMemPhoneMid},
+        #{proMemPhoneBack},
+        #{proMemCertification},
+        #{proMemPassword},
+        #{proMemPasswordVerify},
+        #{proMemEmail}
         )
     </insert>
 
