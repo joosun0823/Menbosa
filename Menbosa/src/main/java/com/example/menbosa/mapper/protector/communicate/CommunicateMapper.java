@@ -44,4 +44,7 @@ public interface CommunicateMapper {
 
     int selectTotal();
 
+//    소통 검색
+//    List<CommuListDto> selectSearch(String search);
+
 }

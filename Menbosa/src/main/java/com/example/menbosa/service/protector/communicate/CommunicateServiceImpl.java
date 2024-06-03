@@ -145,6 +145,13 @@ public class CommunicateServiceImpl implements CommunicateService{
     }
 
 
+    // 소통 검색
+//    @Override
+//    public List<CommuListDto> findSearch(String search) {
+//        return communicateMapper.selectSearch(search);
+//    }
+
+
     //    공지
     @Override
     public List<MainListDto> findAll() {

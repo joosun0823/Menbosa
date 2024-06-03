@@ -322,7 +322,7 @@ main{
   margin: 40px auto;
 }
 
-.protectorCommunity-communicateDetails-commentsInput > form{
+.protectorCommunity-communicateDetails-commentsInput {
   width: 100%;
   display: flex;
   border: 1px solid var(--color-disabled);
@@ -333,13 +333,13 @@ main{
 
 }
 
-.protectorCommunity-communicateDetails-commentsInput > form > input{
+.protectorCommunity-communicateDetails-commentsInput  > input{
   width: 80%;
   border: none;
   outline: none;
 }
 
-.protectorCommunity-communicateDetails-commentsInput > form > button{
+.protectorCommunity-communicateDetails-commentsInput  > button{
   padding: 10px 45px;
   border-radius: 6px;
   border: none;
@@ -348,7 +348,7 @@ main{
   cursor: pointer;
 }
 
-.protectorCommunity-communicateDetails-commentsInput > form > button:hover{
+.protectorCommunity-communicateDetails-commentsInput >  button:hover{
   background-color: var(--color-main-hover);
 }
 
