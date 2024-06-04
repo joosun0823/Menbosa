@@ -3,19 +3,19 @@ let page = 1;
 let hasNext = true;
 
 
-{
-let $titleTabMenu = document.querySelector(".menuButton");
-let $titleSubTabMenu = document.querySelector(".menuButton-modifyDelete");
+
+const $titleTabMenu = document.querySelector(".menuButton");
+const $titleSubTabMenu = document.querySelector(".menuButton-modifyDelete");
 
     $titleTabMenu?.addEventListener("click", function() {
         $titleSubTabMenu.classList.toggle("active");
+        console.log("클릭!");
+
 })
 
     $titleSubTabMenu?.addEventListener("mouseleave", function() {
         $titleSubTabMenu.classList.remove("active");
 })
-
-
 
 }
 
