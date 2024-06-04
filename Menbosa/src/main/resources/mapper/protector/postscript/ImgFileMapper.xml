@@ -5,8 +5,20 @@
         <selectKey keyProperty="imgFileNum" resultType="Long" order="BEFORE">
             SELECT SEQ_IMG_FILE.nextVal FROM DUAL
         </selectKey>
-        INSERT INTO MBS_IMG_FILE(IMG_FILE_NUM, IMG_FILE_USER, IMG_FILE_EXT, IMG_FILE_SERVER, BOARD_RECOM_NUM)
-        VALUES(#{imgFileNum}, #{imgFileUser}, #{imgFileExt}, #{imgFileServer}, #{boardRecomNum})
+        INSERT INTO MBS_IMG_FILE(
+             IMG_FILE_NUM,
+             IMG_FILE_USER,
+             IMG_FILE_EXT,
+             IMG_FILE_SERVER,
+             BOARD_RECOM_NUM
+        )
+        VALUES(
+             #{imgFileNum},
+             #{imgFileUser},
+             #{imgFileExt},
+             #{imgFileServer},
+             #{boardRecomNum}
+        )
     </insert>
 
     <delete id="deleteImgFile" parameterType="Long">
