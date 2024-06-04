@@ -144,60 +144,6 @@
         SELECT COUNT(ANNOUNCE_NUM) FROM MBS_ANNOUNCE
     </select>
 
-<<<<<<< HEAD
-
-
-
-    <insert id="insertComment" parameterType="CommentWriteDto">
-        <selectKey keyProperty="commentCommuNum" resultType="Long" order="BEFORE">
-            SELECT SEQ_COMMENT_COMMU.nextVal FROM DUAL
-        </selectKey>
-        INSERT INTO MBS_COMMENT_COMMU(COMMENT_COMMU_NUM, COMMENT_COMMU_DATE, COMMENT_COMMU_CONTENTS, BOARD_COMMU_NUM, PRO_MEM_NUM)
-        VALUES(#{commentCommuNum}, SYSDATE, #{commentCommuContents}, #{boardCommuNum}, #{proMemNum})
-    </insert>
-
-    <select id="selectCommentList" parameterType="Long" resultType="CommentListDto">
-        ----------------- 댓글 목록 ---------------------
-        SELECT C.COMMENT_COMMU_NUM, C.COMMENT_COMMU_DATE, C.COMMENT_COMMU_CONTENTS, C.BOARD_COMMU_NUM, P.PRO_MEM_NAME
-        FROM MBS_COMMENT_COMMU C JOIN MBS_PRO_MEMBER P
-                                      ON C.PRO_MEM_NUM = P.PRO_MEM_NUM AND C.BOARD_COMMU_NUM = #{boardCommuNum}
-        ORDER BY C.COMMENT_COMMU_DATE DESC
-    </select>
-
-    <select id="selectSlice" resultType="CommentListDto">
-        <![CDATA[
-        SELECT COMMENT_COMMU_NUM, COMMENT_COMMU_DATE, COMMENT_COMMU_CONTENTS, BOARD_COMMU_NUM, PRO_MEM_NUM
-        FROM(
-                SELECT ROWNUM AS RNUM, COMMENT_COMMU_NUM, COMMENT_COMMU_DATE, COMMENT_COMMU_CONTENTS, BOARD_COMMU_NUM, PRO_MEM_NUM
-                FROM (
-                         SELECT C.COMMENT_COMMU_NUM, C.COMMENT_COMMU_DATE, C.COMMENT_COMMU_CONTENTS, C.BOARD_COMMU_NUM, C.PRO_MEM_NUM
-                         FROM MBS_COMMENT_COMMU C JOIN MBS_PRO_MEMBER P
-                                                       ON C.PRO_MEM_NUM = P.PRO_MEM_NUM AND C.BOARD_COMMU_NUM = #{boardCommuNum}
-                     ) WHERE ROWNUM <= #{criteria.page} * #{criteria.amount} + 1
-            ) WHERE RNUM > (#{criteria.page} - 1) * #{criteria.amount}
-        ]]>
-    </select>
-
-    <delete id="deleteComment" parameterType="Long">
-        DELETE FROM MBS_COMMENT_COMMU
-        WHERE COMMENT_COMMU_NUM = #{commentCommuNum}
-    </delete>
-
-    <!--    <select id="">-->
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 댓글, 대댓글 조회&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        SELECT-->
-<!--            C.COMMENT_COMMU_DATE,-->
-<!--            C.COMMENT_COMMU_CONTENTS,-->
-<!--            C.PRO_MEM_NUM,-->
-<!--            R.REPLY_COMMU_DATE,-->
-<!--            R.REPLY_COMMU_CONTENTS,-->
-<!--            R.PRO_MEM_NUM-->
-<!--        FROM MBS_COMMENT_COMMU C-->
-<!--                 JOIN MBS_REPLY_COMMU R-->
-<!--                      ON C.COMMENT_COMMU_NUM = R.COMMENT_COMMU_NUM-->
-<!--        ORDER BY C.COMMENT_COMMU_DATE DESC-->
-<!--    </select>-->
-=======
 
 
 
@@ -221,6 +167,5 @@
     <!--        DELETE FROM MBS_REPLY_COMMU-->
     <!--        WHERE REPLY_COMMU_NUM = #{replyCommuNum}-->
     <!--    </delete>-->
->>>>>>> main
 
 </mapper>
