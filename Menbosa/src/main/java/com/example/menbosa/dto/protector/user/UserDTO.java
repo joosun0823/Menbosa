@@ -7,11 +7,11 @@ import lombok.*;
 public class UserDTO {
     private Long proMemNum;
     private String proMemName;
-    private String proMemEmail;
     private int proMemPhoneMid;
     private int proMemPhoneBack;
     private String proMemPhone;
     private int proMemCertification;
     private String proMemPassword;
     private String proMemPasswordVerify;
+    private String proMemEmail;
 }

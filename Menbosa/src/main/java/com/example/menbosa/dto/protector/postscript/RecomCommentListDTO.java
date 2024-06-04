@@ -5,21 +5,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
-public class PostListDTO {
+public class RecomCommentListDTO {
+    private Long commentRecomNum;
+    private LocalDateTime commentRecomDate;
+    private String commentRecomContents;
     private Long boardRecomNum;
-    private String boardRecomTitle;
-    private String proMemPhone;
     private String proMemName;
-    private LocalDateTime boardRecomDate;
-    private Long IMG_FILE_NUM;
-    private String IMG_FILE_USER;
-    private String IMG_FILE_SERVER;
-    private String IMG_FILE_EXT;
+    private Long proMemNum;
 }

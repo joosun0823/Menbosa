@@ -11,12 +11,10 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @NoArgsConstructor
-public class PostViewDTO {
+public class RecomCommentWriteDTO {
+    private Long commentRecomNum;
+    private LocalDateTime commentRecomDate;
+    private String commentRecomContents;
     private Long boardRecomNum;
-    private String boardRecomTitle;
-    private String boardRecomContents;
-    private LocalDateTime boardRecomDate;
-    private String proMemPhone;
     private Long proMemNum;
-    private String proMemName;
 }
