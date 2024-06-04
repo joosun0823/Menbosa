@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
   <!-- communicateDetails CSS -->
   <link rel="stylesheet" th:href="@{/css/protectorCommunity-communicateDetails.css}">
   <!-- communicateDetails JS -->
-  <script defer src="/js/protectorCommunity-communicateDetails.js"></script>
+  <script defer type="module" th:src="@{/js/protectorCommunity-communicateDetails.js}" ></script>
   <!-- header CSS -->
   <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
   <link rel="stylesheet" th:href="@{/css/headerMember.css}">

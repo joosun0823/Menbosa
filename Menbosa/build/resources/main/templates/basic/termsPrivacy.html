@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,15 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"/>
     <!-- css -->
-    <link rel="stylesheet" href="/css/terms-common.css" />
+    <link rel="stylesheet" th:href="@{/css/terms-common.css}" />
     <!-- fetch -->
-    <script defer src="/js/headerMember.js"></script>
-    <script defer src="/js/footer.js"></script>
-    <link rel="stylesheet" href="/css/headerMember.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <script defer th:src="@{/js/headerMember.js}"></script>
+    <script defer th:src="@{/js/footer.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
   </head>
   <body>
-    <header></header>
+  <header th:replace="~{/basic/header-ver1 :: header1}"></header>
     <main>
       <section>
         <h1>개인정보처리방침</h1>
@@ -271,6 +271,6 @@
         </article>
       </section>
     </main>
-    <footer></footer>
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
   </body>
 </html>

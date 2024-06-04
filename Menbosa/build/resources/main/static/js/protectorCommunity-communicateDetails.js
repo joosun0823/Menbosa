@@ -17,7 +17,7 @@ const $titleSubTabMenu = document.querySelector(".menuButton-modifyDelete");
         $titleSubTabMenu.classList.remove("active");
 })
 
-}
+
 
 
 // replyButton.addEventListener("click", function() {

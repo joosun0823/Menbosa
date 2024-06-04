@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
     <data-source source="LOCAL" name="@localhost" uuid="164384dc-b7c7-439f-aaa6-5b3cf8e4d1c9">
+=======
+<<<<<<< HEAD
+    <data-source source="LOCAL" name="@localhost" uuid="3e18a663-5f48-4690-a35c-62ecd4a4a002">
+=======
+<<<<<<< HEAD
+    <data-source source="LOCAL" name="@localhost" uuid="b3e026a0-7e57-46db-b0a0-7a6b77408bfb">
+=======
+    <data-source source="LOCAL" name="@localhost" uuid="5e68eea0-c9e0-4f9b-b02b-fb59b715a448">
+>>>>>>> dd20961340cf66e39f534e11799537397d4894a0
+>>>>>>> main
+>>>>>>> hjy
       <driver-ref>oracle.19</driver-ref>
       <synchronize>true</synchronize>
       <auto-commit>false</auto-commit>
