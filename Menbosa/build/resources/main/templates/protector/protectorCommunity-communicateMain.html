@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- communicateMain -->
-  <link rel="stylesheet" href="/css/protectorCommunity-communicateMain.css">
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-communicateMain.css}">
   <!-- header CSS -->
   <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
   <link rel="stylesheet" th:href="@{/css/headerMember.css}">
@@ -76,15 +76,6 @@
   </div>
 
 
-
-
-<!--  <div class="protectorCommunity-communicate-pageButton">-->
-<!--    <span>1</span>-->
-<!--    <span>2</span>-->
-<!--    <span>3</span>-->
-<!--    <span>4</span>-->
-<!--    <span>5</span>-->
-<!--  </div>-->
 </main>
 
 <footer th:replace="~{/basic/footer :: footer}"></footer>

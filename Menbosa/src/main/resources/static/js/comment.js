@@ -7,11 +7,9 @@ export function registerComment(commentInfo, callback){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({content: commentInfo.content}),
         }).then(resp => {
-
         if(resp.status === 200){
             callback();
         }
-
     });
 }
 
