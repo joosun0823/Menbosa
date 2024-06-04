@@ -125,57 +125,5 @@
         SELECT COUNT(ANNOUNCE_NUM) FROM MBS_ANNOUNCE
     </select>
 
-    <!--    <select id="">-->
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 댓글, 대댓글 조회&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        SELECT-->
-<!--            C.COMMENT_COMMU_DATE,-->
-<!--            C.COMMENT_COMMU_CONTENTS,-->
-<!--            C.PRO_MEM_NUM,-->
-<!--            R.REPLY_COMMU_DATE,-->
-<!--            R.REPLY_COMMU_CONTENTS,-->
-<!--            R.PRO_MEM_NUM-->
-<!--        FROM MBS_COMMENT_COMMU C-->
-<!--                 JOIN MBS_REPLY_COMMU R-->
-<!--                      ON C.COMMENT_COMMU_NUM = R.COMMENT_COMMU_NUM-->
-<!--        ORDER BY C.COMMENT_COMMU_DATE DESC-->
-<!--    </select>-->
-
-
-
-
-<!--    <insert id="">-->
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 댓글 작성하기&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        INSERT INTO MBS_COMMENT_COMMU-->
-<!--        (COMMENT_COMMU_NUM, COMMENT_COMMU_DATE, COMMENT_COMMU_CONTENTS, BOARD_COMMU_NUM, PRO_MEM_NUM)-->
-<!--        VALUES-->
-<!--            (#{commentCommuNum}, SYSDATE, #{commentCommuContents}, #{BoardCommuNum}, #{proMemNum})-->
-<!--    </insert>-->
-
-<!--    <insert id="">-->
-<!--        -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 대댓글 작성하기&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        INSERT INTO MBS_REPLY_COMMU-->
-<!--        (REPLY_COMMU_NUM, REPLY_COMMU_DATE, REPLY_COMMU_CONTENTS, COMMENT_COMMU_NUM, PRO_MEM_NUM)-->
-<!--        VALUES-->
-<!--            (#{replyCommuNum}, SYSDATE, #{replyCommuContents}, #{commentCommuNum}, #{proMemNum})-->
-<!--    </insert>-->
-
-
-
-
-
-
-
-<!--    <delete id="">-->
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 댓글 삭제하기-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        DELETE FROM MBS_COMMENT_COMMU-->
-<!--        WHERE COMMENT_COMMU_NUM = #{commentCommuNum}-->
-<!--    </delete>-->
-
-
-<!--    <delete id="">-->
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;소통 대댓글 삭제하기-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        DELETE FROM MBS_REPLY_COMMU-->
-<!--        WHERE REPLY_COMMU_NUM = #{replyCommuNum}-->
-<!--    </delete>-->
 
 </mapper>

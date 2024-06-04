@@ -23,6 +23,11 @@ class MypageServiceimplTest {
     @Autowired
     private ProMypageFindSenDTO proMypageFindSenDTO;
 
+    @Test
+    void selectSMS(){
+        System.out.println(mypageService.selectSenExi("한지윤","01073967653"));
+    }
+
 //    @Test
 //    void selectMyResult() {
 //        System.out.println(mypageService.selectMyResult(600));

@@ -3,8 +3,11 @@ package com.example.menbosa.controller.protector.mypage;
 import com.example.menbosa.dto.protector.communicate.CommuDetailDto;
 import com.example.menbosa.dto.protector.communicate.CommuUpdateDto;
 import com.example.menbosa.dto.protector.mypage.*;
+import com.example.menbosa.dto.senior.mypage.SenMyTestInfoDTO;
 import com.example.menbosa.service.protector.communicate.CommunicateService;
 import com.example.menbosa.service.protector.mypage.MypageService;
+import com.example.menbosa.service.protector.postscript.PostService;
+import com.example.menbosa.service.senior.mypage.SenMypageService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -25,6 +28,7 @@ public class MypageController {
 
     private final MypageService mypageService;
     private final ProMypageSenConnecDTO proMypageSenConnecDTO;
+    private final SenMypageService senMypageService;
 
     @GetMapping("/logout")
     public RedirectView logout(HttpSession session){
@@ -40,7 +44,6 @@ public class MypageController {
     }
 
     //   메인 마이페이지 화면
-    //   TODO 임의의 값 600설정
     @GetMapping
     public String mypage(Model model, @SessionAttribute("proMemNum")Long proMemNum) {
         List<ProMypageResultDTO> MyResultList = mypageService.selectMyResult(proMemNum);
@@ -54,11 +57,12 @@ public class MypageController {
     }
 
     //  마이페이지 시니어 상세보기
-    //     TODO 임의의값 600
     @GetMapping("/seninfo")
     public String mypageSenInfo(Model model, @RequestParam("senMemNum")Long senMemNum) {
         ProMypageSenDetailsDTO MySenDetails = mypageService.selectMySenDetails(senMemNum);
+        List<SenMyTestInfoDTO> senMyTestInfo = senMypageService.selectSenMyTestInfo(senMemNum);
         model.addAttribute("MySenDetails", MySenDetails);
+        model.addAttribute("MySenInfoList", senMyTestInfo);
         return "/protector/protectorMypage-seniorDetails";
     }
 
@@ -82,7 +86,6 @@ public class MypageController {
     }
 
     //    개인정보 수정 페이지
-    //    TODO 임의의 값 600
     @GetMapping("/modify")
     public String mypageModify(Model model ,@SessionAttribute("proMemNum")Long proMemNum) {
         ProMypageInfoDTO MyInfo = mypageService.selectMyInfo(proMemNum);
@@ -140,10 +143,17 @@ public class MypageController {
 //-------------------------------------------------------------------------------------------
 //소통 글 삭제페이지
     private final CommunicateService communicateService;
+    private final PostService postService;
 
     @GetMapping("/commuRemove")
     public RedirectView commuRemove(Long boardCommuNum){
         communicateService.removeCommu(boardCommuNum);
+        return new RedirectView("/alheum/mypage");
+    }
+
+    @GetMapping("/recomRemove")
+    public RedirectView recomRemove(Long boardRecomNum){
+        postService.removePost(boardRecomNum);
         return new RedirectView("/alheum/mypage");
     }
 }

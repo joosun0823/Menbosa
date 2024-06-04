@@ -32,7 +32,7 @@ public class SurveyController {
         return "/protector/protectorTest-survey";
     }
 
-    @PostMapping("test")
+    @PostMapping("/test")
     public void saveResult(@SessionAttribute("proMemNum")Long proMemNum, Long resultSurveyScore){
         System.out.println(resultSurveyScore);
         surveyService.insertSurvey(resultSurveyScore, proMemNum);

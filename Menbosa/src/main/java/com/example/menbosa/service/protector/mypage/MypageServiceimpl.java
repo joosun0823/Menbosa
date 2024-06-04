@@ -87,4 +87,27 @@ public class MypageServiceimpl implements MypageService{
         mypageMapper.deleteProMem(proMemNum);
     }
 
+
+//    //////////////////SMS
+
+    @Override
+    public Long selectProExi(String name, String phoneNum) {
+        return mypageMapper.selectProExi(name, phoneNum);
+    }
+
+    @Override
+    public Long selectSenExi(String name, String phoneNum) {
+        return mypageMapper.selectSenExi(name, phoneNum);
+    }
+
+    @Override
+    public void updateProCerti(String smsMessagePost, String proMemNum) {
+        mypageMapper.updateProCerti(smsMessagePost, proMemNum);
+    }
+
+    @Override
+    public void updateSenCerti(String smsMessagePost, String senMemNum) {
+        mypageMapper.updateSenCerti(smsMessagePost, senMemNum);
+    }
+
 }

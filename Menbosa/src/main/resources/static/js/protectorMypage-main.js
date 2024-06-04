@@ -106,12 +106,6 @@ menus.forEach(function(menu){
     $clickmenu_1.css("visibility", "hidden");
   });
 
-//삭제 confirm
-// let $menudelete_1 = $(".protectorMypage-mycontents-clickmenu .mypage-import");
-// let menudelete_1_value = false;
-// $menudelete_1.on('click',()=>{
-//   menudelete_1_value = confirm("게시물을 삭제하시겠습니까?")
-// });
 
 let deleteBoard = document.getElementsByClassName("deleteBoard");
 let deleteBoard_value = false;
@@ -123,13 +117,10 @@ Array.from(deleteBoard).forEach(function (board) {
     if (deleteBoard_value) {
       switch (division) {
         case '100' :
-          // alert("소통");
-          // console.log(boardNum);
           location.href = `/alheum/mypage/commuRemove?boardCommuNum=${boardNum}`;
           break;
         case '200' :
-          alert("시설후기");
-          // location.href = `/alheum/mypage/deleteSenMem?senMemNum=${division}`;
+          location.href = `/alheum/mypage/recomRemove?boardRecomNum=${boardNum}`;
           break;
       }
     }

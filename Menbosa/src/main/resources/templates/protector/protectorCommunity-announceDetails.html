@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- announceDetails CSS -->
-  <link rel="stylesheet" href="/css/protectorCommunity-announceDetails.css">
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-announceDetails.css}">
   <!-- header CSS -->
   <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
   <link rel="stylesheet" th:href="@{/css/headerMember.css}">
@@ -37,7 +37,7 @@
     <div class="protectorCommunity-announceDetails-content">
       <p th:text='${mainDetail.announceContents}'></p>
       <p>
-        <img src="/img/community-example.png" alt="">
+        <img th:src="@{/img/community-example.png}" alt="">
       </p>
     </div>
   </div>

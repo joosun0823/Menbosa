@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- announce CSS -->
-  <link rel="stylesheet" href="/css/protectorCommunity-announce.css">
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-announce.css}">
   <!-- header CSS -->
   <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
   <link rel="stylesheet" th:href="@{/css/headerMember.css}">
@@ -25,8 +25,8 @@
   <ul class="protectorCommunity-announce-tabMenu">
     <li><a th:href="@{/alheum/community/main}">공지</a></li>
     <li><a th:href="@{/alheum/community/commuMain}">소통</a></li>
-    <li><a href="./../../templates/protector/protectorCommunity-postcriptMain.html">시설후기</a></li>
-    <li><a href="./../../templates/protector/protectorCommunity-questionMain.html">자주하는 질문</a></li>
+    <li><a th:href="@{/alheum/community/postMain}">시설후기</a></li>
+    <li><a th:href="@{/alheum/community/commuQuestion}">자주하는 질문</a></li>
   </ul>
   <div class="protectorCommunity-announce-notice">
     <p class="protectorCommunity-announce-notice-title">

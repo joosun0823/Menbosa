@@ -29,9 +29,6 @@
 <header th:replace="~{/basic/header-ver1 :: header1}"></header>
 <section id="protectorMypage-seniorDetails">
     <aside>
-<!--        <div class="mypage-alheum-logo-mid">-->
-<!--            <img th:src="@{/img/alheum_logo.svg}" alt="알흠로고"/>-->
-<!--        </div>-->
         <ul>
             <a th:href="@{/alheum/mypage}">
                 <li>마이페이지</li>
@@ -50,7 +47,6 @@
         <div class="mypage-subtitle-box">어르신 정보상세</div>
         <section class="mypage-contents-container">
             <section th:each="info:${MySenDetails}" class="senior-info-container-flex">
-                <!--              TODO 임의의 값 600설정-->
                 <article>
                     <img
                             class="mypage-icon-user"
@@ -69,9 +65,8 @@
                     </div>
                 </article>
             </section>
-            <!--          FIXME 서혁님이 만든 쿼리+DTO 불러오면 됨-->
-            <div id="senior-info-resultall-title" class="mypage-subtitle-box">
-                <span>000</span>님의 검사결과 모아보기
+            <div id="senior-info-resultall-title" class="mypage-subtitle-box" th:each="info:${MySenDetails}">
+                <span th:text="${info.senMemName}"></span>님의 검사결과 모아보기
             </div>
             <article id="senior-info-resultall-container">
                 <div class="mypage-table">
@@ -80,11 +75,16 @@
                         <p class="mypage-th">검사명</p>
                         <p class="mypage-th">위험도</p>
                     </div>
-                    <div class="mypage-tr">
-                        <p class="mypage-td">ex.2024.05.09.</p>
-                        <p class="mypage-td">ex.기본인지기능검사</p>
+                    <div class="mypage-tr" th:each="test:${MySenInfoList}">
+                        <p class="mypage-td" th:text="${#temporals.format(test.testResultDate, 'yy년 M월 d일')}"></p>
+                        <p class="mypage-td" th:text="${test.testListName}"></p>
                         <p class="mypage-td">
-                            <span class="mypage-state-box mypage-state-good">양호</span>
+                            <span th:if="${test.testResultScore} == 4"
+                                  class="mypage-state-box mypage-state-good">양호</span>
+                            <span th:if="${test.testResultScore} == 3"
+                                  class="mypage-state-box mypage-state-mid">주의</span>
+                            <span th:if="${test.testResultScore} >= 1 and ${test.testResultScore} <= 2"
+                                  class="mypage-state-box mypage-state-bad">위험</span>
                         </p>
                     </div>
                     <p class="mypage-warning">

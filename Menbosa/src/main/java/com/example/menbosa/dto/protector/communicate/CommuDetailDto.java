@@ -16,5 +16,6 @@ public class CommuDetailDto {
     private String boardCommuContents;
     private LocalDateTime boardCommuDate;
     private String proMemName;
+    private Long proMemNum;
     private String fileUser;
 }

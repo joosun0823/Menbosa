@@ -49,4 +49,7 @@ public interface CommunicateService {
 
     int findTotal();
 
+    // 소통 검색
+//    List<CommuListDto> findSearch(String search);
+
 }
