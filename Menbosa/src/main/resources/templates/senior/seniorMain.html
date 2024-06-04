@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +7,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./../../static/css/seniorMain.css">
+  <link rel="stylesheet" th:href="@{/css/seniorMain.css}"/>
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
   <main>
-    <img src="./../../static/img/seniorBackgroundImg.png" alt="" class="seniorBackgroundImg">
+    <img th:src="@{/img/seniorBackgroundImg.png}" alt="" class="seniorBackgroundImg">
     <div class="seniorMain-container">
-      <img src="./../../static/img/senior-alheum_logo.svg" alt="" class="seniorMain-logo">
-      <p class="seniorMain-welcome">000님 어서오세요</p>
+      <img th:src="@{/img/senior-alheum_logo.svg}" alt="" class="seniorMain-logo">
+      <p class="seniorMain-welcome" th:text="${session.senMemName} + '님 어서오세요'"></p>
       <div class="seniorMain-menus">
         <div class="seniorMain-myInfo">
-          <a  href="./../../templates/basic/passwordVerify-seniorMypage.html">
+          <a  th:href="@{/alheum/senUser/passwordVerify}">
           <p class="seniorMain-myInfo-title">내 정보 보기</p>
           <hr>
           <p class="seniorMain-myInfo-menu">내 정보 수정하기</p>
@@ -28,17 +30,17 @@
         </div>
         <div class="seniorMain-menus-right">
           <div class="seniorMain-menu-test">
-            <a href="./seniorTest-list.html">검사하러가기</a> 
+            <a th:href="@{/alheum/senTest/testList}">검사하러가기</a>
             <a href="./seniorTest-list.html">&gt</a>
           </div>
           <div class="seniorMain-menu-account">
-            <div><a  class="seniorMain-menu-logout" href="./../../templates/basic/division.html">로그아웃</a></div>
-            <div><a  class="seniorMain-menu-login" href="./../../templates/protector/protectorLogin.html">보호자 로그인</a></div>
+            <div><a  class="seniorMain-menu-logout" th:href="@{/alheum/senUser/logout}">로그아웃</a></div>
+            <div><a  class="seniorMain-menu-login" th:href="@{/alheum/senUser/proLogin}">보호자 로그인</a></div>
           </div>
         </div>
       </div>
     </div>
   </main>
-  <footer></footer>
+  <footer class="footer" th:replace="~{/basic/footer :: footer}"></footer>
 </body>
 </html>

@@ -72,6 +72,11 @@
   font-size: 24px;
 }
 
+/*.seniorTest-list-container-test > p{*/
+/*  width: 280px;*/
+/*  text-align: center;*/
+/*}*/
+
 .seniorTest-list-container-testButton{
   height: 55px;
   width: 195px;
@@ -91,7 +96,6 @@
 .seniorTest-list-container-testLevel{
   width: 85px;
   height: 57px;
-  background-color: #27aae1;
   color: white;
   text-align: center;
   line-height: 57px;
@@ -99,7 +103,11 @@
   border-radius: 10px;
 }
 
-.nomal{
+.easy{
+  background-color: #27aae1;
+}
+
+.normal{
   background-color: #f7941d;
 }
 

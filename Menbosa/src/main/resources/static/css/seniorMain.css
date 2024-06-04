@@ -89,6 +89,7 @@
   margin-bottom: 20px;
   font-weight: bold;
   text-decoration: none;
+  border-bottom: 1px solid black;
 }
 
 .seniorMain-myInfo-menu{
@@ -168,4 +169,8 @@
   top: 150px;
   left: 20px;
   z-index: -1;
+}
+
+.footer{
+  margin-top: 100px;
 }
