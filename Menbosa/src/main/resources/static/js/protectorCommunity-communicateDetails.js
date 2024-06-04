@@ -71,12 +71,7 @@ $removeBtn?.addEventListener("click", function (){
 })
 
 
-<<<<<<< HEAD
-// ---------- 댓글 ----------
-import * as comment from "./comment.js";
-let page = 1;
-let hasNext = true;
-=======
+
 //이미지 상세 불러오기
 let boardCommuNum = document.querySelector('#boardCommuNum').value;
 
@@ -112,5 +107,4 @@ function imgAjax(){
 
 ////////////////////////////////////////////////////////////////////////////
 
->>>>>>> kmj
 

@@ -45,7 +45,7 @@ $result.on('click', () => {
           <div class="protector-result-explanation">해당 검사 결과는 정상 범위에 근접해 있으나,<br>인지 기능 상태가 악화될 가능성이 있으므로 주의가 필요합니다.</div>`);
         }else if(totalScore<=31){
             $resultSurvey.html(`
-          <div class="protector-result-button state-mid">위험</div>
+          <div class="protector-result-button state-bad">위험</div>
           <div class="protector-result-explanation">해당 검사 결과는 정상 범위를 벗어나 있으며,<br>인지 기능 상태가 악화 된 것으로 보입니다.</div>`);
         }else{
             alert("오류발생")

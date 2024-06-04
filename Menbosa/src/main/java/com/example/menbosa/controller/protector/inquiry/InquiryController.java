@@ -30,11 +30,6 @@ public class InquiryController {
         model.addAttribute("page", page);
         return "/protector/protectorMypage-inquiryList";
     }
-//        public String mypageInquiry(Model model, @SessionAttribute("proMemNum")Long proMemNum) {
-//        List<ProInqDTO> proInqList = inquiryService.selectProInq(proMemNum);
-//        model.addAttribute("proInqList", proInqList);
-//        return "/protector/protectorMypage-inquiryList";
-//    }
 
     //    1:1문의 상세
     @GetMapping("/details")

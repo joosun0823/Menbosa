@@ -33,4 +33,11 @@ public interface MypageMapper {
     void updateOnlyEmail(String proMemEmail, String proMemNumString);
 
     void deleteProMem(long proMemNum);
+
+//    sms
+    Long selectProExi(String name, String phoneNum);
+    Long selectSenExi(String name, String phoneNum);
+
+    void updateProCerti(String smsMessagePost, String proMemNum);
+    void updateSenCerti(String smsMessagePost, String senMemNum);
 }

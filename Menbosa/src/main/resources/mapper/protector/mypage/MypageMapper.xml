@@ -100,8 +100,8 @@
         --- [ ]  **SELECT**어르신연결정보셀렉트
         SELECT SEN_MEM_NUM
         FROM MBS_SEN_MEMBER
-        WHERE SEN_MEM_NAME = #{senMemName}
-          AND '010'||SEN_MEM_PHONE_MID || SEN_MEM_PHONE_BACK = #{senMemPhoneNum}
+        WHERE '010'||SEN_MEM_PHONE_MID || SEN_MEM_PHONE_BACK = #{senMemPhoneNum}
+          AND SEN_MEM_CERTIFICATION = #{senMemCertification}
     </select>
 
     <select id="selectFindEmail" parameterType="String" resultType="String">
@@ -124,24 +124,42 @@
         SET PRO_MEM_NUM = NULL
         WHERE SEN_MEM_NUM = #{senMemNum}
     </update>
-
-<!--    <delete id="">-->
-<!--        -&#45;&#45; [ ]  **DELETE**게시글삭제-->
-<!--        DELETE-->
-<!--        FROM MBS_BOARD_COMMU-->
-<!--        WHERE BOARD_COMMU_NUM = #{boardCommuNum}-->
-<!--    </delete>-->
-
-<!--    <delete id="">-->
-<!--        DELETE-->
-<!--        FROM MBS_BOARD_RECOM-->
-<!--        WHERE BOARD_RECOM_NUM = #{boardRecomNum}-->
-<!--    </delete>-->
-
+    
     <delete id="deleteProMem" parameterType="Long">
         --- [ ]  **DELETE**보호자계정삭제
         DELETE
         FROM MBS_PRO_MEMBER
         WHERE PRO_MEM_NUM = #{proMemNum}
     </delete>
+    
+<!--    ///////////////sms 인증 회원확인, 컬럼저장쿼리/////////////////////////////////////////////////////////////-->
+
+    <select id="selectProExi" resultType="Long" parameterType="String">
+        --- [ ]  **SELECT**보호자연결정보셀렉트
+        SELECT PRO_MEM_NUM
+        FROM MBS_PRO_MEMBER
+        WHERE PRO_MEM_NAME = #{name}
+          AND '010'||PRO_MEM_PHONE_MID || PRO_MEM_PHONE_BACK = #{phoneNum}
+    </select>
+
+    <select id="selectSenExi" resultType="Long" parameterType="String">
+        --- [ ]  **SELECT**보호자연결정보셀렉트
+        SELECT SEN_MEM_NUM
+        FROM MBS_SEN_MEMBER
+        WHERE SEN_MEM_NAME = #{name}
+          AND '010'||SEN_MEM_PHONE_MID || SEN_MEM_PHONE_BACK = #{phoneNum}
+    </select>
+    
+    <update id="updateProCerti" parameterType="String">
+        UPDATE MBS_PRO_MEMBER
+        SET PRO_MEM_CERTIFICATION = #{smsMessagePost}
+        WHERE PRO_MEM_NUM = #{proMemNum}
+    </update>
+
+    <update id="updateSenCerti" parameterType="String">
+        UPDATE MBS_SEN_MEMBER
+        SET SEN_MEM_CERTIFICATION = #{smsMessagePost}
+        WHERE SEN_MEM_NUM = #{senMemNum}
+    </update>
+
 </mapper>

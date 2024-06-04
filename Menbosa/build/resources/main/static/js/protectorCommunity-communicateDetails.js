@@ -71,8 +71,40 @@ $removeBtn?.addEventListener("click", function (){
 })
 
 
-// ---------- 댓글 ----------
-import * as comment from "./comment.js";
-let page = 1;
-let hasNext = true;
+
+//이미지 상세 불러오기
+let boardCommuNum = document.querySelector('#boardCommuNum').value;
+
+imgAjax();
+
+
+function imgAjax(){
+  fetch(`/v1/commu/${boardCommuNum}/files`, {method: 'GET'})
+      //서버에 GET요청을 보내 파일 목록을 가져옴
+      .then(res => res.json())//응답을 JSON으로 변환
+      .then(list => { //변환된 데이터를 list 변수에 저장
+        console.log(list)
+
+        let tags = ''; //HTML 태그를 저장할 변수 초기화
+
+        for (let i = 0; i < list.length; i++) {
+          let fileName = list[i].fileExt + '/' + list[i].fileServer + '_' + list[i].fileUser;
+          //파일 경로 조합
+
+          tags += `
+                         <img src="/v1/files?fileName=${fileName}" data-id="${list[i].fileNum}" data-name="${fileName}"/>
+                        `;
+        }
+
+        let $postImgs = document.querySelector('.post-images'); //이미지가 삽입될 요소
+
+        $postImgs.innerHTML = tags; //생성된 html 태그를 삽입
+      });
+
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////
+
 

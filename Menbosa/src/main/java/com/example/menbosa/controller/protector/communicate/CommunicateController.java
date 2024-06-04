@@ -141,18 +141,10 @@ public class CommunicateController {
             return new RedirectView("/alheum/community/commuMain");
         }
 
-<<<<<<< HEAD
-    // 자주하는 질문
-    @GetMapping("/commuQuestion")
-    public String commuQuestion(){
-        return "protector/protectorCommunity-questionMain";
-    }
-=======
-
         // 자주하는 질문
         @GetMapping("/commuQuestion")
         public String commuQuestion(){
             return "protector/protectorCommunity-questionMain";
         }
->>>>>>> kmj
+
 }
