@@ -79,11 +79,11 @@
                         <p class="mypage-td" th:text="${#temporals.format(test.testResultDate, 'yy년 M월 d일')}"></p>
                         <p class="mypage-td" th:text="${test.testListName}"></p>
                         <p class="mypage-td">
-                            <span th:if="${test.testResultScore} >= 1 and ${test.testResultScore} < 6"
+                            <span th:if="${test.testResultScore} == 4"
                                   class="mypage-state-box mypage-state-good">양호</span>
-                            <span th:if="${test.testResultScore} >= 6 and ${test.testResultScore} < 11"
+                            <span th:if="${test.testResultScore} == 3"
                                   class="mypage-state-box mypage-state-mid">주의</span>
-                            <span th:if="${test.testResultScore} >= 11 and ${test.testResultScore} <= 31"
+                            <span th:if="${test.testResultScore} >= 1 and ${test.testResultScore} <= 2"
                                   class="mypage-state-box mypage-state-bad">위험</span>
                         </p>
                     </div>

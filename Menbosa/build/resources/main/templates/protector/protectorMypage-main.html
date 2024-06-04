@@ -74,7 +74,7 @@
                         </span>
                         <span>
                             <a th:if="${board.division}==100" th:href="@{/alheum/community/commuModify (boardCommuNum=${board.boardNum})}"><span>수정 |</span></a>
-                            <a th:if="${board.division}==200" th:href="@{/alheum/postScript/postModify (boardRecomNum=${board.boardNum})}"><span>수정 |</span></a>
+                            <a th:if="${board.division}==200" th:href="@{/alheum/community/postModify (boardRecomNum=${board.boardNum})}"><span>수정 |</span></a>
                             <span class="deleteBoard" th:attr="data-division=${board.division}, data-board=${board.boardNum}"> 삭제</span>
                         </span>
                     </div>
@@ -110,17 +110,13 @@
                                 th:text="${info.senMemPhoneBack}"></span></span></div>
                         <div>
                             <span>최근검사결과</span>
-                            <!--                  FIXME null값 잡기..............-->
-                            <!--                  TODO 기준값에 맞춰서 수정해야함!!!-->
-                            <!--                  <span th:if="${info.testResultScore} == 'nothing'">검사결과 없음</span>-->
-                            <!--                  <span th:if="${#strings.isEmpty(info.testResultScore)}">검사결과 없음</span>-->
                             <span th:if="${info.testResultScore} == 0"
                                   class="mypage-state-box mypage-state-not">없음</span>
-                            <span th:if="${info.testResultScore} > 1 and ${info.testResultScore} < 6"
+                            <span th:if="${info.testResultScore} == 4"
                                   class="mypage-state-box mypage-state-good">양호</span>
-                            <span th:if="${info.testResultScore} >= 6 and ${info.testResultScore} < 11"
+                            <span th:if="${info.testResultScore} == 3"
                                   class="mypage-state-box mypage-state-mid">주의</span>
-                            <span th:if="${info.testResultScore} >= 11 and ${info.testResultScore} <= 31"
+                            <span th:if="${info.testResultScore} >= 1 and ${info.testResultScore} <= 2"
                                   class="mypage-state-box mypage-state-bad">위험</span>
                         </div>
                     </div>
