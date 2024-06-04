@@ -27,10 +27,6 @@
 <header th:replace="~{/basic/header-ver1 :: header1}"></header>
 <section id="protectorMypage">
     <aside>
-<!--        <div class="mypage-alheum-logo-mid">-->
-<!--            <img th:src="@{/img/alheum_logo.svg}" alt="알흠로고"/>-->
-<!--        </div>-->
-<!--        <a th:href="@{/sms/send-one}">smstest</a>-->
         <ul>
             <a th:href="@{/alheum/mypage}">
                 <li>마이페이지</li>
@@ -69,7 +65,6 @@
             <div id="protectorMypage-mycontents-slidbox" class="protectorMypage-container-box">
                 <article class="mypage-box-half" th:each="board:${MyBoardList}">
                     <!-- 클릭시 수정 삭제 js -->
-                    <!--                    <span id="one" class="mypage-icon-menu mypage-notblock">&#9776;</span>-->
                     <p th:text="${board.boardTitle}"></p>
                     <div class="mypage-box-textsmall">
                         <span>
@@ -78,9 +73,8 @@
                             <span th:text="${#temporals.format(board.boardDate, '· yyyy.MM.dd.')}"></span>
                         </span>
                         <span>
-<!--                            TODO 수정경로 나눠줄 것-->
                             <a th:if="${board.division}==100" th:href="@{/alheum/community/commuModify (boardCommuNum=${board.boardNum})}"><span>수정 |</span></a>
-                            <a th:if="${board.division}==200" th:href="@{/alheum/postScript/postModify (boardRecomNum=${board.boardNum})}"><span>수정 |</span></a>
+                            <a th:if="${board.division}==200" th:href="@{/alheum/community/postModify (boardRecomNum=${board.boardNum})}"><span>수정 |</span></a>
                             <span class="deleteBoard" th:attr="data-division=${board.division}, data-board=${board.boardNum}"> 삭제</span>
                         </span>
                     </div>
@@ -95,7 +89,6 @@
             <!-- 클릭메뉴S -->
             <div class="protectorMypage-seniorinfo-clickmenu">
                 <ul>
-                    <!--              (senMemNum=${info.senMemNum})-->
                     <a th:href="@{/alheum/mypage/seninfo}">
                         <li>상세보기</li>
                     </a>
@@ -109,7 +102,6 @@
             <div class="protectorMypage-container-box">
                 <article class="mypage-box-half" th:each="info:${MySenInfoList}">
                     <!-- 클릭시 상세보기 삭제 js -->
-                    <!--                    <span class="mypage-icon-menu">&#9776;</span>-->
                     <div>
                         <div><span>성함</span><span th:text="${info.senMemName}"></span></div>
                         <div><span>생년월일</span><span
@@ -118,17 +110,13 @@
                                 th:text="${info.senMemPhoneBack}"></span></span></div>
                         <div>
                             <span>최근검사결과</span>
-                            <!--                  FIXME null값 잡기..............-->
-                            <!--                  TODO 기준값에 맞춰서 수정해야함!!!-->
-                            <!--                  <span th:if="${info.testResultScore} == 'nothing'">검사결과 없음</span>-->
-                            <!--                  <span th:if="${#strings.isEmpty(info.testResultScore)}">검사결과 없음</span>-->
                             <span th:if="${info.testResultScore} == 0"
                                   class="mypage-state-box mypage-state-not">없음</span>
-                            <span th:if="${info.testResultScore} > 1 and ${info.testResultScore} < 6"
+                            <span th:if="${info.testResultScore} == 4"
                                   class="mypage-state-box mypage-state-good">양호</span>
-                            <span th:if="${info.testResultScore} >= 6 and ${info.testResultScore} < 11"
+                            <span th:if="${info.testResultScore} == 3"
                                   class="mypage-state-box mypage-state-mid">주의</span>
-                            <span th:if="${info.testResultScore} >= 11 and ${info.testResultScore} <= 31"
+                            <span th:if="${info.testResultScore} >= 1 and ${info.testResultScore} <= 2"
                                   class="mypage-state-box mypage-state-bad">위험</span>
                         </div>
                     </div>

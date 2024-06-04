@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,14 +25,9 @@
     <form action="" method="post">
       <div class="inquiryWrite-title">
         <label for="title">제목</label>
-        <input type="text" name="boardInquTitle" id="title">
+        <input type="text" name="boardInquTitle" id="title" required>
       </div>
-      <textarea name="boardInquContents" id="inquiryWrite-content"></textarea>
-<!--      <div class="inquiryWrite-inputFile">-->
-<!--        <span>첨부파일</span>-->
-<!--        <input type="file" id="inquiryWrite-file">-->
-<!--        <button type="button" onclick = "deleteFile(this)">삭제</button>-->
-<!--      </div>-->
+      <textarea name="boardInquContents" id="inquiryWrite-content" required></textarea>
       <div class="inquiryWrite-buttons">
         <a th:href="@{/alheum/inquiry}">취소</a>
         <button>작성완료</button>
