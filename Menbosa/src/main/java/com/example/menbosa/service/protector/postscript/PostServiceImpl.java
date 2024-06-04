@@ -81,9 +81,10 @@ public class PostServiceImpl implements PostService  {
     }
 
     @Override
-    public void removeImgFile(Long boardRecomNum) {
+    public void removePost(Long boardRecomNum) {
         List<ImgFileDTO> imgFileList = imgFileMapper.selectImgList(boardRecomNum);
         imgFileMapper.deleteImgFile(boardRecomNum);
+        postScriptMapper.deletePost(boardRecomNum);
 
         for(ImgFileDTO file:imgFileList){
             File targetFile = new File(fileDir, file.getImgFileExt() + "/" + file.getImgFileServer() + "_" + file.getImgFileUser());

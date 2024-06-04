@@ -26,9 +26,9 @@
   <form th:action="@{/alheum/community/commuWrite}"  method="post"  enctype="multipart/form-data">
     <div class="write-title">
       <label for="">제목</label>
-      <input type="text" name="boardCommuTitle" id="" >
+      <input type="text" name="boardCommuTitle" id="" required>
     </div>
-    <textarea name="boardCommuContents" id="write-content"></textarea>
+    <textarea name="boardCommuContents" id="write-content" required></textarea>
     <div class="write-inputFile">
       <span>첨부파일</span>
       <input type="file" id="write-file" name="boardFile">

@@ -20,7 +20,9 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public void registerComment(CommentWriteDto commentWriteDto) {
+        System.out.println("====" + commentWriteDto);
         commentMapper.insertComment(commentWriteDto);
+
     }
 
     @Override
@@ -41,7 +43,7 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
-    public void removeComment(Long boardCommuNum) {
-        commentMapper.deleteComment(boardCommuNum);
+    public void removeComment(Long commentCommuNum) {
+        commentMapper.deleteComment(commentCommuNum);
     }
 }

@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> kmj
 //댓글작성
 export function registerComment(commentInfo, callback){
     fetch(`/protector/communicate/${commentInfo.boardCommuNum}/comment`,
@@ -10,15 +7,11 @@ export function registerComment(commentInfo, callback){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({content: commentInfo.content}),
         }).then(resp => {
-<<<<<<< HEAD
-            if(resp.status === 200){
-                callback();
-            }
-=======
+
         if(resp.status === 200){
             callback();
         }
->>>>>>> kmj
+
     });
 }
 
