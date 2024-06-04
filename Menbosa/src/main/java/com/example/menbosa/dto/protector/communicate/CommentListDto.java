@@ -4,17 +4,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@ToString
-@NoArgsConstructor
+@Component
 public class CommentListDto {
     private Long commentCommuNum;
     private LocalDateTime commentCommuDate;
     private String commentCommuContents;
     private Long boardCommuNum;
-    private Long proMemName;
+    private Long proMemNum;
+    private String proMemName;
 }

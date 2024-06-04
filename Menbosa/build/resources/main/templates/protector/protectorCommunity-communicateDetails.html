@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- communicateDetails CSS -->
-  <link rel="stylesheet" href="/css/protectorCommunity-communicateDetails.css">
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-communicateDetails.css}">
   <!-- communicateDetails JS -->
-  <script defer src="/js/protectorCommunity-communicateDetails.js"></script>
+  <script defer type="module" th:src="@{/js/protectorCommunity-communicateDetails.js}" ></script>
+<!--  <script defer type="module" th:src="@{/js/commuComment.js}"></script>-->
+<!--  <script defer type="module" th:src="@{/js/module/comment.js}"></script>-->
   <!-- header CSS -->
   <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
   <link rel="stylesheet" th:href="@{/css/headerMember.css}">
@@ -22,6 +24,7 @@
   <header th:replace="~{/basic/header-ver1 :: header1}"></header>
 
   <main>
+    <input type="hidden" id="proMemNum" th:value="${session.proMemNum}">
     <input type="hidden" id="boardCommuNum" th:value="${detail.boardCommuNum}">
     <div class="protectorCommunity-communicateDetails-title">
       <div class="title-top">
@@ -29,13 +32,15 @@
           <span>[소통]</span>
           <span th:text="${detail.boardCommuTitle}"></span>
         </p>
+        <th:block th:if="${session.proMemNum == detail.proMemNum}">
         <div class="menuButton">
-          <img src="/img/community-menuButton.png" alt="">
+          <img th:src="@{/img/community-menuButton.png}" alt="">
           <ul class="menuButton-modifyDelete">
             <li><button type="button" class="modifyButtn" th:data-id="${detail.boardCommuNum}">수정</button></li>
             <li><button type="button" class="deleteButtn" th:data-id="${detail.boardCommuNum}">삭제</button></li>
           </ul>
         </div>
+        </th:block>
       </div>
       <div class="title-bottom">
         <span th:text="${detail.proMemName}"></span>
@@ -45,79 +50,23 @@
 
     <div class="protectorCommunity-communicateDetails-content">
       <p th:text="${detail.boardCommuContents}"></p>
-      <p>
-        <img src="/img/community-example.png" alt="">
+      <p class="post-images">
+<!--              이미지 들어갈 공간    -->
       </p>
     </div>
 
     <div class="protectorCommunity-communicateDetails-comments">
       <div class="comments-top">
-        <p><img src="/community-commentsLogo.png" alt=""></p>
+        <p><img th:src="@{/community-commentsLogo.png}" alt=""></p>
         <span>Comments</span>
       </div>
       <ul class="comments-list">
-<!--        <li>-->
-<!--          <div class="comments-list-own">-->
-<!--            <p><img src="/img/community-profile.png" alt=""></p>-->
-<!--            <div>-->
-<!--              <div class="comments-list-writer">-->
-<!--                <span>작성자</span>-->
-<!--                <div class="comments-menuButton">-->
-<!--                  <img src="/img/community-menuButton.png" alt="">-->
-<!--                  <ul class="comments-list-submenu">-->
-<!--                    <li class="reply"><span>답글</span></li>-->
-<!--                    <li><span>삭제</span></li>-->
-<!--                  </ul>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <p class="comments-list-contents">-->
-<!--                <span>으미 기여븐거</span>-->
-<!--                <span>20240511 15:08</span>-->
-<!--              </p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <ul class="comments-list-reply">-->
-<!--            <div class="reply-inputBox">-->
-<!--              <div class="reply-input">-->
-<!--                <input type="text" name="" placeholder="댓글을 남겨보세요">-->
-<!--                <button>등록</button>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <li>-->
-<!--              <p>ㄴ</p>-->
-<!--              <div>-->
-<!--                <p class="reply-writer">-->
-<!--                  <span>다른사람 1</span>-->
-<!--                  <span></span>-->
-<!--                </p>-->
-<!--                <p class="reply-contents">-->
-<!--                  <span>넘기여브넹</span>-->
-<!--                  <span>20240511 15:08</span>-->
-<!--                </p>-->
-<!--              </div>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--              <p>ㄴ</p>-->
-<!--              <div>-->
-<!--                <p class="reply-writer">-->
-<!--                  <span>다른사람 1</span>-->
-<!--                  <span></span>-->
-<!--                </p>-->
-<!--                <p class="reply-contents">-->
-<!--                  <span>넘기여브넹</span>-->
-<!--                  <span>20240511 15:08</span>-->
-<!--                </p>-->
-<!--              </div>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
+<!--        댓글 들어갈 공간        -->
       </ul>
 
       <div class="protectorCommunity-communicateDetails-commentsInput">
-        <form action="">
-          <input type="text" id="comment-content" name="" placeholder="댓글을 남겨보세요">
-          <button type="submit" class="btn-comment">등록</button>
-        </form>
+          <input type="text" id="comment-content" name="commentCommuContents" placeholder="댓글을 남겨보세요" required>
+          <button type="button" class="btn-comment">등록</button>
       </div>
     </div>
 
