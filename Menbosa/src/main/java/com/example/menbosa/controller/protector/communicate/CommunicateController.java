@@ -141,39 +141,6 @@ public class CommunicateController {
     }
 
 
-<<<<<<< HEAD
-        @PostMapping("/commuModify")
-        public String commuModify(CommuUpdateDto commuUpdateDto,
-                                  @RequestParam("boardFile") List<MultipartFile> files,
-                                  RedirectAttributes redirectAttributes){
-
-            try{
-                communicateService.modifyCommu(commuUpdateDto, files);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            Long boardCommuNum = commuUpdateDto.getBoardCommuNum();
-            redirectAttributes.addFlashAttribute("boardCommuNum", boardCommuNum);
-
-            return "redirect:/alheum/community/commuDetails?boardCommuNum=" + boardCommuNum;
-        }
-
-
-        // 소통 글 삭제
-
-        @GetMapping("/commuRemove")
-        public RedirectView commuRemove(Long boardCommuNum){
-            communicateService.removeCommu(boardCommuNum);
-            return new RedirectView("/alheum/community/commuMain");
-        }
-
-        // 자주하는 질문
-        @GetMapping("/commuQuestion")
-        public String commuQuestion(){
-            return "protector/protectorCommunity-questionMain";
-        }
-=======
     // 자주하는 질문
     @GetMapping("/commuQuestion")
     public String commuQuestion(){
@@ -181,6 +148,5 @@ public class CommunicateController {
     }
 
 
->>>>>>> main
 
 }

@@ -32,40 +32,22 @@ public class CommentApi {
     }
 
     //댓글목록
-<<<<<<< HEAD
-    @GetMapping("/protector/communicate/{boardCommuNum}/comments")
-    public List<CommentListDto> commentList(@PathVariable("boardCommuNum") Long boardCommuNum) {
-=======
     @GetMapping("/v1/communicate/{boardCommuNum}/comments")
     public List<CommentListDto> commentList(@PathVariable("boardCommuNum") Long boardCommuNum){
->>>>>>> main
         return commentService.findCommentList(boardCommuNum);
     }
 
     //페이지네이션
-<<<<<<< HEAD
-    @GetMapping("/protector/communicate/{boardCommuNum}/commentsPage")
-    public Slice<CommentListDto> commentSlice(@PathVariable("boardCommuNum") long boardCommuNum, int page) {
-        Slice<CommentListDto> slice = commentService.findSlice(new Criteria(page, 1), boardCommuNum);
-=======
     @GetMapping("/v2/communicate/{boardCommuNum}/comments")
     public Slice<CommentListDto> commentSlice(@PathVariable("boardCommuNum") Long boardCommuNum, int page){
         Slice<CommentListDto> slice = commentService.findSlice(new Criteria(page, 5), boardCommuNum);
->>>>>>> main
         return slice;
     }
 
     //댓글삭제
-<<<<<<< HEAD
-    @DeleteMapping("/protector/communicate/comments/{commentCommuNum}")
-    public void deleteComment(@PathVariable("commentCommuNum") long commentCommuNum) {
-        commentService.removeComment(commentCommuNum);
-    }
-=======
     @DeleteMapping("/v1/comments/{commentCommuNum}")
     public void deleteComment(@PathVariable("commentCommuNum") Long commentCommuNum){
         commentService.removeComment(commentCommuNum);
     }
 
->>>>>>> main
 }
