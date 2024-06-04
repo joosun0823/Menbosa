@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-=======
-<html lang="en">
->>>>>>> dd20961340cf66e39f534e11799537397d4894a0
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- postcriptMain CSS -->
-<<<<<<< HEAD
   <link rel="stylesheet" th:href="@{/css/protectorCommunity-postscriptMain.css}">
-=======
-  <link rel="stylesheet" href="./../../static/css/protectorCommunity-postscriptMain.css">
->>>>>>> dd20961340cf66e39f534e11799537397d4894a0
   <!-- header CSS -->
   <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
   <link rel="stylesheet" th:href="@{/css/headerMember.css}">
@@ -32,15 +24,7 @@
     <ul class="protectorCommunity-postscript-tabMenu">
       <li><a th:href="@{/alheum/community/main}" >공지</a></li>
       <li><a th:href="@{/alheum/community/commuMain}">소통</a></li>
-<<<<<<< HEAD
-<<<<<<<< HEAD:Menbosa/src/main/resources/templates/protector/protectorCommunity-postscriptMain.html
       <li><a th:href="@{/alheum/community/postMain}">시설후기</a></li>
-========
-      <li><a href="/protector/protectorCommunity-postcriptMain.html">시설후기</a></li>
->>>>>>>> dd20961340cf66e39f534e11799537397d4894a0:Menbosa/build/resources/main/templates/protector/protectorCommunity-postcriptMain.html
-=======
-      <li><a href="/protector/protectorCommunity-postcriptMain.html">시설후기</a></li>
->>>>>>> dd20961340cf66e39f534e11799537397d4894a0
       <li><a th:href="@{/alheum/community/commuQuestion}">자주하는 질문</a></li>
     </ul>
     <div class="protectorCommunity-postscript-searchbar">
@@ -64,7 +48,6 @@
         <span>등록일</span>
       </p>
       <ul>
-<<<<<<< HEAD
         <li th:each="postList : ${postList}">
           <span th:text="${postList.boardRecomNum}"></span>
           <a th:text="${postList.boardRecomTitle}" th:href="@{/alheum/community/postDetails(boardRecomNum=${postList.boardRecomNum})}"></a>
@@ -95,26 +78,6 @@
           <li class="page-num next"> &gt </li>
         </a>
       </ul>
-=======
-        <li>
-          <span>12345</span>
-          <a href="./../../templates/protector/protectorCommunity-postscriptDetails.html">여기 좋아요</a>
-          <span>장서혁</span>
-          <span>2024-05-11</span>
-        </li>
-
-      </ul>
-    </div>
-    <div class="protectorCommunity-postscript-writeButton">
-      <a href="./../../templates/protector/protectorCommunity-postscriptWrite.html">글쓰기</a>
-    </div>
-    <div class="protectorCommunity-postscript-pageButton">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
->>>>>>> dd20961340cf66e39f534e11799537397d4894a0
     </div>
   </main>
 

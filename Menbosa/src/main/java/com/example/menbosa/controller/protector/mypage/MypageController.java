@@ -6,6 +6,7 @@ import com.example.menbosa.dto.protector.mypage.*;
 import com.example.menbosa.dto.senior.mypage.SenMyTestInfoDTO;
 import com.example.menbosa.service.protector.communicate.CommunicateService;
 import com.example.menbosa.service.protector.mypage.MypageService;
+import com.example.menbosa.service.protector.postscript.PostService;
 import com.example.menbosa.service.senior.mypage.SenMypageService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -142,6 +143,7 @@ public class MypageController {
 //-------------------------------------------------------------------------------------------
 //소통 글 삭제페이지
     private final CommunicateService communicateService;
+    private final PostService postService;
 
     @GetMapping("/commuRemove")
     public RedirectView commuRemove(Long boardCommuNum){
@@ -150,8 +152,8 @@ public class MypageController {
     }
 
     @GetMapping("/recomRemove")
-    public RedirectView recomRemove(Long boardCommuNum){
-        //TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public RedirectView recomRemove(Long boardRecomNum){
+        postService.removePost(boardRecomNum);
         return new RedirectView("/alheum/mypage");
     }
 }
