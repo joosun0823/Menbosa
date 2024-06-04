@@ -325,6 +325,8 @@
 }
 
 .secessionButton{
+  text-align: center;
+  line-height: 50px;
   font-size: 20px;
   color: #EF4136;
   background-color: #E6E7EB;

@@ -103,24 +103,29 @@
   height: 80px;
   width: 650px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
   margin-bottom: 60px;
 }
 
-.seniorTest-button{
-  width: 300px;
-  border-radius: 50px;
-  background-color: #DCDBDB;
-}
+/*.seniorTest-button{*/
+/*  width: 300px;*/
+/*  border-radius: 50px;*/
+/*  background-color: #DCDBDB;*/
+/*}*/
 
-.seniorTest-button > a{
+.seniorTest-button > button{
   font-size: 30px;
   text-decoration-line: none;
   color: white;
   display: block;
   text-align: center;
   line-height: 80px;
+  width: 300px;
+  border-radius: 50px;
+  cursor: pointer;
+
+  /*background-color: #DCDBDB;*/
 }
 
 .back{
@@ -160,6 +165,7 @@
   box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.2);
   padding: 20px;
   text-align: center;
+  /* display: none; */
 }
 
 
@@ -229,4 +235,12 @@
 .protector-result-warningText{
   color: #A7A9AC;
   font-size: 16px;
+}
+
+.caution{
+  background-color: #F7941D;
+}
+
+.danger{
+  background-color: #EF4136;
 }
