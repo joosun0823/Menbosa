@@ -22,15 +22,15 @@
 - [Stacks](#-stacks)
 
 ## 😎팀 구성
-양효준(팀장) :
+양효준(팀장)
 <br>
-김주선(부팀장) :
+김주선(부팀장)
 <br>
-한지윤 :
+한지윤
 <br>
-김민주 :
+김민주
 <br>
-장서혁 :
+장서혁
 
 ## 💡ERD구성
 
@@ -38,6 +38,43 @@
 <summary>ERD</summary>
   <img src="https://github.com/joosun0823/Menbosa/assets/133857203/2b070302-6d0b-4815-a13c-26d003bc17fa">
 </details>
+
+## 🖥 주요기능
+
+### 로그인
+<p><보호자 로그인></p> 
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/ae61d8be-ee41-4ff8-80ab-f4527ffdd913" width="600"/>
+<br>
+<p><어르신 로그인></p> 
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/1399cf25-b86b-4061-a16f-7ac2aaa71cd0" width="600"/>
+<br>
+
+### 회원가입
+<p><보호자 회원가입></p>
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/9ecd8bde-b70e-4551-b0f8-2090bf19a2f6" width="600"/>
+<p><어르신 회원가입></p>
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/68a11d0a-ed56-429b-b0ea-3bdb904da55d" width="600"/>
+
+
+### 지도 API
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/6e4d81a2-7b70-4d8d-a88b-26baa20da670" width="600"/>
+
+### 설문
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/7e373248-3320-4ffc-a587-abb2f2695b49" width="600"/>
+
+
+### 검사
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/4b3b595a-eec4-4f39-9383-ac4d3ab83ef4" width="600"/>
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/0b1556af-9d30-433c-a225-09ed3ef98b49" width="600"/>
+
+
+### 게시판
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/169c1661-77cf-4a97-a859-f86c2bb3b1a7" width="600"/>
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/0ebe1000-e82b-49a4-af26-32229bb37c8a" width="600"/>
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/d6153440-abf0-40dc-92b5-68e180c68f47" width="600"/>
+<img src="https://github.com/joosun0823/Menbosa/assets/133857203/f05ed9be-5a83-49cf-bc36-37aa9ef809d2" width="600"/>
+
+
 
 ## ⚙ Stacks
 ### Environment
@@ -67,4 +104,3 @@
   <img src="https://img.shields.io/badge/KakaoMapAPI-FFCD00?style=flat&logo=kakao&logoColor=white"/>
 </div>
 
-## 
